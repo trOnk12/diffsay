@@ -1,0 +1,216 @@
+{
+ "mode": "diffsay text + crop of first change",
+ "protocol": "agent answer written before labels were opened; scored by property category",
+ "pairs": [
+  {
+   "i": 0,
+   "diffspot_row": "3328",
+   "truth": "justify",
+   "difficulty": "hard",
+   "agent_answer": "justify"
+  },
+  {
+   "i": 1,
+   "diffspot_row": "3440",
+   "truth": "spacing",
+   "difficulty": "hard",
+   "agent_answer": "spacing"
+  },
+  {
+   "i": 2,
+   "diffspot_row": "1509",
+   "truth": "line_height",
+   "difficulty": "hard",
+   "agent_answer": "text"
+  },
+  {
+   "i": 3,
+   "diffspot_row": "3446",
+   "truth": "gradient",
+   "difficulty": "hard",
+   "agent_answer": "gradient"
+  },
+  {
+   "i": 4,
+   "diffspot_row": "0441",
+   "truth": "letter_spacing",
+   "difficulty": "hard",
+   "agent_answer": "letter_spacing"
+  },
+  {
+   "i": 5,
+   "diffspot_row": "2255",
+   "truth": "rounded",
+   "difficulty": "hard",
+   "agent_answer": "rounded"
+  },
+  {
+   "i": 6,
+   "diffspot_row": "3088",
+   "truth": "font_size",
+   "difficulty": "hard",
+   "agent_answer": "gradient"
+  },
+  {
+   "i": 7,
+   "diffspot_row": "0817",
+   "truth": "letter_spacing",
+   "difficulty": "hard",
+   "agent_answer": "letter_spacing"
+  },
+  {
+   "i": 8,
+   "diffspot_row": "3087",
+   "truth": "position",
+   "difficulty": "hard",
+   "agent_answer": "position"
+  },
+  {
+   "i": 9,
+   "diffspot_row": "3797",
+   "truth": "opacity",
+   "difficulty": "hard",
+   "agent_answer": "opacity"
+  },
+  {
+   "i": 10,
+   "diffspot_row": "3424",
+   "truth": "opacity",
+   "difficulty": "hard",
+   "agent_answer": "gradient"
+  },
+  {
+   "i": 11,
+   "diffspot_row": "2899",
+   "truth": "font_size",
+   "difficulty": "hard",
+   "agent_answer": "font_size"
+  },
+  {
+   "i": 12,
+   "diffspot_row": "3915",
+   "truth": "none",
+   "difficulty": "no_diff",
+   "agent_answer": "none"
+  },
+  {
+   "i": 13,
+   "diffspot_row": "2173",
+   "truth": "color",
+   "difficulty": "hard",
+   "agent_answer": "color"
+  },
+  {
+   "i": 14,
+   "diffspot_row": "3527",
+   "truth": "gradient",
+   "difficulty": "hard",
+   "agent_answer": "gradient"
+  },
+  {
+   "i": 15,
+   "diffspot_row": "0330",
+   "truth": "position",
+   "difficulty": "hard",
+   "agent_answer": "position"
+  },
+  {
+   "i": 16,
+   "diffspot_row": "4150",
+   "truth": "none",
+   "difficulty": "no_diff",
+   "agent_answer": "none"
+  },
+  {
+   "i": 17,
+   "diffspot_row": "3339",
+   "truth": "justify",
+   "difficulty": "hard",
+   "agent_answer": "justify"
+  },
+  {
+   "i": 18,
+   "diffspot_row": "2082",
+   "truth": "line_height",
+   "difficulty": "hard",
+   "agent_answer": "font_size"
+  },
+  {
+   "i": 19,
+   "diffspot_row": "3856",
+   "truth": "text",
+   "difficulty": "hard",
+   "agent_answer": "text"
+  },
+  {
+   "i": 20,
+   "diffspot_row": "0592",
+   "truth": "text",
+   "difficulty": "hard",
+   "agent_answer": "text"
+  },
+  {
+   "i": 21,
+   "diffspot_row": "1147",
+   "truth": "font_weight",
+   "difficulty": "hard",
+   "agent_answer": "font_weight"
+  },
+  {
+   "i": 22,
+   "diffspot_row": "1182",
+   "truth": "font_weight",
+   "difficulty": "hard",
+   "agent_answer": "font_weight"
+  },
+  {
+   "i": 23,
+   "diffspot_row": "2003",
+   "truth": "rounded",
+   "difficulty": "hard",
+   "agent_answer": "rounded"
+  },
+  {
+   "i": 24,
+   "diffspot_row": "2993",
+   "truth": "border",
+   "difficulty": "hard",
+   "agent_answer": "border"
+  },
+  {
+   "i": 25,
+   "diffspot_row": "2267",
+   "truth": "color",
+   "difficulty": "hard",
+   "agent_answer": "color"
+  },
+  {
+   "i": 26,
+   "diffspot_row": "3942",
+   "truth": "none",
+   "difficulty": "no_diff",
+   "agent_answer": "none"
+  },
+  {
+   "i": 27,
+   "diffspot_row": "3847",
+   "truth": "spacing",
+   "difficulty": "hard",
+   "agent_answer": "position"
+  },
+  {
+   "i": 28,
+   "diffspot_row": "2403",
+   "truth": "border",
+   "difficulty": "hard",
+   "agent_answer": "border"
+  },
+  {
+   "i": 29,
+   "diffspot_row": "4291",
+   "truth": "none",
+   "difficulty": "no_diff",
+   "agent_answer": "none"
+  }
+ ]
+}

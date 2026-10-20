@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diffsay"
+version = "0.2.0"
+description = "Failed Compose screenshot test -> the line of code and the value that changed the pixels."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy", "scipy", "pillow"]
+keywords = ["android", "jetpack-compose", "screenshot-testing", "roborazzi", "visual-regression", "ai-agents"]
+
+[project.scripts]
+diffsay = "diffsay.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+diffsay = ["android/*.kt"]

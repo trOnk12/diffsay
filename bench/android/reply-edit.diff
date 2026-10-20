@@ -1,0 +1,20 @@
+--- a/app/src/main/java/com/example/reply/ui/components/ReplyEmailListItem.kt	2026-10-20 16:48:25.091437142 +0000
++++ b/app/src/main/java/com/example/reply/ui/components/ReplyEmailListItem.kt	2026-10-20 18:50:25.847355475 +0000
+@@ -78,7 +78,7 @@
+         Column(
+             modifier = Modifier
+                 .fillMaxWidth()
+-                .padding(20.dp),
++                .padding(12.dp),
+         ) {
+             Row(modifier = Modifier.fillMaxWidth()) {
+                 val clickModifier = Modifier.clickable(
+@@ -128,7 +128,7 @@
+ 
+             Text(
+                 text = email.subject,
+-                style = MaterialTheme.typography.bodyLarge,
++                style = MaterialTheme.typography.titleMedium,
+                 modifier = Modifier.padding(top = 12.dp, bottom = 8.dp),
+             )
+             Text(

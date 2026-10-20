@@ -1,0 +1,69 @@
+diff --git a/JetNews/app/build.gradle.kts b/JetNews/app/build.gradle.kts
+index 872c846b..efc074e1 100644
+--- a/JetNews/app/build.gradle.kts
++++ b/JetNews/app/build.gradle.kts
+@@ -21,6 +21,7 @@ plugins {
+     alias(libs.plugins.android.application)
+     alias(libs.plugins.kotlin.serialization)
+     alias(libs.plugins.compose)
++    alias(libs.plugins.roborazzi)
+ }
+ 
+ android {
+@@ -125,6 +126,13 @@ dependencies {
+     implementation(libs.androidx.navigation3.ui)
+     implementation(libs.androidx.window)
+ 
++    testImplementation(composeBom)
++    testImplementation(libs.junit)
++    testImplementation(libs.robolectric)
++    testImplementation(libs.roborazzi)
++    testImplementation(libs.roborazzi.compose)
++    testImplementation(libs.androidx.compose.ui.test.junit4)
++    testImplementation("androidx.compose.ui:ui-tooling-data")
+     androidTestImplementation(libs.junit)
+     androidTestImplementation(libs.androidx.test.core)
+     androidTestImplementation(libs.androidx.test.runner)
+@@ -135,3 +143,10 @@ dependencies {
+     androidTestImplementation(libs.androidx.compose.ui.test)
+     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+ }
++
++android.testOptions.unitTests.isIncludeAndroidResources = true
++tasks.withType<Test>().configureEach {
++    systemProperty("robolectric.graphicsMode", "NATIVE")
++    systemProperty("robolectric.dependency.repo.url", "https://maven-central.storage-download.googleapis.com/maven2")
++    systemProperty("robolectric.dependency.repo.id", "gcs-central")
++}
+diff --git a/JetNews/gradle.properties b/JetNews/gradle.properties
+index 9299bc6d..309a5042 100644
+--- a/JetNews/gradle.properties
++++ b/JetNews/gradle.properties
+@@ -37,3 +37,4 @@ android.useAndroidX=true
+ 
+ # Kotlin code style for this project: "official" or "obsolete":
+ kotlin.code.style=official
++roborazzi.dumpUiTree=true
+diff --git a/JetNews/settings.gradle.kts b/JetNews/settings.gradle.kts
+index 56625726..1bbe19c3 100644
+--- a/JetNews/settings.gradle.kts
++++ b/JetNews/settings.gradle.kts
+@@ -17,8 +17,9 @@ val snapshotVersion : String? = System.getenv("COMPOSE_SNAPSHOT_ID")
+ 
+ pluginManagement {
+     repositories {
+-        gradlePluginPortal()
+         google()
++        maven("https://maven-central.storage-download.googleapis.com/maven2/")
++        gradlePluginPortal()
+         mavenCentral()
+     }
+ }
+@@ -31,6 +32,7 @@ dependencyResolutionManagement {
+         }
+ 
+         google()
++        maven("https://maven-central.storage-download.googleapis.com/maven2/")
+         mavenCentral()
+     }
+ }

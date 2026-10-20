@@ -1,0 +1,119 @@
+J01 EXPLAINED Divider.kt:52 10.dp -> 16.dp  (1 tests)
+      Divider.kt:52 Box: modifier chain: size(width=100.0.dp, height=10.0.dp) -> size(width=100.0.dp, height=16.0.dp)
+      Divider.kt:52 Box: value 5: size(width=100.0.dp, height=10.0.dp) -> size(width=100.0.dp, height=16.0.dp)
+      SlotRecorder.kt:38 (group): layout size 200x20 -> 200x32px
+      height = 16.dp is written at Divider.kt:52
+J02 EXPLAINED Filters.kt:156 6.dp -> 12.dp  (3 tests)
+      Filters.kt:150 Text: modifier chain: padding(horizontal=20.0.dp, vertical=6.0.dp) -> padding(horizontal=20.0.dp, vertical=12.0.dp)
+      Filters.kt:150 Text: value 4: padding(horizontal=20.0.dp, vertical=6.0.dp).TextStringSimpleElement() -> padding(horizontal=20.0.dp, vertical=12.0.dp).
+      SlotRecorder.kt:38 (group): layout size 150x52 -> 150x76px
+      vertical = 12.dp is written at Filters.kt:156
+J03 EXPLAINED Filters.kt:169 4.dp -> 10.dp  (1 tests)
+      Surface.kt:53 Box: modifier chain: padding(4.0.dp) -> padding(10.0.dp)
+      Surface.kt:53 Box: value 5: padding(4.0.dp).shadow(elevat… -> padding(10.0.dp).shadow(elevat…
+      SlotRecorder.kt:38 (group): layout moved (+12, +12)px
+      padding(10.dp) is written at Filters.kt:169
+J04 MISSED    Gradient.kt:71 2.dp -> 8.dp  (6 tests)
+      Surface.kt:111 Box: modifier chain: border(width=2.0.dp, brush=LinearG… -> border(width=8.0.dp, brush=LinearG…
+      Surface.kt:111 Box: value 5: …0.dp)).border(width=2.0.dp, brush=LinearG… -> …0.dp)).border(width=8.0.dp, brush=LinearG…
+      Filters.kt:139 Box: modifier chain: border(width=2.0.dp, brush=LinearG… -> border(width=8.0.dp, brush=LinearG…
+      Filters.kt:139 Box: value 5: …@0.00).border(width=2.0.dp, brush=LinearG… -> …@0.00).border(width=8.0.dp, brush=LinearG…
+J05 EXPLAINED GradientTintedIconButton.kt:108 4.dp -> 10.dp  (1 tests)
+      Surface.kt:111 Box: modifier chain: padding(4.0.dp) -> padding(10.0.dp)
+      Surface.kt:111 Box: value 5: padding(4.0.dp).clickable(ena… -> padding(10.0.dp).clickable(ena…
+      SlotRecorder.kt:38 (group): layout moved (+12, +12)px
+      padding(10.dp) is written at GradientTintedIconButton.kt:108
+J06 MISSED    Snacks.kt:88 16.dp -> 22.dp  (1 tests)
+J07 MISSED    Snacks.kt:310 1.dp -> 7.dp  (1 tests)
+J08 EXPLAINED Snacks.kt:348 100.dp -> 106.dp  (1 tests)
+      Snacks.kt:332 Box: value 2: …Modifier().height(100.0.dp).fillMaxWidth(… -> …Modifier().height(106.0.dp).fillMaxWidth(…
+      height(106.dp) is written at Snacks.kt:348
+J09 EXPLAINED Snacks.kt:387 8.dp -> 14.dp  (1 tests)
+      Snacks.kt:387 Spacer: modifier chain: height(8.0.dp) -> height(14.0.dp)
+      Snacks.kt:387 Spacer: value 4: height(8.0.dp) -> height(14.0.dp)
+      Snacks.kt:388 Text: layout moved (+0, +12)px
+      height(14.dp) is written at Snacks.kt:387
+J10 EXPLAINED Snacks.kt:412 4.dp -> 10.dp  (1 tests)
+      Snacks.kt:412 Spacer: modifier chain: height(4.0.dp) -> height(10.0.dp)
+      Snacks.kt:412 Spacer: value 4: height(4.0.dp) -> height(10.0.dp)
+      Snacks.kt:414 Text: layout moved (+0, +12)px
+      height(10.dp) is written at Snacks.kt:412
+J11 EXPLAINED DestinationBar.kt:78 maxLines = 1 -> maxLines = 2  (1 tests)
+      DestinationBar.kt:73 Text: layout moved (+0, -24)px, size 592x39 -> 592x87px
+J12 MISSED    FilterScreen.kt:126 24.dp -> 30.dp  (1 tests)
+      FilterScreen.kt:107 Column: layout moved (+12, +0)px, size 560x1340 -> 536x1544px
+      FilterScreen.kt:173 FilterChipSection: layout moved (+12, +0)px, size 552x157 -> 528x225px
+      FilterScreen.kt:177 FilterChipSection: layout moved (+12, +68)px, size 552x225 -> 528x293px
+J13 EXPLAINED FilterScreen.kt:205 4.dp -> 10.dp  (1 tests)
+      FilterScreen.kt:201 FlowRow: modifier chain: padding(horizontal=4.0.dp, vertical=0.0.dp) -> padding(horizontal=10.0.dp, vertical=0.0.dp)
+      FilterScreen.kt:201 FlowRow: value 5: ….padding(horizontal=4.0.dp, vertical=0.0.… -> ….padding(horizontal=10.0.dp, vertical=0.0.…
+      FilterScreen.kt:107 Column: layout size 560x1340 -> 560x1544px
+      padding(10.dp) is written at FilterScreen.kt:205
+J14 EXPLAINED FilterScreen.kt:294 10.dp -> 16.dp  (1 tests)
+      FilterScreen.kt:290 Text: value 2: padding(start=10.0.dp, top=0.0.dp, end=0.0.dp, bottom=0.0.dp).weight(1.0) -> padding(start=16.0.dp, top=0.0.dp, end
+      FilterScreen.kt:290 Text: modifier chain: padding(start=10.0.dp, top=0.0.dp, end=0.0.dp, bottom=0.0.dp) -> padding(start=16.0.dp, top=0.0.dp, end=0.0.
+      FilterScreen.kt:290 Text: value 4: padding(start=10.0.dp, top=0.0.dp, e… -> padding(start=16.0.dp, top=0.0.dp, e…
+J15 MISSED    Home.kt:402 2.dp -> 8.dp  (1 tests)
+J16 NO-DIFF  Cart.kt:319 16.dp -> 22.dp
+J17 NO-DIFF  Cart.kt:384 56.dp -> 62.dp
+J18 NO-DIFF  Cart.kt:387 24.dp -> 30.dp
+J19 NO-DIFF  Cart.kt:402 24.dp -> 30.dp
+J20 NO-DIFF  Cart.kt:417 8.dp -> 14.dp
+J21 NO-DIFF  Cart.kt:454 8.dp -> 14.dp
+J22 NO-DIFF  Categories.kt:75 16.dp -> 22.dp
+J23 EXPLAINED Results.kt:80 24.dp -> 30.dp  (1 tests)
+      Results.kt:76 Box: modifier chain: padding(horizontal=24.0.dp, vertical=0.0.dp) -> padding(horizontal=30.0.dp, vertical=0.0.dp)
+      Results.kt:76 Box: value 5: ….padding(horizontal=24.0.dp, vertical=0.0.… -> ….padding(horizontal=30.0.dp, vertical=0.0.…
+      Surface.kt:64 CompositionLocalProvider: layout moved (+12, +0)px, size 624x264 -> 600x264px
+      padding(30.dp) is written at Results.kt:80
+J24 EXPLAINED Results.kt:111 8.dp -> 14.dp  (1 tests)
+      Results.kt:111 Spacer: modifier chain: height(8.0.dp) -> height(14.0.dp)
+      Results.kt:111 Spacer: value 4: height(8.0.dp) -> height(14.0.dp)
+      Results.kt:96 Column: layout moved (+0, -6)px, size 288x131 -> 288x143px
+      height(14.dp) is written at Results.kt:111
+J25 EXPLAINED Results.kt:122 36.dp -> 42.dp  (1 tests)
+      Button.kt:65 JetsnackSurface: value 2: size(36.0.dp).graphicsLayer… -> size(42.0.dp).graphicsLayer…
+      Surface.kt:53 Box: modifier chain: size(36.0.dp) -> size(42.0.dp)
+      Surface.kt:53 Box: value 5: size(36.0.dp).graphicsLayer… -> size(42.0.dp).graphicsLayer…
+      size(42.dp) is written at Results.kt:122
+J26 MISSED    SnackDetail.kt:232 280.dp -> 286.dp  (1 tests)
+      SnackDetail.kt:147 remember: value 1: …monds, imageRes=<id> -> …monds, imageRes=<id>, pr
+      SnackDetail.kt:184 Body: value 2: …monds, imageRes=<id> -> …monds, imageRes=<id>, pr
+      SnackDetail.kt:183 Header: layout size 720x560 -> 720x572px
+J27 LOCATED   SnackDetail.kt:261 16.dp -> 22.dp  (1 tests)
+      SnackDetail.kt:187 Up: layout moved (+12, +0)px
+      SnackDetail.kt:256 IconButton: layout moved (+12, +0)px
+      SnackDetail.kt:272 Icon: layout moved (+12, +0)px
+J28 LOCATED   SnackDetail.kt:262 36.dp -> 42.dp  (1 tests)
+      SnackDetail.kt:187 Up: layout size 72x72 -> 84x84px
+      SnackDetail.kt:256 IconButton: layout size 72x72 -> 84x84px
+      SnackDetail.kt:272 Icon: layout moved (+6, +6)px
+J29 NO-DIFF  SnackDetail.kt:353 4.dp -> 10.dp
+J30 NO-DIFF  Color.kt:23 Color(0xff0009b3) -> Color(0xFF5A53E9)
+J31 NO-DIFF  Color.kt:44 Color(0xffd6fefe) -> Color(0xFF8CA4A4)
+J32 NO-DIFF  Color.kt:47 Color(0xff170085) -> Color(0xFF4D5ADF)
+J33 NO-DIFF  Color.kt:61 Color(0xff97005c) -> Color(0xFFCD5A06)
+J34 EXPLAINED Color.kt:67 Color(0xfff4568b) -> Color(0xFFAE0CD1)  (1 tests)
+      Theme.kt:84 ProvideJetsnackColors: value 2: …7f5], gradient6_2=[#f4568b, #c186fa, #fdbbcf, #c186fa, #f4568b], gradient3_1=[#c8bbfd, #86 -> …7f5], grad
+      Categories.kt:152 SearchCategory: value 3: [#fdbbcf, #c186fa, #f4568b] -> [#fdbbcf, #c186fa, #ae0cd1]
+      Categories.kt:98 Layout: modifier chain: …[#fdbbcf, #c186fa, #f4568b], stops=null, start… -> …[#fdbbcf, #c186fa, #ae0cd1], stops=null, start…
+      0x..AE0CD1 is written at Color.kt:67
+J35 MISSED    Type.kt:30 FontWeight.Medium -> FontWeight.Light  (1 tests)
+      Theme.kt:85 MaterialTheme: value 4: …t=FontWeight(weight=500), style=Normal, loadingStrategy=Blocking), ResourceFont(resId=<id>… -> …t=FontWeight(weig
+      Profile.kt:55 Text: value 4: …t=FontWeight(weight=500), style=Normal, l… -> …t=FontWeight(weight=300), style=Normal, l…
+      Profile.kt:62 Text: value 4: …t=FontWeight(weight=500), style=Normal, l… -> …t=FontWeight(weight=300), style=Normal, l…
+J36 NO-DIFF  Type.kt:68 24.sp -> 27.sp
+J37 NO-DIFF  Type.kt:76 24.sp -> 27.sp
+J38 EXPLAINED Type.kt:90 0.1.sp -> 3.1.sp  (1 tests)
+      SnackDetail.kt:147 remember: value 1: …e=Almonds, imageRes=<id> -> …e=Almonds, imageRes=213109
+      SnackDetail.kt:184 Body: value 2: …e=Almonds, imageRes=<id> -> …e=Almonds, imageRes=213109
+      SnackDetail.kt:430 Text: value 6: …null, letterSpacing=0.1.sp, baselineShift… -> …null, letterSpacing=3.1.sp, baselineShift…
+      letterSpacing = 3.1.sp is written at Type.kt:90
+J39 MISSED    Type.kt:116 FontWeight.Bold -> FontWeight.Light  (3 tests)
+      Filters.kt:150 Text: value 3: …t=FontWeight(weight=700), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      FilterScreen.kt:208 FilterChip: layout size 98x52 -> 96x52px
+      FilterScreen.kt:208 FilterChip: layout moved (-2, +0)px, size 116x52 -> 112x52px
+      Filters.kt:150 Text: value 3: …t=FontWeight(weight=700), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+J40 NO-DIFF  Type.kt:117 16.sp -> 19.sp
+
+40 mutations run; 15 changed no preview; of 25 visible: explained 15, located 17, value named 18, missed 8

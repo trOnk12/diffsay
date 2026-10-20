@@ -1,0 +1,119 @@
+J01 EXPLAINED Divider.kt:52 10.dp -> 16.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 3: ….0.dp), bottomStart = -> ….0.dp), bottomStart 
+      Theme.kt:85 MaterialTheme: value 2: …dp), bottomStart = C -> …dp), bottomStart = Cor
+      Divider.kt:52 Box: modifier chain: size(width=100.0.dp, height=10.0.dp) -> size(width=100.0.dp, height=16.0.dp)
+J02 MISSED    Filters.kt:156 6.dp -> 12.dp  (3 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …=MutableState(value=androidx.compose.material3.RippleNodeFactory)), androidx.compose.runti -> …=MutableState(valu
+      Surface.kt:64 CompositionLocalProvider: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=an
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+J03 MISSED    Filters.kt:169 4.dp -> 10.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 3: …=MutableState(value=androidx.compose.material3.RippleNodeFactory)), androidx.compose.runti -> …=MutableState(valu
+      Surface.kt:53 Box: modifier chain: padding(4.0.dp) -> padding(10.0.dp)
+      Surface.kt:53 Box: value 5: padding(4.0.dp).shadow(elevat… -> padding(10.0.dp).shadow(elevat…
+J04 MISSED    Gradient.kt:71 2.dp -> 8.dp  (6 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …idx.compose.runtime.DynamicProvidableCompositionLocal=DynamicValueHolder(state=MutableStat -> …idx.compose.runtim
+      Surface.kt:111 Box: modifier chain: border(width=2.0.dp, brush=LinearG… -> border(width=8.0.dp, brush=LinearG…
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+J05 MISSED    GradientTintedIconButton.kt:108 4.dp -> 10.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …idx.compose.runtime.DynamicProvidableCompositionLocal=DynamicValueHolder(state=MutableStat -> …idx.compose.runtim
+      Surface.kt:111 Box: modifier chain: padding(4.0.dp) -> padding(10.0.dp)
+J06 MISSED    Snacks.kt:88 16.dp -> 22.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …dp), bottomStart = Co -> …dp), bottomStart = C
+      Snacks.kt:498 CompositionLocalProvider: value 3: …x.compose.animation.AnimatedVisibilityScopeImpl)), androidx.compose.runtime.DynamicProvida -> …x.com
+J07 MISSED    Snacks.kt:310 1.dp -> 7.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …idx.compose.runtime.DynamicProvidableCompositionLocal=DynamicValueHolder(state=MutableStat -> …idx.compose.runtim
+      Snacks.kt:498 CompositionLocalProvider: value 3: …x.compose.animation.AnimatedVisibilityScopeImpl)), androidx.compose.runtime.DynamicProvida -> …x.com
+J08 MISSED    Snacks.kt:348 100.dp -> 106.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 3: ….0.dp), bottomStart = -> ….0.dp), bottomStart 
+      Theme.kt:85 MaterialTheme: value 2: …dp), bottomStart = Co -> …dp), bottomStart = C
+      Snacks.kt:498 CompositionLocalProvider: value 3: …x.compose.animation.AnimatedVisibilityScopeImpl)), androidx.compose.runtime.DynamicProvida -> …x.com
+J09 MISSED    Snacks.kt:387 8.dp -> 14.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …idx.compose.runtime.DynamicProvidableCompositionLocal=DynamicValueHolder(state=MutableStat -> …idx.compose.runtim
+      Snacks.kt:498 CompositionLocalProvider: value 3: …x.compose.animation.AnimatedVisibilityScopeImpl)), androidx.compose.runtime.DynamicProvida -> …x.com
+J10 MISSED    Snacks.kt:412 4.dp -> 10.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 3: ….0.dp), bottomStart = -> ….0.dp), bottomStart 
+      Snacks.kt:498 CompositionLocalProvider: value 3: …x.compose.animation.AnimatedVisibilityScopeImpl)), androidx.compose.runtime.DynamicProvida -> …x.com
+      Surface.kt:64 CompositionLocalProvider: value 2: …ableCompositionLocal -> …ableCompositionLocal=
+J11 MISSED    DestinationBar.kt:78 maxLines = 1 -> maxLines = 2  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …idx.compose.runtime.DynamicProvidableCompositionLocal=DynamicValueHolder(state=MutableStat -> …idx.compose.runtim
+      Snacks.kt:498 CompositionLocalProvider: value 3: …x.compose.animation.AnimatedVisibilityScopeImpl)), androidx.compose.runtime.DynamicProvida -> …x.com
+J12 MISSED    FilterScreen.kt:126 24.dp -> 30.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …idx.compose.runtime.DynamicProvidableCompositionLocal=DynamicValueHolder(state=MutableStat -> …idx.compose.runtim
+      FilterScreen.kt:131 Icon: value 2: …=false, properties={ContentDescription=[Close], Role=Image}) -> …=false, properties={Role=Image, ContentDescriptio
+J13 EXPLAINED FilterScreen.kt:205 4.dp -> 10.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …idx.compose.runtime.DynamicProvidableCompositionLocal=DynamicValueHolder(state=MutableStat -> …idx.compose.runtim
+      FilterScreen.kt:201 FlowRow: modifier chain: padding(horizontal=4.0.dp, vertical=0.0.dp) -> padding(horizontal=10.0.dp, vertical=0.0.dp)
+J14 EXPLAINED FilterScreen.kt:294 10.dp -> 16.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …idx.compose.runtime.DynamicProvidableCompositionLocal=DynamicValueHolder(state=MutableStat -> …idx.compose.runtim
+      FilterScreen.kt:290 Text: value 2: padding(start=10.0.dp, top=0.0.dp, end=0.0.dp, bottom=0.0.dp).weight(1.0) -> padding(start=16.0.dp, top=0.0.dp, end
+J15 MISSED    Home.kt:402 2.dp -> 8.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ornerSize(size = 48.0 -> …ornerSize(size = 48.
+      Theme.kt:85 MaterialTheme: value 3: ….0.dp), bottomStart = -> ….0.dp), bottomStart 
+      Theme.kt:85 MaterialTheme: value 2: …p), bottomStart = Cor -> …p), bottomStart = Co
+J16 NO-DIFF  Cart.kt:319 16.dp -> 22.dp
+J17 NO-DIFF  Cart.kt:384 56.dp -> 62.dp
+J18 NO-DIFF  Cart.kt:387 24.dp -> 30.dp
+J19 NO-DIFF  Cart.kt:402 24.dp -> 30.dp
+J20 NO-DIFF  Cart.kt:417 8.dp -> 14.dp
+J21 NO-DIFF  Cart.kt:454 8.dp -> 14.dp
+J22 NO-DIFF  Categories.kt:75 16.dp -> 22.dp
+J23 EXPLAINED Results.kt:80 24.dp -> 30.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …idx.compose.runtime.DynamicProvidableCompositionLocal=DynamicValueHolder(state=MutableStat -> …idx.compose.runtim
+      Results.kt:76 Box: modifier chain: padding(horizontal=24.0.dp, vertical=0.0.dp) -> padding(horizontal=30.0.dp, vertical=0.0.dp)
+J24 EXPLAINED Results.kt:111 8.dp -> 14.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 3: …=MutableState(value=androidx.compose.material3.RippleNodeFactory)), androidx.compose.runti -> …=MutableState(valu
+      Results.kt:111 Spacer: modifier chain: height(8.0.dp) -> height(14.0.dp)
+      Results.kt:111 Spacer: value 4: height(8.0.dp) -> height(14.0.dp)
+J25 MISSED    Results.kt:122 36.dp -> 42.dp  (1 tests)
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+      Theme.kt:85 MaterialTheme: value 3: …=MutableState(value=androidx.compose.material3.RippleNodeFactory)), androidx.compose.runti -> …=MutableState(valu
+      Surface.kt:64 CompositionLocalProvider: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=an
+J26 MISSED    SnackDetail.kt:232 280.dp -> 286.dp  (1 tests)
+      Snacks.kt:184 SnackItem: value 3: -3078796210544858462 -> -3497449040437177752
+      Snacks.kt:184 SnackItem: value 2: Snack(id=-5143432568850648630, name=Donut, imageR… -> Snack(id=-767720084189995112, name=Donut, imageR…
+      Snacks.kt:184 SnackItem: value 2: Snack(id=-340659047216169515, name=Eclair, image… -> Snack(id=111804732337681978, name=Eclair, image…
+J27 MISSED    SnackDetail.kt:261 16.dp -> 22.dp  (1 tests)
+      Snacks.kt:184 SnackItem: value 3: -3078796210544858462 -> -4716141483843511343
+      Snacks.kt:184 SnackItem: value 2: Snack(id=-5143432568850648630, name=Donut, imageR… -> Snack(id=-4364755830078534152, name=Donut, imageR…
+      Snacks.kt:184 SnackItem: value 2: Snack(id=-340659047216169515, name=Eclair, image… -> Snack(id=2872239346987518689, name=Eclair, image…
+J28 MISSED    SnackDetail.kt:262 36.dp -> 42.dp  (1 tests)
+      Snacks.kt:184 SnackItem: value 3: -3078796210544858462 -> -1817182301445621115
+      Snacks.kt:184 SnackItem: value 2: Snack(id=-5143432568850648630, name=Donut, image… -> Snack(id=-4509111960750247690, name=Donut, image…
+      Snacks.kt:184 SnackItem: value 2: Snack(id=-340659047216169515, name=Eclair, image… -> Snack(id=-9148672124610891699, name=Eclair, image…
+J29 NO-DIFF  SnackDetail.kt:353 4.dp -> 10.dp
+J30 NO-DIFF  Color.kt:23 Color(0xff0009b3) -> Color(0xFF5A53E9)
+J31 NO-DIFF  Color.kt:44 Color(0xffd6fefe) -> Color(0xFF8CA4A4)
+J32 NO-DIFF  Color.kt:47 Color(0xff170085) -> Color(0xFF4D5ADF)
+J33 NO-DIFF  Color.kt:61 Color(0xff97005c) -> Color(0xFFCD5A06)
+J34 MISSED    Color.kt:67 Color(0xfff4568b) -> Color(0xFFAE0CD1)  (1 tests)
+      Theme.kt:84 ProvideJetsnackColors: value 2: …7f5], gradient6_2=[#f4568b, #c186fa, #fdbbcf, #c186fa, #f4568b], gradient3_1=[#c8bbfd, #86 -> …7f5], grad
+      Theme.kt:137 CompositionLocalProvider: value 2: …7f5], gradient6_2=[#f4568b, #c186fa, #fdbbcf, #c186fa, #f4568b], gradient3_1=[#c8bbfd, #86… -> …7f5],
+      Theme.kt:85 MaterialTheme: value 2: …ue=androidx.compose.material3.MotionScheme$StandardMotionSchemeImpl), androidx.compose.run -> …ue=androidx.compos
+J35 MISSED    Type.kt:30 FontWeight.Medium -> FontWeight.Light  (1 tests)
+      Theme.kt:85 MaterialTheme: value 4: …t=FontWeight(weight=500), style=Normal, loadingStrategy=Blocking), ResourceFont(resId=2131… -> …t=FontWeight(weig
+      Theme.kt:85 MaterialTheme: value 3: …2.0.dp), bottomStart  -> …2.0.dp), bottomStart
+      Theme.kt:85 MaterialTheme: value 2: …dp), bottomStart = C -> …dp), bottomStart = Co
+J36 NO-DIFF  Type.kt:68 24.sp -> 27.sp
+J37 NO-DIFF  Type.kt:76 24.sp -> 27.sp
+J38 MISSED    Type.kt:90 0.1.sp -> 3.1.sp  (1 tests)
+      Snacks.kt:184 SnackItem: value 3: -3078796210544858462 -> -2359838016918935875
+      Snacks.kt:184 SnackItem: value 2: Snack(id=-5143432568850648630, name=Donut, imageR… -> Snack(id=-403469746541668498, name=Donut, imageR…
+      Snacks.kt:184 SnackItem: value 2: Snack(id=-340659047216169515, name=Eclair, imag… -> Snack(id=1692424623910910755, name=Eclair, imag…
+J39 MISSED    Type.kt:116 FontWeight.Bold -> FontWeight.Light  (3 tests)
+      Surface.kt:64 CompositionLocalProvider: value 2: …onLocal=StaticValueH -> …onLocal=StaticValueHo
+      Surface.kt:64 CompositionLocalProvider: value 2: …ionLocal=StaticValueH -> …ionLocal=StaticValue
+      Surface.kt:64 CompositionLocalProvider: value 2: …ionLocal=StaticValue -> …ionLocal=StaticValueH
+      Theme.kt:85 MaterialTheme: value 3: …2.0.dp), bottomStart  -> …2.0.dp), bottomStart
+J40 NO-DIFF  Type.kt:117 16.sp -> 19.sp
+
+40 mutations run; 15 changed no preview; of 25 visible: explained 5, located 5, missed 20

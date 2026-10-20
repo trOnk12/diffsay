@@ -1,0 +1,110 @@
+F22 EXPLAINED edit FeedScreen.kt:45  'Card(shape = RoundedCornerShape(16.dp)'
+      FeedScreen.kt:45 Card: shape: RoundedCornerShape(10.0.dp) -> RoundedCornerShape(16.0.dp) in "Release notes 4.2"
+      FeedScreen.kt:45 Card: shape: RoundedCornerShape(10.0.dp) -> RoundedCornerShape(16.0.dp) in "Design review: onboarding"
+      FeedScreen.kt:45 Card: shape: RoundedCornerShape(10.0.dp) -> RoundedCornerShape(16.0.dp) in "Incident report #118"
+F23 EXPLAINED edit FeedScreen.kt:31  'contentPadding = PaddingValues(12.dp)'
+      FeedScreen.kt:31 LazyColumn: contentPadding: PaddingValues(start=16.0.dp, top=16.0.dp, end=16.0.dp, bottom=16.0.dp) -> PaddingValues(start=12.0.dp, to
+      FeedScreen.kt:32 PostCard: layout moved (-8, -8)px, size 656x152 -> 672x152px
+      FeedScreen.kt:45 Card: layout moved (-8, -8)px, size 656x152 -> 672x152px
+F24 EXPLAINED edit FeedScreen.kt:31  'Arrangement.spacedBy(16.dp)'
+      FeedScreen.kt:31 LazyColumn: verticalArrangement: …ment#spacedAligned(10.0.dp, Function2<jav… -> …ment#spacedAligned(16.0.dp, Function2<jav…
+      FeedScreen.kt:32 PostCard: layout moved (+0, +12)px
+      FeedScreen.kt:32 PostCard: layout moved (+0, +24)px
+F25 EXPLAINED edit FeedScreen.kt:48  'Text(post.title, fontSize = 17.sp)'
+      FeedScreen.kt:48 Text: fontSize: 16sp -> 17sp in "Release notes 4.2"
+      FeedScreen.kt:48 Text: fontSize: 16sp -> 17sp in "Design review: onboarding"
+      FeedScreen.kt:48 Text: fontSize: 16sp -> 17sp in "Incident report #118"
+F26 EXPLAINED edit FeedScreen.kt:49  'color = Color(0xFF374151))'
+      FeedScreen.kt:49 Text: color: #6b7280 -> #374151 in "Mobile team"
+      FeedScreen.kt:49 Text: color: #6b7280 -> #374151 in "Design"
+      FeedScreen.kt:49 Text: color: #6b7280 -> #374151 in "SRE"
+F27 EXPLAINED edit FeedScreen.kt:52  'Badge(containerColor = Color(0xFFFB8C00))'
+      FeedScreen.kt:52 Badge: containerColor: #e53935 -> #fb8c00 in "new"
+      FeedScreen.kt:52 Badge: modifier chain: background(#e53935) -> background(#fb8c00) in "new"
+F28 EXPLAINED edit FeedScreen.kt:36  'containerColor = Color(0xFF3949AB),'
+      FeedScreen.kt:34 FloatingActionButton: containerColor: #00897b -> #3949ab
+      FeedScreen.kt:34 FloatingActionButton: modifier chain: background(#00897b) -> background(#3949ab)
+F29 EXPLAINED edit FeedScreen.kt:37  '.align(Alignment.BottomEnd).padding(28.dp)'
+      FeedScreen.kt:34 FloatingActionButton: modifier: padding(20.0.dp) -> padding(28.0.dp)
+      FeedScreen.kt:34 FloatingActionButton: modifier chain: padding(20.0.dp) -> padding(28.0.dp)
+      FeedScreen.kt:38 Icon: layout moved (-16, -16)px
+F30 EXPLAINED edit FeedScreen.kt:24  'Post("Hiring update: Q3", "People", false)'
+      FeedScreen.kt:48 Text: text: Hiring update -> Hiring update: Q3
+      "Hiring update: Q3" is written at FeedScreen.kt:24
+F31 EXPLAINED edit FeedScreen.kt:22  'Post("Design review: onboarding", "Design", true)'
+      FeedScreen.kt:52 Badge: Badge added in "Design review: onboarding" (new)
+      FeedScreen.kt:47 Column: layout size 600x96 -> 543x96px
+      "Design review: onboarding" is written at FeedScreen.kt:22
+P11 EXPLAINED edit ProfileScreen.kt:25  'Modifier.size(72.dp)'
+      ProfileScreen.kt:24 Box: modifier chain: size(88.0.dp) -> size(72.0.dp) in "AL"
+      ProfileScreen.kt:46 OutlinedButton: layout moved (+0, -32)px
+      ProfileScreen.kt:34 Row: layout moved (+0, -32)px
+P12 EXPLAINED edit ProfileScreen.kt:25  'background(Color(0xFF26A69A))'
+      ProfileScreen.kt:24 Box: modifier chain: background(#7e57c2) -> background(#26a69a) in "AL"
+P13 EXPLAINED edit ProfileScreen.kt:25  '.clip(RoundedCornerShape(16.dp))'
+      ProfileScreen.kt:24 Box: modifier chain: …=RoundedCornerShape(50.0%), clip=true, render… -> …=RoundedCornerShape(16.0.dp), clip=true, render… in "AL"
+P14 EXPLAINED edit ProfileScreen.kt:31  'Text("Ada Lovelace", fontSize = 26.sp'
+      ProfileScreen.kt:31 Text: fontSize: 24sp -> 26sp in "Ada Lovelace"
+      ProfileScreen.kt:46 OutlinedButton: layout moved (+0, +4)px
+      ProfileScreen.kt:34 Row: layout moved (+0, +4)px
+P15 EXPLAINED edit ProfileScreen.kt:31  'fontSize = 24.sp, fontWeight = FontWeight.Bold'
+      ProfileScreen.kt:31 Text: fontWeight: FontWeight(weight=600) -> FontWeight(weight=700) in "Ada Lovelace"
+P16 EXPLAINED edit ProfileScreen.kt:32  'Text("Analyst · London", fontSize = 14.sp, color = Color(0xF'
+      ProfileScreen.kt:32 Text: color: #757575 -> #424242 in "Analyst · London"
+P17 LOCATED   edit ProfileScreen.kt:34  'horizontalArrangement = Arrangement.SpaceBetween'
+      ProfileScreen.kt:35 Stat: layout moved (-81, +0)px
+      ProfileScreen.kt:37 Stat: layout moved (+81, +0)px
+      ProfileScreen.kt:55 Column: layout moved (-81, +0)px
+P18 EXPLAINED edit ProfileScreen.kt:36  'Stat("4.3k", "Followers")'
+      ProfileScreen.kt:56 Text: text: 4.2k -> 4.3k
+      "4.3k" is written at ProfileScreen.kt:36
+P19 LOCATED   edit ProfileScreen.kt:40  'Arrangement.spacedBy(12.dp)'
+      ProfileScreen.kt:40 Row: layout moved (-8, +0)px, size 479x96 -> 495x96px
+      ProfileScreen.kt:41 AssistChip: layout moved (-8, +0)px
+      ProfileScreen.kt:43 AssistChip: layout moved (+8, +0)px
+P20 EXPLAINED edit ProfileScreen.kt:46  'shape = RoundedCornerShape(8.dp)'
+      ProfileScreen.kt:46 OutlinedButton: shape: RoundedCornerShape(20.0.dp) -> RoundedCornerShape(8.0.dp) in "Edit profile"
+      ProfileScreen.kt:46 OutlinedButton: modifier chain: …=RoundedCornerShape(20.0.dp), clip=true, r… -> …=RoundedCornerShape(8.0.dp), clip=true, r… in "Ed
+P21 EXPLAINED edit ProfileScreen.kt:41  'AssistChip(onClick = {}, label = { Text("Poetry") })\n       '
+      ProfileScreen.kt:43 AssistChip: AssistChip removed in "AL" (Poetry)
+      ProfileScreen.kt:43 remember: remember removed in "Poetry"
+      ProfileScreen.kt:41 AssistChip: AssistChip added in "AL" (Poetry)
+      "Poetry" is written at ProfileScreen.kt:41
+S01 EXPLAINED edit SettingsScreen.kt:22  'TopAppBar(title = { Text("Preferences") })'
+      SettingsScreen.kt:22 Text: text: Settings -> Preferences
+      "Preferences" is written at SettingsScreen.kt:22
+S02 EXPLAINED edit SettingsScreen.kt:57  'fontSize = 14.sp,'
+      SettingsScreen.kt:55 Text: fontSize: 12sp -> 14sp in "ACCOUNT"
+      SettingsScreen.kt:55 Text: fontSize: 12sp -> 14sp in "PREFERENCES"
+      SettingsScreen.kt:23 SectionHeader: layout size 121x48 -> 137x48px
+S03 EXPLAINED edit SettingsScreen.kt:59  'color = Color(0xFF2E7D32),'
+      SettingsScreen.kt:55 Text: color: #1565c0 -> #2e7d32 in "ACCOUNT"
+      SettingsScreen.kt:55 Text: color: #1565c0 -> #2e7d32 in "PREFERENCES"
+S04 EXPLAINED edit SettingsScreen.kt:34  'color = Color(0xFF9E9E9E))'
+      SettingsScreen.kt:34 HorizontalDivider: color: #e0e0e0 -> #9e9e9e in "Settings"
+S05 EXPLAINED edit SettingsScreen.kt:34  'HorizontalDivider(Modifier.padding(horizontal = 0.dp)'
+      SettingsScreen.kt:34 HorizontalDivider: modifier: padding(horizontal=16.0.dp, vertical=0.0.dp) -> padding(horizontal=0.0.dp, vertical=0.0.dp) in "Sett
+      SettingsScreen.kt:34 HorizontalDivider: modifier chain: padding(horizontal=16.0.dp, vertical=0.0.dp) -> padding(horizontal=0.0.dp, vertical=0.0.dp) in
+S06 EXPLAINED edit SettingsScreen.kt:43  'Switch(checked = true, onCheckedChange = {})'
+      SettingsScreen.kt:43 Switch: checked: false -> true in "Dark mode"
+      SettingsScreen.kt:43 Switch: modifier chain: border(#79747e).background(#e6e0e9) -> border(#000000@0.00).background(#6750a4) in "Dark mode"
+      SettingsScreen.kt:43 Switch: modifier chain: …SourceImpl, checked=false).background(#79747e) -> …SourceImpl, checked=true).background(#ffffff) in "Dar
+S07 EXPLAINED edit SettingsScreen.kt:45  'Spacer(Modifier.height(48.dp))'
+      SettingsScreen.kt:45 Spacer: modifier chain: height(24.0.dp) -> height(48.0.dp) in "Settings"
+      SettingsScreen.kt:46 TextButton: layout moved (+0, +48)px
+      SettingsScreen.kt:47 Text: layout moved (+0, +48)px
+S08 EXPLAINED edit SettingsScreen.kt:47  'Text("Sign out", color = Color(0xFF616161))'
+      SettingsScreen.kt:47 Text: color: #d32f2f -> #616161 in "Sign out"
+S09 EXPLAINED edit SettingsScreen.kt:29  ''
+      SettingsScreen.kt:29 ListItem: ListItem removed in "Settings" (Privacy)
+      SettingsScreen.kt:29 HorizontalDivider: layout moved (+0, -144)px
+      SettingsScreen.kt:31 ListItem: layout moved (+0, -144)px
+      "Settings" is written at SettingsScreen.kt:22
+S10 EXPLAINED edit SettingsScreen.kt:42  'headlineContent = { Text("Dark mode") },\n                lea'
+      SettingsScreen.kt:41 ListItem: rememberComposableLambda added in "Dark mode" (inside rememberComposableLambda at ListItem.kt:134)
+      SettingsScreen.kt:41 ListItem: Box added in "Dark mode" (inside Box at ListItem.kt:135)
+      SettingsScreen.kt:42 Text: layout moved (+80, +0)px
+      "Dark mode" is written at SettingsScreen.kt:42
+
+31 mutations: explained 29, located 31, missed 0
+cause text: median 21 words (~28 tokens)

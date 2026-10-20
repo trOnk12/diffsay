@@ -1,0 +1,559 @@
+{
+ "seed": 2026,
+ "population": 222,
+ "sites": [
+  {
+   "file": "app/src/main/java/com/example/jetnews/glance/ui/Divider.kt",
+   "line": 49,
+   "kind": "dp",
+   "match": "1.dp",
+   "value": "1",
+   "col": 24,
+   "id": "J01",
+   "replacement": "7.dp",
+   "expect": [
+    "7.0.dp",
+    "7.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/glance/ui/JetnewsGlanceAppWidget.kt",
+   "line": 128,
+   "kind": "dp",
+   "match": "10.dp",
+   "value": "10",
+   "col": 53,
+   "id": "J02",
+   "replacement": "16.dp",
+   "expect": [
+    "16.0.dp",
+    "16.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/glance/ui/theme/Type.kt",
+   "line": 23,
+   "kind": "sp",
+   "match": "16.sp",
+   "value": "16",
+   "col": 41,
+   "id": "J03",
+   "replacement": "19.sp",
+   "expect": [
+    "19sp",
+    "19.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/components/AppNavRail.kt",
+   "line": 53,
+   "kind": "dp",
+   "match": "12.dp",
+   "value": "12",
+   "col": 44,
+   "id": "J04",
+   "replacement": "18.dp",
+   "expect": [
+    "18.0.dp",
+    "18.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/components/JetnewsSnackbarHost.kt",
+   "line": 46,
+   "kind": "dp",
+   "match": "550.dp",
+   "value": "550",
+   "col": 27,
+   "id": "J05",
+   "replacement": "556.dp",
+   "expect": [
+    "556.0.dp",
+    "556.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/home/HomeScreens.kt",
+   "line": 404,
+   "kind": "dp",
+   "match": "0.dp",
+   "value": "0",
+   "col": 50,
+   "id": "J06",
+   "replacement": "6.dp",
+   "expect": [
+    "6.0.dp",
+    "6.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/home/HomeScreens.kt",
+   "line": 470,
+   "kind": "dp",
+   "match": "16.dp",
+   "value": "16",
+   "col": 44,
+   "id": "J07",
+   "replacement": "22.dp",
+   "expect": [
+    "22.0.dp",
+    "22.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/home/PostCards.kt",
+   "line": 114,
+   "kind": "dp",
+   "match": "10.dp",
+   "value": "10",
+   "col": 36,
+   "id": "J08",
+   "replacement": "16.dp",
+   "expect": [
+    "16.0.dp",
+    "16.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/home/PostCards.kt",
+   "line": 145,
+   "kind": "dp",
+   "match": "12.dp",
+   "value": "12",
+   "col": 36,
+   "id": "J09",
+   "replacement": "18.dp",
+   "expect": [
+    "18.0.dp",
+    "18.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/interests/InterestsScreen.kt",
+   "line": 298,
+   "kind": "alpha",
+   "match": "alpha = 0.1f",
+   "value": "0.1",
+   "col": 61,
+   "id": "J10",
+   "replacement": "alpha = 0.4f",
+   "expect": [
+    "alpha=0.4",
+    "0.4"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/interests/InterestsScreen.kt",
+   "line": 377,
+   "kind": "dp",
+   "match": "16.dp",
+   "value": "16",
+   "col": 41,
+   "id": "J11",
+   "replacement": "22.dp",
+   "expect": [
+    "22.0.dp",
+    "22.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/interests/InterestsScreen.kt",
+   "line": 434,
+   "kind": "dp",
+   "match": "0.dp",
+   "value": "0",
+   "col": 30,
+   "id": "J12",
+   "replacement": "6.dp",
+   "expect": [
+    "6.0.dp",
+    "6.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/interests/InterestsScreen.kt",
+   "line": 489,
+   "kind": "dp",
+   "match": "450.dp",
+   "value": "450",
+   "col": 23,
+   "id": "J13",
+   "replacement": "456.dp",
+   "expect": [
+    "456.0.dp",
+    "456.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/interests/InterestsScreen.kt",
+   "line": 490,
+   "kind": "dp",
+   "match": "600.dp",
+   "value": "600",
+   "col": 36,
+   "id": "J14",
+   "replacement": "606.dp",
+   "expect": [
+    "606.0.dp",
+    "606.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/post/PostContent.kt",
+   "line": 85,
+   "kind": "dp",
+   "match": "0.dp",
+   "value": "0",
+   "col": 50,
+   "id": "J15",
+   "replacement": "6.dp",
+   "expect": [
+    "6.0.dp",
+    "6.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/post/PostContent.kt",
+   "line": 108,
+   "kind": "dp",
+   "match": "24.dp",
+   "value": "24",
+   "col": 65,
+   "id": "J16",
+   "replacement": "30.dp",
+   "expect": [
+    "30.0.dp",
+    "30.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/post/PostContent.kt",
+   "line": 223,
+   "kind": "sp",
+   "match": "9.sp",
+   "value": "9",
+   "col": 24,
+   "id": "J17",
+   "replacement": "12.sp",
+   "expect": [
+    "12sp",
+    "12.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/post/PostContent.kt",
+   "line": 309,
+   "kind": "weight",
+   "match": "FontWeight.Bold",
+   "value": "Bold",
+   "col": 55,
+   "id": "J18",
+   "replacement": "FontWeight.Light",
+   "expect": [
+    "weight=300",
+    "FontWeight.Light",
+    "Light"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/post/PostScreen.kt",
+   "line": 348,
+   "kind": "dp",
+   "match": "8.dp",
+   "value": "8",
+   "col": 35,
+   "id": "J19",
+   "replacement": "14.dp",
+   "expect": [
+    "14.0.dp",
+    "14.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/post/PostScreen.kt",
+   "line": 352,
+   "kind": "dp",
+   "match": "8.dp",
+   "value": "8",
+   "col": 42,
+   "id": "J20",
+   "replacement": "14.dp",
+   "expect": [
+    "14.0.dp",
+    "14.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 30,
+   "kind": "color",
+   "match": "Color(0xFFFFFFFF)",
+   "value": "FFFFFFFF",
+   "col": 32,
+   "id": "J21",
+   "replacement": "Color(0xFFA5A5A5)",
+   "expect": [
+    "#a5a5a5"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 33,
+   "kind": "color",
+   "match": "Color(0xFFBA1A1A)",
+   "value": "FFBA1A1A",
+   "col": 27,
+   "id": "J22",
+   "replacement": "Color(0xFFE04040)",
+   "expect": [
+    "#e04040"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 36,
+   "kind": "color",
+   "match": "Color(0xFF410002)",
+   "value": "FF410002",
+   "col": 38,
+   "id": "J23",
+   "replacement": "Color(0xFF1B5A58)",
+   "expect": [
+    "#1b5a58"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 45,
+   "kind": "color",
+   "match": "Color(0xFF362F2F)",
+   "value": "FF362F2F",
+   "col": 36,
+   "id": "J24",
+   "replacement": "Color(0xFF6C7575)",
+   "expect": [
+    "#6c7575"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 47,
+   "kind": "color",
+   "match": "Color(0xFFBF0031)",
+   "value": "FFBF0031",
+   "col": 33,
+   "id": "J25",
+   "replacement": "Color(0xFFE55A6B)",
+   "expect": [
+    "#e55a6b"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 52,
+   "kind": "color",
+   "match": "Color(0xFFFFDAD9)",
+   "value": "FFFFDAD9",
+   "col": 39,
+   "id": "J26",
+   "replacement": "Color(0xFFA58083)",
+   "expect": [
+    "#a58083"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 56,
+   "kind": "color",
+   "match": "Color(0xFFFFDAD9)",
+   "value": "FFFFDAD9",
+   "col": 41,
+   "id": "J27",
+   "replacement": "Color(0xFFA58083)",
+   "expect": [
+    "#a58083"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 59,
+   "kind": "color",
+   "match": "Color(0xFF5B421A)",
+   "value": "FF5B421A",
+   "col": 38,
+   "id": "J28",
+   "replacement": "Color(0xFF011840)",
+   "expect": [
+    "#011840"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 63,
+   "kind": "color",
+   "match": "Color(0xFF690005)",
+   "value": "FF690005",
+   "col": 28,
+   "id": "J29",
+   "replacement": "Color(0xFF335A5F)",
+   "expect": [
+    "#335a5f"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 65,
+   "kind": "color",
+   "match": "Color(0xFF201A1A)",
+   "value": "FF201A1A",
+   "col": 31,
+   "id": "J30",
+   "replacement": "Color(0xFF7A4040)",
+   "expect": [
+    "#7a4040"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+   "line": 71,
+   "kind": "color",
+   "match": "Color(0xFFA08C8C)",
+   "value": "FFA08C8C",
+   "col": 28,
+   "id": "J31",
+   "replacement": "Color(0xFFFAD6D6)",
+   "expect": [
+    "#fad6d6"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+   "line": 49,
+   "kind": "sp",
+   "match": "57.sp",
+   "value": "57",
+   "col": 19,
+   "id": "J32",
+   "replacement": "60.sp",
+   "expect": [
+    "60sp",
+    "60.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+   "line": 52,
+   "kind": "sp",
+   "match": "45.sp",
+   "value": "45",
+   "col": 19,
+   "id": "J33",
+   "replacement": "48.sp",
+   "expect": [
+    "48sp",
+    "48.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+   "line": 64,
+   "kind": "sp",
+   "match": "24.sp",
+   "value": "24",
+   "col": 19,
+   "id": "J34",
+   "replacement": "27.sp",
+   "expect": [
+    "27sp",
+    "27.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+   "line": 67,
+   "kind": "sp",
+   "match": "0.sp",
+   "value": "0",
+   "col": 62,
+   "id": "J35",
+   "replacement": "3.sp",
+   "expect": [
+    "3sp",
+    "3.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+   "line": 73,
+   "kind": "weight",
+   "match": "FontWeight.Medium",
+   "value": "Medium",
+   "col": 21,
+   "id": "J36",
+   "replacement": "FontWeight.Light",
+   "expect": [
+    "weight=300",
+    "FontWeight.Light",
+    "Light"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+   "line": 77,
+   "kind": "sp",
+   "match": "14.sp",
+   "value": "14",
+   "col": 19,
+   "id": "J37",
+   "replacement": "17.sp",
+   "expect": [
+    "17sp",
+    "17.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+   "line": 78,
+   "kind": "sp",
+   "match": "20.sp",
+   "value": "20",
+   "col": 21,
+   "id": "J38",
+   "replacement": "23.sp",
+   "expect": [
+    "23sp",
+    "23.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+   "line": 80,
+   "kind": "weight",
+   "match": "FontWeight.Medium",
+   "value": "Medium",
+   "col": 21,
+   "id": "J39",
+   "replacement": "FontWeight.Light",
+   "expect": [
+    "weight=300",
+    "FontWeight.Light",
+    "Light"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+   "line": 84,
+   "kind": "weight",
+   "match": "FontWeight.Medium",
+   "value": "Medium",
+   "col": 83,
+   "id": "J40",
+   "replacement": "FontWeight.Light",
+   "expect": [
+    "weight=300",
+    "FontWeight.Light",
+    "Light"
+   ]
+  }
+ ]
+}

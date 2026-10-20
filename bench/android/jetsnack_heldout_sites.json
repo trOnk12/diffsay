@@ -1,0 +1,567 @@
+{
+ "seed": 7,
+ "population": 268,
+ "sites": [
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Gradient.kt",
+   "line": 65,
+   "kind": "dp",
+   "match": "2.dp",
+   "value": "2",
+   "col": 74,
+   "id": "J01",
+   "replacement": "8.dp",
+   "expect": [
+    "8.0.dp",
+    "8.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/QuantitySelector.kt",
+   "line": 48,
+   "kind": "weight",
+   "match": "FontWeight.Normal",
+   "value": "Normal",
+   "col": 25,
+   "id": "J02",
+   "replacement": "FontWeight.Bold",
+   "expect": [
+    "weight=700",
+    "FontWeight.Bold",
+    "Bold"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/QuantitySelector.kt",
+   "line": 70,
+   "kind": "dp",
+   "match": "24.dp",
+   "value": "24",
+   "col": 50,
+   "id": "J03",
+   "replacement": "30.dp",
+   "expect": [
+    "30.0.dp",
+    "30.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Snacks.kt",
+   "line": 104,
+   "kind": "dp",
+   "match": "56.dp",
+   "value": "56",
+   "col": 32,
+   "id": "J04",
+   "replacement": "62.dp",
+   "expect": [
+    "62.0.dp",
+    "62.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Snacks.kt",
+   "line": 111,
+   "kind": "maxLines",
+   "match": "maxLines = 1",
+   "value": "1",
+   "col": 16,
+   "id": "J05",
+   "replacement": "maxLines = 2",
+   "expect": [
+    "maxLines",
+    "2"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Snacks.kt",
+   "line": 181,
+   "kind": "dp",
+   "match": "12.dp",
+   "value": "12",
+   "col": 47,
+   "id": "J06",
+   "replacement": "18.dp",
+   "expect": [
+    "18.0.dp",
+    "18.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Snacks.kt",
+   "line": 181,
+   "kind": "dp",
+   "match": "12.dp",
+   "value": "12",
+   "col": 60,
+   "id": "J07",
+   "replacement": "18.dp",
+   "expect": [
+    "18.0.dp",
+    "18.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Snacks.kt",
+   "line": 216,
+   "kind": "dp",
+   "match": "1.dp",
+   "value": "1",
+   "col": 32,
+   "id": "J08",
+   "replacement": "7.dp",
+   "expect": [
+    "7.0.dp",
+    "7.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Snacks.kt",
+   "line": 237,
+   "kind": "dp",
+   "match": "8.dp",
+   "value": "8",
+   "col": 39,
+   "id": "J09",
+   "replacement": "14.dp",
+   "expect": [
+    "14.0.dp",
+    "14.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Snacks.kt",
+   "line": 279,
+   "kind": "dp",
+   "match": "20.dp",
+   "value": "20",
+   "col": 47,
+   "id": "J10",
+   "replacement": "26.dp",
+   "expect": [
+    "26.0.dp",
+    "26.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Snacks.kt",
+   "line": 307,
+   "kind": "dp",
+   "match": "250.dp",
+   "value": "250",
+   "col": 29,
+   "id": "J11",
+   "replacement": "256.dp",
+   "expect": [
+    "256.0.dp",
+    "256.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/components/Snacks.kt",
+   "line": 454,
+   "kind": "dp",
+   "match": "0.dp",
+   "value": "0",
+   "col": 20,
+   "id": "J12",
+   "replacement": "6.dp",
+   "expect": [
+    "6.0.dp",
+    "6.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/Feed.kt",
+   "line": 127,
+   "kind": "dp",
+   "match": "2.dp",
+   "value": "2",
+   "col": 44,
+   "id": "J13",
+   "replacement": "8.dp",
+   "expect": [
+    "8.0.dp",
+    "8.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/FilterScreen.kt",
+   "line": 154,
+   "kind": "weight",
+   "match": "FontWeight.Normal",
+   "value": "Normal",
+   "col": 28,
+   "id": "J14",
+   "replacement": "FontWeight.Bold",
+   "expect": [
+    "weight=700",
+    "FontWeight.Bold",
+    "Bold"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/FilterScreen.kt",
+   "line": 204,
+   "kind": "dp",
+   "match": "12.dp",
+   "value": "12",
+   "col": 27,
+   "id": "J15",
+   "replacement": "18.dp",
+   "expect": [
+    "18.0.dp",
+    "18.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/FilterScreen.kt",
+   "line": 219,
+   "kind": "dp",
+   "match": "24.dp",
+   "value": "24",
+   "col": 37,
+   "id": "J16",
+   "replacement": "30.dp",
+   "expect": [
+    "30.0.dp",
+    "30.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/cart/Cart.kt",
+   "line": 157,
+   "kind": "dp",
+   "match": "56.dp",
+   "value": "56",
+   "col": 67,
+   "id": "J17",
+   "replacement": "62.dp",
+   "expect": [
+    "62.0.dp",
+    "62.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/cart/Cart.kt",
+   "line": 168,
+   "kind": "dp",
+   "match": "24.dp",
+   "value": "24",
+   "col": 42,
+   "id": "J18",
+   "replacement": "30.dp",
+   "expect": [
+    "30.0.dp",
+    "30.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/search/Categories.kt",
+   "line": 71,
+   "kind": "dp",
+   "match": "56.dp",
+   "value": "56",
+   "col": 32,
+   "id": "J19",
+   "replacement": "62.dp",
+   "expect": [
+    "62.0.dp",
+    "62.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/search/Categories.kt",
+   "line": 93,
+   "kind": "dp",
+   "match": "10.dp",
+   "value": "10",
+   "col": 47,
+   "id": "J20",
+   "replacement": "16.dp",
+   "expect": [
+    "16.0.dp",
+    "16.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/search/Categories.kt",
+   "line": 101,
+   "kind": "dp",
+   "match": "3.dp",
+   "value": "3",
+   "col": 32,
+   "id": "J21",
+   "replacement": "9.dp",
+   "expect": [
+    "9.0.dp",
+    "9.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/home/search/Categories.kt",
+   "line": 111,
+   "kind": "dp",
+   "match": "4.dp",
+   "value": "4",
+   "col": 29,
+   "id": "J22",
+   "replacement": "10.dp",
+   "expect": [
+    "10.0.dp",
+    "10.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/snackdetail/SnackDetail.kt",
+   "line": 127,
+   "kind": "dp",
+   "match": "150.dp",
+   "value": "150",
+   "col": 33,
+   "id": "J23",
+   "replacement": "156.dp",
+   "expect": [
+    "156.0.dp",
+    "156.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/snackdetail/SnackDetail.kt",
+   "line": 128,
+   "kind": "dp",
+   "match": "24.dp",
+   "value": "24",
+   "col": 54,
+   "id": "J24",
+   "replacement": "30.dp",
+   "expect": [
+    "30.0.dp",
+    "30.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/snackdetail/SnackDetail.kt",
+   "line": 156,
+   "kind": "dp",
+   "match": "0.dp",
+   "value": "0",
+   "col": 42,
+   "id": "J25",
+   "replacement": "6.dp",
+   "expect": [
+    "6.0.dp",
+    "6.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/snackdetail/SnackDetail.kt",
+   "line": 234,
+   "kind": "dp",
+   "match": "40.dp",
+   "value": "40",
+   "col": 22,
+   "id": "J26",
+   "replacement": "46.dp",
+   "expect": [
+    "46.0.dp",
+    "46.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/snackdetail/SnackDetail.kt",
+   "line": 268,
+   "kind": "alpha",
+   "match": "alpha = 0.32f",
+   "value": "0.32",
+   "col": 42,
+   "id": "J27",
+   "replacement": "alpha = 0.62f",
+   "expect": [
+    "alpha=0.62",
+    "0.62"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/snackdetail/SnackDetail.kt",
+   "line": 464,
+   "kind": "dp",
+   "match": "8.dp",
+   "value": "8",
+   "col": 35,
+   "id": "J28",
+   "replacement": "14.dp",
+   "expect": [
+    "14.0.dp",
+    "14.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/snackdetail/SnackDetail.kt",
+   "line": 584,
+   "kind": "dp",
+   "match": "16.dp",
+   "value": "16",
+   "col": 46,
+   "id": "J29",
+   "replacement": "22.dp",
+   "expect": [
+    "22.0.dp",
+    "22.dp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Color.kt",
+   "line": 24,
+   "kind": "color",
+   "match": "Color(0xff0200c7)",
+   "value": "ff0200c7",
+   "col": 14,
+   "id": "J30",
+   "replacement": "Color(0xFF585A9D)",
+   "expect": [
+    "#585a9d"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Color.kt",
+   "line": 50,
+   "kind": "color",
+   "match": "Color(0xff4400c7)",
+   "value": "ff4400c7",
+   "col": 16,
+   "id": "J31",
+   "replacement": "Color(0xFF1E5A9D)",
+   "expect": [
+    "#1e5a9d"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Color.kt",
+   "line": 68,
+   "kind": "color",
+   "match": "Color(0xfff985aa)",
+   "value": "fff985aa",
+   "col": 12,
+   "id": "J32",
+   "replacement": "Color(0xFFA3DFF0)",
+   "expect": [
+    "#a3dff0"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Color.kt",
+   "line": 78,
+   "kind": "color",
+   "match": "Color(0x1fffffff)",
+   "value": "1fffffff",
+   "col": 15,
+   "id": "J33",
+   "replacement": "Color(0x1FA5A5A5)",
+   "expect": [
+    "#a5a5a5"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Color.kt",
+   "line": 87,
+   "kind": "color",
+   "match": "Color(0xff2e2e2e)",
+   "value": "ff2e2e2e",
+   "col": 25,
+   "id": "J34",
+   "replacement": "Color(0xFF747474)",
+   "expect": [
+    "#747474"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Type.kt",
+   "line": 28,
+   "kind": "weight",
+   "match": "FontWeight.Light",
+   "value": "Light",
+   "col": 34,
+   "id": "J35",
+   "replacement": "FontWeight.Bold",
+   "expect": [
+    "weight=700",
+    "FontWeight.Bold",
+    "Bold"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Type.kt",
+   "line": 70,
+   "kind": "sp",
+   "match": "29.sp",
+   "value": "29",
+   "col": 21,
+   "id": "J36",
+   "replacement": "32.sp",
+   "expect": [
+    "32sp",
+    "32.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Type.kt",
+   "line": 75,
+   "kind": "weight",
+   "match": "FontWeight.SemiBold",
+   "value": "SemiBold",
+   "col": 21,
+   "id": "J37",
+   "replacement": "FontWeight.Light",
+   "expect": [
+    "weight=300",
+    "FontWeight.Light",
+    "Light"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Type.kt",
+   "line": 88,
+   "kind": "weight",
+   "match": "FontWeight.Bold",
+   "value": "Bold",
+   "col": 21,
+   "id": "J38",
+   "replacement": "FontWeight.Light",
+   "expect": [
+    "weight=300",
+    "FontWeight.Light",
+    "Light"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Type.kt",
+   "line": 101,
+   "kind": "sp",
+   "match": "14.sp",
+   "value": "14",
+   "col": 19,
+   "id": "J39",
+   "replacement": "17.sp",
+   "expect": [
+    "17sp",
+    "17.0.sp"
+   ]
+  },
+  {
+   "file": "app/src/main/java/com/example/jetsnack/ui/theme/Type.kt",
+   "line": 109,
+   "kind": "weight",
+   "match": "FontWeight.SemiBold",
+   "value": "SemiBold",
+   "col": 21,
+   "id": "J40",
+   "replacement": "FontWeight.Light",
+   "expect": [
+    "weight=300",
+    "FontWeight.Light",
+    "Light"
+   ]
+  }
+ ]
+}

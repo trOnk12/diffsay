@@ -1,0 +1,63 @@
+diff --git a/Jetsnack/app/build.gradle.kts b/Jetsnack/app/build.gradle.kts
+index 0fca2103..d06a73cb 100644
+--- a/Jetsnack/app/build.gradle.kts
++++ b/Jetsnack/app/build.gradle.kts
+@@ -21,6 +21,7 @@ plugins {
+     alias(libs.plugins.android.application)
+     alias(libs.plugins.kotlin.parcelize)
+     alias(libs.plugins.compose)
++    alias(libs.plugins.roborazzi)
+ }
+ 
+ android {
+@@ -129,6 +130,14 @@ dependencies {
+     implementation(libs.androidx.compose.animation)
+     implementation(libs.androidx.compose.ui.tooling.preview)
+     debugImplementation(libs.androidx.compose.ui.tooling)
++    debugImplementation("androidx.compose.ui:ui-test-manifest")
++    testImplementation(composeBom)
++    testImplementation(libs.junit)
++    testImplementation(libs.robolectric)
++    testImplementation(libs.roborazzi)
++    testImplementation(libs.roborazzi.compose)
++    testImplementation(libs.androidx.compose.ui.test.junit4)
++    testImplementation("androidx.compose.ui:ui-tooling-data")
+ 
+     implementation(libs.coil.kt.compose)
+ 
+@@ -145,3 +154,10 @@ dependencies {
+     implementation(libs.androidx.glance.appwidget)
+     implementation(libs.androidx.glance.preview)
+ }
++
++android.testOptions.unitTests.isIncludeAndroidResources = true
++tasks.withType<Test>().configureEach {
++    systemProperty("robolectric.graphicsMode", "NATIVE")
++    systemProperty("robolectric.dependency.repo.url", "https://maven-central.storage-download.googleapis.com/maven2")
++    systemProperty("robolectric.dependency.repo.id", "gcs-central")
++}
+diff --git a/Jetsnack/settings.gradle.kts b/Jetsnack/settings.gradle.kts
+index 3bc85330..1dcf98a1 100644
+--- a/Jetsnack/settings.gradle.kts
++++ b/Jetsnack/settings.gradle.kts
+@@ -17,10 +17,10 @@ val snapshotVersion : String? = System.getenv("COMPOSE_SNAPSHOT_ID")
+ 
+ pluginManagement {
+     repositories {
+-        gradlePluginPortal()
+         google()
++        maven("https://maven-central.storage-download.googleapis.com/maven2/")
++        gradlePluginPortal()
+         mavenCentral()
+-        maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/org/jetbrains/kotlin/kotlin-compose-compiler-plugin/2.0.0-RC2-200/") }
+     }
+ }
+ dependencyResolutionManagement {
+@@ -33,6 +33,7 @@ dependencyResolutionManagement {
+         }
+ 
+         google()
++        maven("https://maven-central.storage-download.googleapis.com/maven2/")
+         mavenCentral()
+     }
+ }

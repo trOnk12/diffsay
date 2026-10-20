@@ -1,0 +1,107 @@
+J01 NO-DIFF  Gradient.kt:65 2.dp -> 8.dp
+J02 EXPLAINED QuantitySelector.kt:48 FontWeight.Normal -> FontWeight.Bold  (3 tests)
+      QuantitySelector.kt:44 Text: value 2: …t=FontWeight(weight=400), fontStyle=null,… -> …t=FontWeight(weight=700), fontStyle=null,… (inside BasicText at 
+      SlotRecorder.kt:38 (group): layout size 239x48 -> 242x48px
+      JetsnackPreviewScreenshotTest.kt:46 CompositionLocalProvider: layout size 239x48 -> 242x48px
+      FontWeight.Bold is written at QuantitySelector.kt:48
+J03 EXPLAINED QuantitySelector.kt:70 24.dp -> 30.dp  (3 tests)
+      QuantitySelector.kt:64 Text: modifier chain: widthIn(min=24.0.dp, max=Dp.Unspecified) -> widthIn(min=30.0.dp, max=Dp.Unspecified)
+      QuantitySelector.kt:64 Text: value 4: widthIn(min=24.0.dp, max=Dp.Unspecified).TextStringSimpleElement() -> widthIn(min=30.0.dp, max=Dp.Unspecified).T
+      SlotRecorder.kt:38 (group): layout size 239x48 -> 251x48px
+      widthIn(30.dp) is written at QuantitySelector.kt:70
+J04 NO-DIFF  Snacks.kt:104 56.dp -> 62.dp
+J05 NO-DIFF  Snacks.kt:111 maxLines = 1 -> maxLines = 2
+J06 NO-DIFF  Snacks.kt:181 12.dp -> 18.dp
+J07 NO-DIFF  Snacks.kt:181 12.dp -> 18.dp
+J08 NO-DIFF  Snacks.kt:216 1.dp -> 7.dp
+J09 NO-DIFF  Snacks.kt:237 8.dp -> 14.dp
+J10 NO-DIFF  Snacks.kt:279 20.dp -> 26.dp
+J11 EXPLAINED Snacks.kt:307 250.dp -> 256.dp  (1 tests)
+      Snacks.kt:282 JetsnackCard: value 2: …=170.0.dp, height=250.0.dp).border(#00000… -> …=170.0.dp, height=256.0.dp).border(#00000…
+      SlotRecorder.kt:38 (group): layout size 340x532 -> 340x544px
+      JetsnackPreviewScreenshotTest.kt:46 CompositionLocalProvider: layout size 340x532 -> 340x544px
+      height = 256.dp is written at Snacks.kt:307, RecentOrdersWidget.kt:56
+J12 MISSED    Snacks.kt:454 0.dp -> 6.dp  (4 tests)
+      Surface.kt:53 Box: modifier chain: zIndex(zIndex=0.0) -> shadow(elevation=6.0.dp, shape=RoundedCornerShape(50.0%), clip=false, ambientColor=#000000
+      Surface.kt:53 Box: value 5: …xSize(fraction=1.0).zIndex(zIndex=0.0).background(#ffff… -> …xSize(fraction=1.0).shadow(elevation=6.0.dp, shape=RoundedCo
+      Surface.kt:53 Box: modifier chain: zIndex(zIndex=0.0) -> shadow(elevation=6.0.dp, shape=RoundedCornerShape(50.0%), clip=false, ambientColor=#000000
+      Surface.kt:53 Box: value 5: size(100.0.dp).zIndex(zIndex=0.0).background(#ffff… -> size(100.0.dp).shadow(elevation=6.0.dp, shape=RoundedCornerShape(50
+J13 NO-DIFF  Feed.kt:127 2.dp -> 8.dp
+J14 NO-DIFF  FilterScreen.kt:154 FontWeight.Normal -> FontWeight.Bold
+J15 EXPLAINED FilterScreen.kt:204 12.dp -> 18.dp  (1 tests)
+      FilterScreen.kt:201 FlowRow: modifier chain: padding(start=0.0.dp, top=12.0.dp, end=0.0.dp, bottom=16.0.dp) -> padding(start=0.0.dp, top=18.0.dp, end=
+      FilterScreen.kt:201 FlowRow: value 5: …(start=0.0.dp, top=12.0.dp, end=0.0.dp, b… -> …(start=0.0.dp, top=18.0.dp, end=0.0.dp, b…
+      FilterScreen.kt:107 Column: layout size 560x1340 -> 560x1376px
+      top = 18.dp is written at QuantitySelector.kt:50, FilterScreen.kt:204
+J16 EXPLAINED FilterScreen.kt:219 24.dp -> 30.dp  (1 tests)
+      FilterScreen.kt:219 Column: modifier chain: padding(start=0.0.dp, top=0.0.dp, end=0.0.dp, bottom=24.0.dp) -> padding(start=0.0.dp, top=0.0.dp, end=0.0
+      FilterScreen.kt:219 Column: value 5: padding(start=0.0.dp, top=0.0.dp, end=0.0.dp, bottom=24.0.dp) -> padding(start=0.0.dp, top=0.0.dp, end=0.0.dp, bo
+      FilterScreen.kt:107 Column: layout size 560x1340 -> 560x1352px
+      bottom = 30.dp is written at FilterScreen.kt:219
+J17 NO-DIFF  Cart.kt:157 56.dp -> 62.dp
+J18 NO-DIFF  Cart.kt:168 24.dp -> 30.dp
+J19 NO-DIFF  Categories.kt:71 56.dp -> 62.dp
+J20 EXPLAINED Categories.kt:93 10.dp -> 16.dp  (1 tests)
+      Categories.kt:98 Layout: modifier chain: …RoundedCornerShape(10.0.dp), clip=true, ambientColor=#000000, spotColor=#000000).graphicsL… -> …RoundedCorne
+      Categories.kt:98 Layout: value 5: …RoundedCornerShape(10.0.dp), clip=true, ambientColor=#000000, spotColor=#000000).graphicsL… -> …RoundedCornerShape(
+      RoundedCornerShape(16.dp) is written at Categories.kt:93
+J21 EXPLAINED Categories.kt:101 3.dp -> 9.dp  (1 tests)
+      Categories.kt:98 Layout: modifier chain: shadow(elevation=3.0.dp, shape=Rounded… -> shadow(elevation=9.0.dp, shape=Rounded…
+      Categories.kt:98 Layout: value 5: …e).shadow(elevation=3.0.dp, shape=Rounded… -> …e).shadow(elevation=9.0.dp, shape=Rounded…
+      shadow(9.dp) is written at Categories.kt:101
+      elevation = 9.dp is written at Categories.kt:101
+J22 EXPLAINED Categories.kt:111 4.dp -> 10.dp  (1 tests)
+      Categories.kt:106 Text: modifier chain: padding(4.0.dp) -> padding(10.0.dp)
+      Categories.kt:106 Text: value 4: padding(4.0.dp).padding(start… -> padding(10.0.dp).padding(start…
+      padding(10.dp) is written at Categories.kt:111
+J23 NO-DIFF  SnackDetail.kt:127 150.dp -> 156.dp
+J24 EXPLAINED SnackDetail.kt:128 24.dp -> 30.dp  (1 tests)
+      SnackDetail.kt:483 CollapsingImageLayout: value 2: padding(horizontal=24.0.dp, vertical=0.0.dp).statusBarsPadding() -> padding(horizontal=30.0.dp, ver
+      SnackDetail.kt:411 Text: value 3: padding(horizontal=24.0.dp, vertical=0.0.… -> padding(horizontal=30.0.dp, vertical=0.0.…
+      SnackDetail.kt:430 Text: value 3: padding(horizontal=24.0.dp, vertical=0.0.… -> padding(horizontal=30.0.dp, vertical=0.0.…
+      padding(30.dp) is written at SnackDetail.kt:128
+J25 MISSED    SnackDetail.kt:156 0.dp -> 6.dp  (1 tests)
+      Snacks.kt:232 Text: value 1: …ues: current value: 0.0.dp, target: 0.0.dp, spec: android… -> …ues: current value: 6.0.dp, target: 6.0.dp, spec: android
+      Snacks.kt:232 Text: value 4: …ues: current value: 0.0.dp, target: 0.0.dp, spec: android… -> …ues: current value: 6.0.dp, target: 6.0.dp, spec: android
+      Snacks.kt:232 Text: this_DeferredTransitionCleanupEffect: …ues: current value: 0.0.dp, target: 0.0.dp, spec: android… -> …ues: current value: 6.0.dp, 
+J26 MISSED    SnackDetail.kt:234 40.dp -> 46.dp  (1 tests)
+J27 MISSED    SnackDetail.kt:268 alpha = 0.32f -> alpha = 0.62f  (1 tests)
+J28 EXPLAINED SnackDetail.kt:464 8.dp -> 14.dp  (1 tests)
+      Surface.kt:53 Box: value 4: <hash> -> 316820
+      Surface.kt:53 Box: value 4: <hash> -> 8705428
+      SnackDetail.kt:464 Spacer: modifier chain: height(8.0.dp) -> height(14.0.dp)
+      height(14.dp) is written at SnackDetail.kt:464
+J29 EXPLAINED SnackDetail.kt:584 16.dp -> 22.dp  (1 tests)
+      SnackDetail.kt:584 Spacer: modifier chain: width(16.0.dp) -> width(22.0.dp)
+      SnackDetail.kt:584 Spacer: value 4: width(16.0.dp) -> width(22.0.dp)
+      Snacks.kt:179 LazyRow: value 4: <key> -> -rtsmrhgrhrc (inside remember at RememberSaveable.kt:101)
+      width(22.dp) is written at SnackDetail.kt:584
+J30 NO-DIFF  Color.kt:24 Color(0xff0200c7) -> Color(0xFF585A9D)
+J31 NO-DIFF  Color.kt:50 Color(0xff4400c7) -> Color(0xFF1E5A9D)
+J32 NO-DIFF  Color.kt:68 Color(0xfff985aa) -> Color(0xFFA3DFF0)
+J33 NO-DIFF  Color.kt:78 Color(0x1fffffff) -> Color(0x1FA5A5A5)
+J34 NO-DIFF  Color.kt:87 Color(0xff2e2e2e) -> Color(0xFF747474)
+J35 NO-DIFF  Type.kt:28 FontWeight.Light -> FontWeight.Bold
+J36 NO-DIFF  Type.kt:70 29.sp -> 32.sp
+J37 MISSED    Type.kt:75 FontWeight.SemiBold -> FontWeight.Light  (4 tests)
+      Snacks.kt:388 Text: value 5: …t=FontWeight(weight=600), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      FilterScreen.kt:272 Text: value 3: …t=FontWeight(weight=600), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      FilterScreen.kt:136 Text: value 4: …t=FontWeight(weight=600), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      FilterScreen.kt:200 FilterTitle: layout size 105x49 -> 100x49px
+J38 MISSED    Type.kt:88 FontWeight.Bold -> FontWeight.Light  (3 tests)
+      QuantitySelector.kt:64 Text: value 5: …t=FontWeight(weight=700), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      QuantitySelector.kt:64 Text: value 5: …t=FontWeight(weight=700), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      SnackDetail.kt:430 Text: value 6: …t=FontWeight(weight=700), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      QuantitySelector.kt:64 Text: value 5: …t=FontWeight(weight=700), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+J39 EXPLAINED Type.kt:101 14.sp -> 17.sp  (1 tests)
+      Profile.kt:62 Text: value 4: …lpha=NaN, fontSize=14.0.sp, fontWeight=Fo… -> …lpha=NaN, fontSize=17.0.sp, fontWeight=Fo…
+      SlotRecorder.kt:38 (group): layout moved (+0, -24)px, size 624x481 -> 624x529px
+      JetsnackPreviewScreenshotTest.kt:46 CompositionLocalProvider: layout moved (+0, -24)px, size 624x481 -> 624x529px
+      fontSize = 17.sp is written at Type.kt:101
+J40 MISSED    Type.kt:109 FontWeight.SemiBold -> FontWeight.Light  (4 tests)
+      Button.kt:85 ProvideTextStyle: value 2: …t=FontWeight(weight=600), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      Button.kt:127 Text: value 2: …t=FontWeight(weight=600), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,… (inside BasicText at Text.kt:1
+      SnackDetail.kt:331 Text: value 6: …t=FontWeight(weight=600), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      Button.kt:85 ProvideTextStyle: value 2: …t=FontWeight(weight=600), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+
+40 mutations run; 21 changed no preview; of 19 visible: explained 12, located 12, value named 17, missed 7

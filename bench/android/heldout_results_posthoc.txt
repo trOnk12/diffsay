@@ -1,0 +1,110 @@
+D11 EXPLAINED edit ProductScreen.kt:26  'aspectRatio(2.0f)'
+      ProductScreen.kt:26 Box: modifier chain: aspectRatio(ratio=1.6, matchHeightConstraintsFirst=false) -> aspectRatio(ratio=2.0, matchHeightConstraintsFir
+      ProductScreen.kt:46 SizeChip: layout moved (+0, -90)px
+      ProductScreen.kt:55 Surface: layout moved (+0, -90)px
+D12 EXPLAINED edit ProductScreen.kt:32  'maxLines = 1, overflow'
+      ProductScreen.kt:30 Text: maxLines: 2 -> 1 in "Trail runner jacket with seale"
+      ProductScreen.kt:46 SizeChip: layout moved (+0, -48)px
+      ProductScreen.kt:55 Surface: layout moved (+0, -48)px
+D13 EXPLAINED edit ProductScreen.kt:36  'tint = Color(0xFFE65100)'
+      ProductScreen.kt:36 Icon: tint: #ffb300 -> #e65100 in " 4.6 (212 reviews)"
+D14 EXPLAINED edit ProductScreen.kt:37  'Text(" 4.7 (213 reviews)"'
+      ProductScreen.kt:37 Text: text:  4.6 (212 reviews) ->  4.7 (213 reviews)
+      " 4.7 (213 reviews)" is written at ProductScreen.kt:37
+D15 EXPLAINED edit ProductScreen.kt:40  'Text("$119.00", fontSize = 26.sp'
+      ProductScreen.kt:40 Text: text: $129.00 -> $119.00
+      "$119.00" is written at ProductScreen.kt:40
+D16 MISSED    edit ProductScreen.kt:23  'fun ProductScreen(inStock: Boolean = false)'
+      ProductScreen.kt:42 Text: Text removed in "Trail runner jacket with seale" (In stock · ships tomorrow)
+      ProductScreen.kt:46 SizeChip: layout moved (+0, -48)px
+      ProductScreen.kt:55 Surface: layout moved (+0, -48)px
+      "Trail runner jacket with seale" is written at ProductScreen.kt:31
+D17 EXPLAINED edit ProductScreen.kt:45  'LazyRow(horizontalArrangement = Arrangement.spacedBy(14.dp))'
+      ProductScreen.kt:45 LazyRow: horizontalArrangement: …ement#spacedAligned(8.0.dp, Function2<jav… -> …ement#spacedAligned(14.0.dp, Function2<jav… in "Tr
+      ProductScreen.kt:46 SizeChip: layout moved (+12, +0)px
+      ProductScreen.kt:46 SizeChip: layout moved (+24, +0)px
+D18 MISSED    edit ProductScreen.kt:46  'selected = size == "L")'
+      ProductScreen.kt:55 Surface: modifier chain: background(#263238) -> background(#eceff1) in "M"
+      ProductScreen.kt:55 Surface: modifier chain: background(#eceff1) -> background(#263238) in "L"
+      ProductScreen.kt:61 Text: color: #ffffff -> #263238 in "M"
+D19 EXPLAINED edit ProductScreen.kt:56  'shape = RoundedCornerShape(18.dp),'
+      ProductScreen.kt:55 Surface: modifier chain: …=RoundedCornerShape(6.0.dp), clip=true, r… -> …=RoundedCornerShape(18.0.dp), clip=true, r… in "XS"
+      ProductScreen.kt:55 Surface: modifier chain: …=RoundedCornerShape(6.0.dp), clip=true, r… -> …=RoundedCornerShape(18.0.dp), clip=true, r…
+      ProductScreen.kt:55 Surface: modifier chain: …=RoundedCornerShape(6.0.dp), clip=true, r… -> …=RoundedCornerShape(18.0.dp), clip=true, r… in "M"
+D20 EXPLAINED edit ProductScreen.kt:20  'val SIZES = listOf("XS", "S", "M", "L", "XL", "XXL")'
+      ProductScreen.kt:46 SizeChip: SizeChip added (XXL)
+      ProductScreen.kt:45 LazyRow: layout size 544x72 -> 640x72px
+      "XXL" is written at ProductScreen.kt:20
+I21 EXPLAINED edit InboxScreen.kt:28  'CenterAlignedTopAppBar(title = { Text("Messages") })'
+      InboxScreen.kt:28 Text: text: Inbox -> Messages
+      "Messages" is written at InboxScreen.kt:28
+I22 EXPLAINED edit InboxScreen.kt:39  'Modifier.size(40.dp).clip(CircleShape)'
+      InboxScreen.kt:39 Box: modifier chain: size(44.0.dp) -> size(40.0.dp) in "G"
+      InboxScreen.kt:39 Box: modifier chain: size(44.0.dp) -> size(40.0.dp) in "A"
+      InboxScreen.kt:39 Box: modifier chain: size(44.0.dp) -> size(40.0.dp) in "K"
+I23 EXPLAINED edit InboxScreen.kt:39  'background(Color(0xFFA5D6A7))'
+      InboxScreen.kt:39 Box: modifier chain: background(#90caf9) -> background(#a5d6a7) in "G"
+      InboxScreen.kt:39 Box: modifier chain: background(#90caf9) -> background(#a5d6a7) in "A"
+      InboxScreen.kt:39 Box: modifier chain: background(#90caf9) -> background(#a5d6a7) in "K"
+I24 EXPLAINED edit InboxScreen.kt:42  'Spacer(Modifier.width(16.dp))'
+      InboxScreen.kt:42 Spacer: modifier chain: width(12.0.dp) -> width(16.0.dp) in "G"
+      InboxScreen.kt:42 Spacer: modifier chain: width(12.0.dp) -> width(16.0.dp) in "A"
+      InboxScreen.kt:42 Spacer: modifier chain: width(12.0.dp) -> width(16.0.dp) in "K"
+I25 EXPLAINED edit InboxScreen.kt:45  'Text(thread.preview, fontSize = 14.sp, color = Color(0xFF757'
+      InboxScreen.kt:45 Text: fontSize: 13sp -> 14sp in "The compiler finally works on "
+      InboxScreen.kt:45 Text: fontSize: 13sp -> 14sp in "Can machines think? Let's disc"
+      InboxScreen.kt:45 Text: fontSize: 13sp -> 14sp in "Trajectory numbers attached"
+I26 EXPLAINED edit InboxScreen.kt:20  'Thread("Alan Turing", "Can machines think? Let\'s discuss ton'
+      InboxScreen.kt:44 Text: fontWeight: FontWeight(weight=400) -> FontWeight(weight=700) in "Alan Turing"
+      InboxScreen.kt:50 Badge: Badge added in "Yesterday" (3)
+      InboxScreen.kt:50 rememberComposableLambda: rememberComposableLambda added in "3"
+      "Yesterday" is written at InboxScreen.kt:20
+I27 EXPLAINED edit InboxScreen.kt:21  'Thread("Katherine Johnson", "Trajectory numbers attached", "'
+      InboxScreen.kt:48 Text: text: Mon -> Tue
+      InboxScreen.kt:43 Column: layout size 492x96 -> 501x96px
+      InboxScreen.kt:47 Column: layout moved (+9, +0)px, size 52x80 -> 43x80px
+      "Tue" is written at InboxScreen.kt:21
+I28 EXPLAINED edit InboxScreen.kt:44  'fontWeight = if (thread.unread > 0) FontWeight.SemiBold else'
+      InboxScreen.kt:44 Text: fontWeight: FontWeight(weight=700) -> FontWeight(weight=600) in "Grace Hopper"
+      InboxScreen.kt:44 Text: fontWeight: FontWeight(weight=700) -> FontWeight(weight=600) in "Katherine Johnson"
+I29 EXPLAINED edit InboxScreen.kt:38  'padding(horizontal = 16.dp, vertical = 14.dp)'
+      InboxScreen.kt:38 Row: modifier chain: padding(horizontal=16.0.dp, vertical=10.0.dp) -> padding(horizontal=16.0.dp, vertical=14.0.dp) in "G"
+      InboxScreen.kt:38 Row: modifier chain: padding(horizontal=16.0.dp, vertical=10.0.dp) -> padding(horizontal=16.0.dp, vertical=14.0.dp) in "A"
+      InboxScreen.kt:38 Row: modifier chain: padding(horizontal=16.0.dp, vertical=10.0.dp) -> padding(horizontal=16.0.dp, vertical=14.0.dp) in "K"
+I30 EXPLAINED edit InboxScreen.kt:48  'Text(thread.time, fontSize = 12.sp, color = Color(0xFF616161'
+      InboxScreen.kt:48 Text: color: #9e9e9e -> #616161 in "09:12"
+      InboxScreen.kt:48 Text: color: #9e9e9e -> #616161 in "Yesterday"
+      InboxScreen.kt:48 Text: color: #9e9e9e -> #616161 in "Mon"
+L01 EXPLAINED edit LoginScreen.kt:19  'Text("Welcome back", style = MaterialTheme.typography.headli'
+      LoginScreen.kt:19 Text: style: …lpha=NaN, fontSize=28.0.sp, fontWeight=FontWeight(weight=400), fontStyle=null, fontSynthes… -> …lpha=NaN, fontSize=24.
+      LoginScreen.kt:35 Box: layout moved (+0, -8)px
+      LoginScreen.kt:33 Button: layout moved (+0, -8)px
+L02 EXPLAINED edit LoginScreen.kt:23  'color = Color(0xFF9E9E9E),'
+      LoginScreen.kt:20 Text: color: #6b6b6b -> #9e9e9e in "Sign in to continue to your wo"
+L03 EXPLAINED edit LoginScreen.kt:18  'padding(horizontal = 20.dp, vertical = 40.dp)'
+      LoginScreen.kt:18 Column: modifier chain: padding(horizontal=28.0.dp, vertical=40.0.dp) -> padding(horizontal=20.0.dp, vertical=40.0.dp) in "Welcome b
+      LoginScreen.kt:33 Button: layout moved (-16, +0)px, size 608x104 -> 640x104px
+      LoginScreen.kt:26 OutlinedTextField: layout moved (-16, +0)px, size 608x112 -> 640x112px
+L04 EXPLAINED edit LoginScreen.kt:26  'label = { Text("Email address") }'
+      LoginScreen.kt:26 Text: text: Email -> Email address
+      "Email address" is written at LoginScreen.kt:26
+L05 EXPLAINED edit LoginScreen.kt:26  'OutlinedTextField(value = "ada.lovelace@example.com"'
+      LoginScreen.kt:26 OutlinedTextField: value: ada@example.com -> ada.lovelace@example.com in "Email"
+L06 EXPLAINED edit LoginScreen.kt:29  'horizontalArrangement = Arrangement.Start'
+      LoginScreen.kt:29 Row: remember removed in "Forgot password?" (inside remember at Row.kt:125)
+      LoginScreen.kt:30 TextButton: layout moved (-331, +0)px
+      "Forgot password?" is written at LoginScreen.kt:30
+L07 EXPLAINED edit LoginScreen.kt:33  'Button(onClick = {}, enabled = false'
+      LoginScreen.kt:33 Button: enabled: true -> false in "Sign in"
+      LoginScreen.kt:33 Button: modifier chain: background(#6750a4).clickable(enabled=true, onClick=λ, onClic… -> background(#1d1b20@0.12).clickable(enabled
+L08 EXPLAINED edit LoginScreen.kt:33  'fillMaxWidth().height(44.dp)'
+      LoginScreen.kt:33 Button: modifier: height(52.0.dp) -> height(44.0.dp) in "Sign in"
+      LoginScreen.kt:33 Button: modifier chain: height(52.0.dp) -> height(44.0.dp) in "Sign in"
+      LoginScreen.kt:35 Box: layout moved (+0, -16)px
+L09 EXPLAINED edit LoginScreen.kt:36  'padding(12.dp).border(1.dp, Color(0xFFE0E0E0), RoundedCorner'
+      LoginScreen.kt:35 Box: modifier chain: padding(12.0.dp) -> padding(12.0.dp) in "New here? Create an account"
+L10 EXPLAINED edit LoginScreen.kt:39  'Text("New here? Create an account", textAlign = TextAlign.Ce'
+      LoginScreen.kt:39 Text: color: #1a73e8 -> #0b57d0 in "New here? Create an account"
+
+30 mutations: explained 28, located 28, missed 2
+cause text: median 24 words (~32 tokens)

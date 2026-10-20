@@ -1,0 +1,152 @@
+J01 NO-DIFF  JetnewsGlanceAppWidget.kt:137 8.dp -> 14.dp
+J02 NO-DIFF  Theme.kt:32 alpha = 0.1f -> alpha = 0.4f
+J03 EXPLAINED AppDrawer.kt:61 28.dp -> 34.dp  (2 tests)
+      AppDrawer.kt:82 Row: modifier chain: padding(horizontal=28.0.dp, vertical=24.0.dp) -> padding(horizontal=34.0.dp, vertical=24.0.dp)
+      AppDrawer.kt:82 Row: value 5: padding(horizontal=28.0.dp, vertical=24.0.dp) -> padding(horizontal=34.0.dp, vertical=24.0.dp)
+      AppDrawer.kt:60 JetNewsLogo: layout moved (+12, +0)px
+      padding(34.dp) is written at AppDrawer.kt:61
+J04 EXPLAINED AppDrawer.kt:61 24.dp -> 30.dp  (2 tests)
+      AppDrawer.kt:82 Row: modifier chain: padding(horizontal=28.0.dp, vertical=24.0.dp) -> padding(horizontal=28.0.dp, vertical=30.0.dp)
+      AppDrawer.kt:82 Row: value 5: padding(horizontal=28.0.dp, vertical=24.0.dp) -> padding(horizontal=28.0.dp, vertical=30.0.dp)
+      AppDrawer.kt:60 JetNewsLogo: layout moved (+0, +12)px
+      vertical = 30.dp is written at AppDrawer.kt:61
+J05 EXPLAINED HomeScreens.kt:527 16.dp -> 22.dp  (2 tests)
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      HomeScreens.kt:523 Row: modifier chain: padding(horizontal=16.0.dp, vertical=0.0.dp) -> padding(horizontal=22.0.dp, vertical=0.0.dp)
+      padding(22.dp) is written at HomeScreens.kt:527
+J06 EXPLAINED HomeScreens.kt:565 alpha = 0.08f -> alpha = 0.38f  (4 tests)
+      HomeScreens.kt:563 HorizontalDivider: value 2: #201a1a@0.08 -> #201a1a@0.38
+      HomeScreens.kt:563 HorizontalDivider: value 2: #ece0df@0.08 -> #ece0df@0.38
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+J07 LOCATED   PostCardYourNetwork.kt:75 maxLines = 2 -> maxLines = 3  (4 tests)
+      PostCardYourNetwork.kt:72 Text: layout size 496x128 -> 496x192px
+      PostCardYourNetwork.kt:72 Text: layout size 496x128 -> 496x192px
+      PostCardYourNetwork.kt:78 Spacer: layout moved (+0, +64)px, size 0x1016 -> 0x952px
+      PostCardYourNetwork.kt:72 Text: layout size 496x128 -> 496x192px
+J08 LOCATED   PostCardYourNetwork.kt:81 maxLines = 1 -> maxLines = 2  (2 tests)
+      PostCardYourNetwork.kt:79 Text: layout moved (+0, -40)px, size 496x40 -> 496x80px
+      PostCardYourNetwork.kt:79 Text: layout moved (+0, -40)px, size 496x40 -> 496x80px
+J09 EXPLAINED PostCards.kt:110 16.dp -> 22.dp  (6 tests)
+      PostCards.kt:70 Image: value 3: padding(16.0.dp).size(width=40… -> padding(22.0.dp).size(width=40…
+      PostCards.kt:70 Image: modifier chain: padding(16.0.dp) -> padding(22.0.dp)
+      PostCards.kt:70 Image: value 4: padding(16.0.dp).size(width=40… -> padding(22.0.dp).size(width=40…
+      padding(22.dp) is written at PostCards.kt:110
+J10 EXPLAINED PostCards.kt:125 2.dp -> 8.dp  (6 tests)
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      PostCards.kt:119 BookmarkButton: value 2: clearAndSetSemantics(properties={}).padding(horizontal=6.0.dp, vertical=2.0.dp) -> clearAndSetSemantics(prop
+      vertical = 8.dp is written at HomeScreens.kt:528, PostCards.kt:125
+J11 EXPLAINED PostCards.kt:154 4.dp -> 10.dp  (2 tests)
+      PostCards.kt:56 Row: modifier chain: padding(start=0.0.dp, top=4.0.dp, end=0.0.dp, bottom=0.0.dp) -> padding(start=0.0.dp, top=10.0.dp, end=0.0.dp, bo
+      PostCards.kt:56 Row: value 5: padding(start=0.0.dp, top=4.0.dp, end=0.0.dp, bottom=0.0.dp) -> padding(start=0.0.dp, top=10.0.dp, end=0.0.dp, bottom=0.
+      SlotRecorder.kt:38 (group): layout size 720x272 -> 720x284px
+      top = 10.dp is written at PostCards.kt:154
+J12 EXPLAINED InterestsScreen.kt:396 16.dp -> 22.dp  (8 tests)
+      InterestsScreen.kt:393 Text: value 2: padding(16.0.dp).weight(1.0) -> padding(22.0.dp).weight(1.0)
+      InterestsScreen.kt:393 Text: modifier chain: padding(16.0.dp) -> padding(22.0.dp)
+      InterestsScreen.kt:393 Text: value 4: padding(16.0.dp).weight(1.0).TextStringSimpleElement() -> padding(22.0.dp).weight(1.0).TextStringSimpleElement()
+      padding(22.dp) is written at InterestsScreen.kt:396
+J13 EXPLAINED InterestsScreen.kt:404 72.dp -> 78.dp  (8 tests)
+      InterestsScreen.kt:403 HorizontalDivider: value 2: padding(start=72.0.dp, top=8.0.dp, end=0.0.dp, bottom=8.0.dp) -> padding(start=78.0.dp, top=8.0.dp,
+      Divider.kt:54 Canvas: value 2: padding(start=72.0.dp, top=8.0.dp, e… -> padding(start=78.0.dp, top=8.0.dp, e…
+      Divider.kt:54 Canvas: modifier chain: padding(start=72.0.dp, top=8.0.dp, end=0.0.dp, bottom=8.0.dp) -> padding(start=78.0.dp, top=8.0.dp, end=0.0.dp, 
+      padding(78.dp) is written at InterestsScreen.kt:404
+J14 EXPLAINED InterestsScreen.kt:469 20.dp -> 26.dp  (2 tests)
+      InterestsScreen.kt:465 Text: value 3: …gnmentLine, before=20.0.dp, after=Dp.Unsp… -> …gnmentLine, before=26.0.dp, after=Dp.Unsp…
+      InterestsScreen.kt:465 Text: modifier chain: …gnmentLine, before=20.0.dp, after=Dp.Unsp… -> …gnmentLine, before=26.0.dp, after=Dp.Unsp…
+      InterestsScreen.kt:465 Text: value 4: …gnmentLine, before=20.0.dp, after=Dp.Unsp… -> …gnmentLine, before=26.0.dp, after=Dp.Unsp…
+      before = 26.dp is written at InterestsScreen.kt:469
+J15 EXPLAINED SelectTopicButton.kt:58 36.dp -> 42.dp  (12 tests)
+      SelectTopicButton.kt:54 Surface: modifier chain: size(width=36.0.dp, height=36.0.dp) -> size(width=42.0.dp, height=36.0.dp)
+      SelectTopicButton.kt:54 Surface: value 5: …32.0.dp).size(width=36.0.dp, height=36.0.d… -> …32.0.dp).size(width=42.0.dp, height=36.0.d…
+      SlotRecorder.kt:38 (group): layout size 200x200 -> 212x200px
+      size(42.dp) is written at SelectTopicButton.kt:58
+J16 EXPLAINED SelectTopicButton.kt:92 32.dp -> 38.dp  (4 tests)
+      SelectTopicButton.kt:54 Surface: modifier chain: padding(32.0.dp) -> padding(38.0.dp)
+      SelectTopicButton.kt:54 Surface: value 5: padding(32.0.dp).size(width=36… -> padding(38.0.dp).size(width=36…
+      SlotRecorder.kt:38 (group): layout size 200x200 -> 224x224px
+      padding(38.dp) is written at SelectTopicButton.kt:92
+J17 EXPLAINED PostContent.kt:135 40.dp -> 46.dp  (6 tests)
+      PostContent.kt:132 Image: modifier chain: size(40.0.dp) -> size(46.0.dp)
+      PostContent.kt:132 Image: value 4: size(40.0.dp).graphicsLayer… -> size(46.0.dp).graphicsLayer…
+      PostContent.kt:108 PostMetadata: layout size 386x80 -> 398x92px
+      size(46.dp) is written at PostContent.kt:135
+J18 NO-DIFF  PostContent.kt:183 4.dp -> 10.dp
+J19 NO-DIFF  PostContent.kt:206 16.dp -> 22.dp
+J20 NO-DIFF  PostContent.kt:254 16.dp -> 22.dp
+J21 EXPLAINED PostContent.kt:258 28.sp -> 31.sp  (6 tests)
+      PostContent.kt:189 Text: value 3: …ecified, lineHeight=28.0.sp, textIndent=nu… -> …ecified, lineHeight=31.0.sp, textIndent=nu…
+      PostContent.kt:109 Paragraph: layout size 656x464 -> 656x512px
+      PostContent.kt:167 Box: layout size 656x464 -> 656x512px
+      lineHeight = 31.sp is written at PostContent.kt:258
+J22 NO-DIFF  PostContent.kt:263 16.dp -> 22.dp
+J23 NO-DIFF  PostContent.kt:273 8.sp -> 11.sp
+J24 EXPLAINED PostScreen.kt:350 16.dp -> 22.dp  (2 tests)
+      PostScreen.kt:347 Surface: modifier chain: padding(start=0.0.dp, top=0.0.dp, end=16.0.dp, bottom=0.0.dp) -> padding(start=0.0.dp, top=0.0.dp, end=22.0
+      PostScreen.kt:347 Surface: value 5: …dp, top=0.0.dp, end=16.0.dp, bottom=0.0.dp… -> …dp, top=0.0.dp, end=22.0.dp, bottom=0.0.dp…
+      PostScreen.kt:249 PostTopBar: layout moved (-12, +0)px
+      end = 22.dp is written at PostScreen.kt:350
+J25 EXPLAINED Color.kt:22 Color(0xFFFFFFFF) -> Color(0xFFA5A5A5)  (6 tests)
+      Theme.kt:99 MaterialTheme: value 2: …y=#bf0031onPrimary=#ffffffprimaryContainer=#ff… -> …y=#bf0031onPrimary=#a5a5a5primaryContainer=#ff…
+      SelectTopicButton.kt:54 Surface: modifier chain: background(#ffffff) -> background(#a5a5a5)
+      SelectTopicButton.kt:54 Surface: value 5: …a@0.10).background(#ffffff).graphicsLayer(scal… -> …a@0.10).background(#a5a5a5).graphicsLayer(scal…
+      0x..A5A5A5 is written at Color.kt:22
+J26 NO-DIFF  Color.kt:26 Color(0xFFFFFFFF) -> Color(0xFFA5A5A5)
+J27 EXPLAINED Color.kt:27 Color(0xFFFFDAD9) -> Color(0xFFA58083)  (2 tests)
+      Theme.kt:99 MaterialTheme: value 2: …secondaryContainer=#ffdad9onSecondaryContainer… -> …secondaryContainer=#a58083onSecondaryContainer…
+      AppDrawer.kt:65 NavigationDrawerItem: modifier chain: background(#ffdad9) -> background(#a58083)
+      0x..A58083 is written at Color.kt:27
+      Theme.kt:99 MaterialTheme: value 2: …secondaryContainer=#ffdad9onSecondaryContainer… -> …secondaryContainer=#a58083onSecondaryContainer…
+J28 EXPLAINED Color.kt:28 Color(0xFF2C1516) -> Color(0xFF764F4C)  (2 tests)
+      Theme.kt:99 MaterialTheme: value 2: …SecondaryContainer=#2c1516tertiary=#755a2fonTe… -> …SecondaryContainer=#764f4ctertiary=#755a2fonTe…
+      AppDrawer.kt:65 NavigationDrawerItem: value 1: MutableState(value=#2c1516) -> MutableState(value=#764f4c) (inside remember at SnapshotState.kt:340)
+      AppDrawer.kt:67 Icon: modifier chain: …eColorFilter(color=#2c1516, blendMode=SrcIn)) -> …eColorFilter(color=#764f4c, blendMode=SrcIn))
+      0x..764F4C is written at Color.kt:28
+J29 NO-DIFF  Color.kt:35 Color(0xFFFFFFFF) -> Color(0xFFA5A5A5)
+J30 NO-DIFF  Color.kt:44 Color(0xFFFBEEED) -> Color(0xFFA1B4B7)
+J31 EXPLAINED Color.kt:49 Color(0xFFFFB3B4) -> Color(0xFFA5E9EE)  (11 tests)
+      Theme.kt:99 MaterialTheme: value 2: …olorScheme(primary=#ffb3b4onPrimary=#680016pri… -> …olorScheme(primary=#a5e9eeonPrimary=#680016pri…
+      JetnewsIcons.kt:45 IconToggleButton: value 5: MutableState(value=#ffb3b4) -> MutableState(value=#a5e9ee)
+      JetnewsIcons.kt:54 Icon: modifier chain: …eColorFilter(color=#ffb3b4, blendMode=SrcIn)) -> …eColorFilter(color=#a5e9ee, blendMode=SrcIn))
+      0x..A5E9EE is written at Color.kt:49
+J32 EXPLAINED Color.kt:50 Color(0xFF680016) -> Color(0xFF325A4C)  (6 tests)
+      Theme.kt:99 MaterialTheme: value 2: …y=#ffb3b4onPrimary=#680016primaryContainer=#92… -> …y=#ffb3b4onPrimary=#325a4cprimaryContainer=#92…
+      SelectTopicButton.kt:54 Surface: modifier chain: background(#680016) -> background(#325a4c)
+      SelectTopicButton.kt:54 Surface: value 5: …f@0.10).background(#680016).graphicsLayer(scal… -> …f@0.10).background(#325a4c).graphicsLayer(scal…
+      0x..325A4C is written at Color.kt:50
+J33 NO-DIFF  Color.kt:64 Color(0xFFFFDAD6) -> Color(0xFFA5808C)
+J34 NO-DIFF  Type.kt:61 36.sp -> 39.sp
+J35 EXPLAINED Type.kt:67 22.sp -> 25.sp  (8 tests)
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      InterestsScreen.kt:188 CenterAlignedTopAppBar: value 2: …lpha=NaN, fontSize=22.0.sp, fontWeight=nu… -> …lpha=NaN, fontSize=25.0.sp, fontWeight=nu… (in
+      fontSize = 25.sp is written at Type.kt:67
+J36 EXPLAINED Type.kt:71 24.sp -> 27.sp  (16 tests)
+      PostCards.kt:81 Text: value 3: …cified, lineHeight=24.0.sp, textIndent=nu… -> …cified, lineHeight=27.0.sp, textIndent=nu…
+      SlotRecorder.kt:38 (group): layout size 720x272 -> 720x290px
+      JetnewsPreviewScreenshotTest.kt:48 CompositionLocalProvider: layout size 720x272 -> 720x290px
+      lineHeight = 27.sp is written at Type.kt:71
+J37 LOCATED   Type.kt:72 0.15.sp -> 3.15.sp  (16 tests)
+      InterestsScreen.kt:348 Text: value 4: …null, letterSpacing=0.15.sp, baselineShif… -> …null, letterSpacing=3.15.sp, baselineShif…
+      InterestsScreen.kt:393 Text: value 3: …null, letterSpacing=0.15.sp, baselineShif… -> …null, letterSpacing=3.15.sp, baselineShif…
+      InterestsScreen.kt:608 TabWithSections: layout size 720x1844 -> 720x1892px
+      letterSpacing = 3.15.sp is written at Type.kt:72
+J38 EXPLAINED Type.kt:84 20.sp -> 23.sp  (12 tests)
+      PostCardTop.kt:69 Text: value 3: …cified, lineHeight=20.0.sp, textIndent=nu… -> …cified, lineHeight=23.0.sp, textIndent=nu…
+      SlotRecorder.kt:38 (group): layout size 720x664 -> 720x670px
+      JetnewsPreviewScreenshotTest.kt:48 CompositionLocalProvider: layout size 720x664 -> 720x670px
+      lineHeight = 23.sp is written at Type.kt:84
+J39 EXPLAINED Type.kt:87 0.5.sp -> 3.5.sp  (4 tests)
+      AppNavRail.kt:48 NavigationRail: value 3: …null, letterSpacing=0.5.sp, baselineShift… -> …null, letterSpacing=3.5.sp, baselineShift… (inside ProvideCo
+      AppNavRail.kt:72 Text: value 2: …null, letterSpacing=0.5.sp, baselineShift… -> …null, letterSpacing=3.5.sp, baselineShift… (inside BasicText at Text.k
+      SlotRecorder.kt:38 (group): layout size 160x1800 -> 171x1800px
+      letterSpacing = 3.5.sp is written at Type.kt:87
+J40 EXPLAINED Type.kt:93 16.sp -> 19.sp  (10 tests)
+      HomeScreens.kt:578 OutlinedTextField: modifier chain: …lpha=1.0, fontSize=16.0.sp, fontWeight=nu… -> …lpha=1.0, fontSize=19.0.sp, fontWeight=nu…
+      HomeScreens.kt:578 OutlinedTextField: value 5: …lpha=1.0, fontSize=16.0.sp, fontWeight=nu… -> …lpha=1.0, fontSize=19.0.sp, fontWeight=nu…
+      Theme.kt:99 MaterialTheme: value 2: …lpha=NaN, fontSize=16.0.sp, fontWeight=nu… -> …lpha=NaN, fontSize=19.0.sp, fontWeight=nu… (inside ProvideTextStyl
+      fontSize = 19.sp is written at Type.kt:93
+
+40 mutations run; 12 changed no preview; of 28 visible: explained 25, located 28, value named 25, missed 0

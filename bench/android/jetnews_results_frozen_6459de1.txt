@@ -1,0 +1,108 @@
+J01 NO-DIFF  Divider.kt:49 1.dp -> 7.dp
+J02 NO-DIFF  JetnewsGlanceAppWidget.kt:128 10.dp -> 16.dp
+J03 NO-DIFF  Type.kt:23 16.sp -> 19.sp
+J04 EXPLAINED AppNavRail.kt:53 12.dp -> 18.dp  (2 tests)
+      AppNavRail.kt:50 Icon: modifier chain: padding(horizontal=0.0.dp, vertical=12.0.dp) -> padding(horizontal=0.0.dp, vertical=18.0.dp)
+      AppNavRail.kt:59 Spacer: layout moved (+0, +24)px, size 0x704 -> 0x692px
+      AppNavRail.kt:72 Text: layout moved (+0, +12)px
+      vertical = 18.dp is written at AppNavRail.kt:53
+J05 NO-DIFF  JetnewsSnackbarHost.kt:46 550.dp -> 556.dp
+J06 NO-DIFF  HomeScreens.kt:404 0.dp -> 6.dp
+J07 EXPLAINED HomeScreens.kt:470 16.dp -> 22.dp  (4 tests)
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      HomeScreens.kt:469 Text: modifier chain: padding(start=16.0.dp, top=16.0.dp, end=16.0.dp, bottom=0.0.dp) -> padding(start=22.0.dp, top=16.0.dp, end=16
+      padding(22.dp) is written at HomeScreens.kt:470
+J08 EXPLAINED PostCards.kt:114 10.dp -> 16.dp  (6 tests)
+      PostCards.kt:111 Column: modifier chain: padding(horizontal=0.0.dp, vertical=10.0.dp) -> padding(horizontal=0.0.dp, vertical=16.0.dp)
+      PostCards.kt:111 Column: value 5: weight(1.0).padding(horizontal=0.0.dp, vertical=10.0.dp) -> weight(1.0).padding(horizontal=0.0.dp, vertical=16.0.dp)
+      SlotRecorder.kt:38 (group): layout size 720x264 -> 720x288px
+      PostCards.kt:111 Column: modifier chain: padding(horizontal=0.0.dp, vertical=10.0.dp) -> padding(horizontal=0.0.dp, vertical=16.0.dp)
+J09 EXPLAINED PostCards.kt:145 12.dp -> 18.dp  (2 tests)
+      PostCards.kt:142 Column: modifier chain: padding(horizontal=0.0.dp, vertical=12.0.dp) -> padding(horizontal=0.0.dp, vertical=18.0.dp)
+      PostCards.kt:142 Column: value 5: weight(1.0).padding(horizontal=0.0.dp, vertical=12.0.dp) -> weight(1.0).padding(horizontal=0.0.dp, vertical=18.0.dp)
+      SlotRecorder.kt:38 (group): layout size 720x272 -> 720x296px
+      vertical = 18.dp is written at PostCards.kt:145
+J10 EXPLAINED InterestsScreen.kt:298 alpha = 0.1f -> alpha = 0.4f  (2 tests)
+      InterestsScreen.kt:297 HorizontalDivider: value 2: #201a1a@0.10 -> #201a1a@0.40
+      InterestsScreen.kt:297 HorizontalDivider: value 2: #ece0df@0.10 -> #ece0df@0.40
+J11 EXPLAINED InterestsScreen.kt:377 16.dp -> 22.dp  (8 tests)
+      InterestsScreen.kt:377 Column: modifier chain: padding(horizontal=16.0.dp, vertical=0.0.dp) -> padding(horizontal=22.0.dp, vertical=0.0.dp)
+      InterestsScreen.kt:328 TopicItem: layout moved (+12, +0)px, size 656x146 -> 632x146px
+      InterestsScreen.kt:403 HorizontalDivider: layout moved (+12, +0)px, size 512x2 -> 488x2px
+      padding(22.dp) is written at InterestsScreen.kt:377
+J12 NO-DIFF  InterestsScreen.kt:434 0.dp -> 6.dp
+J13 NO-DIFF  InterestsScreen.kt:489 450.dp -> 456.dp
+J14 NO-DIFF  InterestsScreen.kt:490 600.dp -> 606.dp
+J15 MISSED    PostContent.kt:85 0.dp -> 6.dp  (2 tests)
+      PostContent.kt:99 PostHeaderImage: layout moved (+12, +12)px, size 656x360 -> 632x360px
+      PostContent.kt:100 Spacer: layout moved (+12, +12)px
+      PostContent.kt:102 Spacer: layout moved (+12, +92)px
+      PostContent.kt:99 PostHeaderImage: layout moved (+12, +12)px, size 656x360 -> 632x360px
+J16 EXPLAINED PostContent.kt:108 24.dp -> 30.dp  (6 tests)
+      PostContent.kt:128 Row: modifier chain: padding(start=0.0.dp, top=0.0.dp, end=0.0.dp, bottom=24.0.dp) -> padding(start=0.0.dp, top=0.0.dp, end=0.0.dp,
+      PostContent.kt:128 Row: value 5: … end=0.0.dp, bottom=24.0.dp).semantics(mer… -> … end=0.0.dp, bottom=30.0.dp).semantics(mer…
+      PostContent.kt:109 Paragraph: layout moved (+0, +12)px
+      bottom = 30.dp is written at PostContent.kt:108
+J17 NO-DIFF  PostContent.kt:223 9.sp -> 12.sp
+J18 NO-DIFF  PostContent.kt:309 FontWeight.Bold -> FontWeight.Light
+J19 MISSED    PostScreen.kt:348 8.dp -> 14.dp  (2 tests)
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+J20 MISSED    PostScreen.kt:352 8.dp -> 14.dp  (2 tests)
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+J21 NO-DIFF  Color.kt:30 Color(0xFFFFFFFF) -> Color(0xFFA5A5A5)
+J22 NO-DIFF  Color.kt:33 Color(0xFFBA1A1A) -> Color(0xFFE04040)
+J23 NO-DIFF  Color.kt:36 Color(0xFF410002) -> Color(0xFF1B5A58)
+J24 NO-DIFF  Color.kt:45 Color(0xFF362F2F) -> Color(0xFF6C7575)
+J25 NO-DIFF  Color.kt:47 Color(0xFFBF0031) -> Color(0xFFE55A6B)
+J26 NO-DIFF  Color.kt:52 Color(0xFFFFDAD9) -> Color(0xFFA58083)
+J27 EXPLAINED Color.kt:56 Color(0xFFFFDAD9) -> Color(0xFFA58083)  (2 tests)
+      Theme.kt:99 MaterialTheme: value 2: …SecondaryContainer=#ffdad9tertiary=#e5c18donTe… -> …SecondaryContainer=#a58083tertiary=#e5c18donTe…
+      AppDrawer.kt:65 NavigationDrawerItem: value 1: MutableState(value=#ffdad9) -> MutableState(value=#a58083) (inside remember at SnapshotState.kt:340)
+      AppDrawer.kt:67 Icon: modifier chain: …eColorFilter(color=#ffdad9, blendMode=SrcIn)) -> …eColorFilter(color=#a58083, blendMode=SrcIn))
+      0x..A58083 is written at Color.kt:56
+J28 NO-DIFF  Color.kt:59 Color(0xFF5B421A) -> Color(0xFF011840)
+J29 NO-DIFF  Color.kt:63 Color(0xFF690005) -> Color(0xFF335A5F)
+J30 EXPLAINED Color.kt:65 Color(0xFF201A1A) -> Color(0xFF7A4040)  (5 tests)
+      Theme.kt:99 MaterialTheme: value 2: …=#ffddafbackground=#201a1aonBackground=#ece0df… -> …=#ffddafbackground=#7a4040onBackground=#ece0df…
+      HomeScreens.kt:252 Scaffold: modifier chain: background(#201a1a) -> background(#7a4040)
+      HomeScreens.kt:252 Scaffold: value 5: …lock=λ).background(#201a1a).graphicsLayer(scal… -> …lock=λ).background(#7a4040).graphicsLayer(scal…
+      0x..7A4040 is written at Color.kt:65
+J31 EXPLAINED Color.kt:71 Color(0xFFA08C8C) -> Color(0xFFFAD6D6)  (1 tests)
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      HomeScreens.kt:578 OutlinedTextField: value 2: border(#a08c8c).drawWithCache(onBuildDrawCache=λ) -> border(#fad6d6).drawWithCache(onBuildDrawCache=λ) 
+      0x..FAD6D6 is written at Color.kt:71
+J32 NO-DIFF  Type.kt:49 57.sp -> 60.sp
+J33 NO-DIFF  Type.kt:52 45.sp -> 48.sp
+J34 EXPLAINED Type.kt:64 24.sp -> 27.sp  (6 tests)
+      PostCardYourNetwork.kt:72 Text: value 3: …lpha=NaN, fontSize=24.0.sp, fontWeight=nu… -> …lpha=NaN, fontSize=27.0.sp, fontWeight=nu…
+      PostCardYourNetwork.kt:78 Spacer: layout moved (+0, +2)px, size 0x1016 -> 0x1014px
+      fontSize = 27.sp is written at Type.kt:64
+      PostCardYourNetwork.kt:72 Text: value 3: …lpha=NaN, fontSize=24.0.sp, fontWeight=nu… -> …lpha=NaN, fontSize=27.0.sp, fontWeight=nu…
+J35 EXPLAINED Type.kt:67 0.sp -> 3.sp  (8 tests)
+      HomeScreens.kt:630 CenterAlignedTopAppBar: value 2: …null, letterSpacing=0.0.sp, baselineShift… -> …null, letterSpacing=3.0.sp, baselineShift… (inside
+      HomeScreens.kt:518 Text: value 3: …null, letterSpacing=0.0.sp, baselineShift… -> …null, letterSpacing=3.0.sp, baselineShift…
+      PostCardTop.kt:64 Text: value 3: …null, letterSpacing=0.0.sp, baselineShift… -> …null, letterSpacing=3.0.sp, baselineShift…
+      letterSpacing = 3.sp is written at Type.kt:67
+J36 EXPLAINED Type.kt:73 FontWeight.Medium -> FontWeight.Light  (16 tests)
+      PostCards.kt:81 Text: value 3: …t=FontWeight(weight=500), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      FontWeight.Light is written at Type.kt:73
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+J37 NO-DIFF  Type.kt:77 14.sp -> 17.sp
+J38 NO-DIFF  Type.kt:78 20.sp -> 23.sp
+J39 NO-DIFF  Type.kt:80 FontWeight.Medium -> FontWeight.Light
+J40 EXPLAINED Type.kt:84 FontWeight.Medium -> FontWeight.Light  (12 tests)
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda added
+      JetnewsPreviewScreenshotTest.kt:48 rememberComposableLambda: rememberComposableLambda removed
+      PostContent.kt:141 Text: value 3: …t=FontWeight(weight=500), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,…
+      FontWeight.Light is written at Type.kt:84
+
+40 mutations run; 23 changed no preview; of 17 visible: explained 14, located 14, value named 14, missed 3

@@ -1,0 +1,216 @@
+{
+ "mode": "full screenshots",
+ "protocol": "agent answer written before labels were opened; scored by property category",
+ "pairs": [
+  {
+   "i": 0,
+   "diffspot_row": "0261",
+   "truth": "text",
+   "difficulty": "hard",
+   "agent_answer": "text"
+  },
+  {
+   "i": 1,
+   "diffspot_row": "1754",
+   "truth": "color",
+   "difficulty": "hard",
+   "agent_answer": "color"
+  },
+  {
+   "i": 2,
+   "diffspot_row": "2459",
+   "truth": "justify",
+   "difficulty": "hard",
+   "agent_answer": "justify"
+  },
+  {
+   "i": 3,
+   "diffspot_row": "3637",
+   "truth": "spacing",
+   "difficulty": "hard",
+   "agent_answer": "spacing"
+  },
+  {
+   "i": 4,
+   "diffspot_row": "2833",
+   "truth": "font_weight",
+   "difficulty": "hard",
+   "agent_answer": "font_weight"
+  },
+  {
+   "i": 5,
+   "diffspot_row": "1732",
+   "truth": "border",
+   "difficulty": "hard",
+   "agent_answer": "border"
+  },
+  {
+   "i": 6,
+   "diffspot_row": "3029",
+   "truth": "opacity",
+   "difficulty": "hard",
+   "agent_answer": "opacity"
+  },
+  {
+   "i": 7,
+   "diffspot_row": "2249",
+   "truth": "opacity",
+   "difficulty": "hard",
+   "agent_answer": "opacity"
+  },
+  {
+   "i": 8,
+   "diffspot_row": "2450",
+   "truth": "gradient",
+   "difficulty": "hard",
+   "agent_answer": "gradient"
+  },
+  {
+   "i": 9,
+   "diffspot_row": "1161",
+   "truth": "rounded",
+   "difficulty": "hard",
+   "agent_answer": "none"
+  },
+  {
+   "i": 10,
+   "diffspot_row": "4083",
+   "truth": "none",
+   "difficulty": "no_diff",
+   "agent_answer": "none"
+  },
+  {
+   "i": 11,
+   "diffspot_row": "2041",
+   "truth": "line_height",
+   "difficulty": "hard",
+   "agent_answer": "line_height"
+  },
+  {
+   "i": 12,
+   "diffspot_row": "0238",
+   "truth": "justify",
+   "difficulty": "hard",
+   "agent_answer": "justify"
+  },
+  {
+   "i": 13,
+   "diffspot_row": "0574",
+   "truth": "line_height",
+   "difficulty": "hard",
+   "agent_answer": "line_height"
+  },
+  {
+   "i": 14,
+   "diffspot_row": "3913",
+   "truth": "none",
+   "difficulty": "no_diff",
+   "agent_answer": "none"
+  },
+  {
+   "i": 15,
+   "diffspot_row": "3040",
+   "truth": "text",
+   "difficulty": "hard",
+   "agent_answer": "text"
+  },
+  {
+   "i": 16,
+   "diffspot_row": "0477",
+   "truth": "font_size",
+   "difficulty": "hard",
+   "agent_answer": "font_size"
+  },
+  {
+   "i": 17,
+   "diffspot_row": "0336",
+   "truth": "position",
+   "difficulty": "hard",
+   "agent_answer": "position"
+  },
+  {
+   "i": 18,
+   "diffspot_row": "3280",
+   "truth": "color",
+   "difficulty": "hard",
+   "agent_answer": "color"
+  },
+  {
+   "i": 19,
+   "diffspot_row": "0820",
+   "truth": "rounded",
+   "difficulty": "hard",
+   "agent_answer": "none"
+  },
+  {
+   "i": 20,
+   "diffspot_row": "2944",
+   "truth": "position",
+   "difficulty": "hard",
+   "agent_answer": "position"
+  },
+  {
+   "i": 21,
+   "diffspot_row": "0168",
+   "truth": "letter_spacing",
+   "difficulty": "hard",
+   "agent_answer": "letter_spacing"
+  },
+  {
+   "i": 22,
+   "diffspot_row": "3535",
+   "truth": "gradient",
+   "difficulty": "hard",
+   "agent_answer": "gradient"
+  },
+  {
+   "i": 23,
+   "diffspot_row": "0352",
+   "truth": "font_size",
+   "difficulty": "hard",
+   "agent_answer": "spacing"
+  },
+  {
+   "i": 24,
+   "diffspot_row": "3902",
+   "truth": "none",
+   "difficulty": "no_diff",
+   "agent_answer": "none"
+  },
+  {
+   "i": 25,
+   "diffspot_row": "3283",
+   "truth": "spacing",
+   "difficulty": "hard",
+   "agent_answer": "spacing"
+  },
+  {
+   "i": 26,
+   "diffspot_row": "0733",
+   "truth": "font_weight",
+   "difficulty": "hard",
+   "agent_answer": "font_weight"
+  },
+  {
+   "i": 27,
+   "diffspot_row": "0738",
+   "truth": "border",
+   "difficulty": "hard",
+   "agent_answer": "border"
+  },
+  {
+   "i": 28,
+   "diffspot_row": "0977",
+   "truth": "letter_spacing",
+   "difficulty": "hard",
+   "agent_answer": "letter_spacing"
+  },
+  {
+   "i": 29,
+   "diffspot_row": "3991",
+   "truth": "none",
+   "difficulty": "no_diff",
+   "agent_answer": "none"
+  }
+ ]
+}
