@@ -37,6 +37,22 @@ scale, RTL, devices) gets its own dump.
 If you already use your own `ComposePreviewTester`, add the same option to your capturer: see the
 `SlotCapture` class in that file.
 
+## Paparazzi
+
+Use `snapshotWithCauses` in place of `snapshot` (`diffsay init` copies `PaparazziCauses.kt` when the
+module applies Paparazzi; tested with Paparazzi 2.0.0-alpha05.1, AGP 9.3):
+
+```kotlin
+@get:Rule val paparazzi = Paparazzi()
+
+@Test fun orderCard() = paparazzi.snapshotWithCauses { OrderCard("Running shoes", "$89.00") }
+```
+
+Recording writes `<golden>.slots.json.gz` beside each golden in `src/test/snapshots/images`;
+`verifyPaparazzi…` writes `<name>_actual.slots.json.gz` next to the `delta-<name>.png` failures.
+`diffsay scan <module>/build --source <module>` pairs them up. A shared Paparazzi harness (one
+`paparazzi.snapshot { … }` for all previews, as Element X has) needs that one call changed.
+
 ## Hand-written Roborazzi tests
 
 Replace `setContent { … }` + `onRoot().captureRoboImage(path)` with `captureWithCauses`:

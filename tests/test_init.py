@@ -28,5 +28,18 @@ class InitTest(unittest.TestCase):
             self.assertEqual(2, cli.main(["init", tmp]))
 
 
+    def test_paparazzi_module_gets_the_paparazzi_adapter(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ui = Path(tmp) / "ui"
+            (ui / "src/test/kotlin").mkdir(parents=True)
+            (ui / "build.gradle.kts").write_text('plugins { id("app.cash.paparazzi") }\n')
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                self.assertEqual(0, cli.main(["init", str(ui)]))
+            copied = sorted(p.name for p in (ui / "src/test/kotlin/dev/diffsay").iterdir())
+            self.assertEqual(["PaparazziCauses.kt", "SlotRecorder.kt"], copied)
+            self.assertIn("snapshotWithCauses", out.getvalue())
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,106 @@
+J01 NO-DIFF  Background.kt:62 0.dp -> 6.dp
+J02 NO-DIFF  Button.kt:272 50.dp -> 56.dp
+J03 EXPLAINED LoadingWheel.kt:113 8.dp -> 14.dp  (16 tests)
+      LoadingWheel.kt:110 Canvas: value 2: …ze(48.0.dp).padding(8.0.dp).graphicsLayer… -> …ze(48.0.dp).padding(14.0.dp).graphicsLayer…
+      LoadingWheel.kt:110 Canvas: modifier chain: padding(8.0.dp) -> padding(14.0.dp)
+      LoadingWheel.kt:110 Canvas: value 4: …ze(48.0.dp).padding(8.0.dp).graphicsLayer… -> …ze(48.0.dp).padding(14.0.dp).graphicsLayer…
+      padding(14.dp) is written at LoadingWheel.kt:113
+J04 NO-DIFF  LoadingWheel.kt:140 60.dp -> 66.dp
+J05 NO-DIFF  AppScrollbars.kt:139 12.dp -> 18.dp
+J06 NO-DIFF  AppScrollbars.kt:189 16.dp -> 22.dp
+J07 NO-DIFF  Color.kt:28 Color(0xFF5DD5FC) -> Color(0xFF078FA6)
+J08 NO-DIFF  Color.kt:34 Color(0xFFB7CCB8) -> Color(0xFFED96E2)
+J09 NO-DIFF  Color.kt:35 Color(0xFFD3E8D3) -> Color(0xFF89B289)
+J10 NO-DIFF  Color.kt:37 Color(0xFF2F312E) -> Color(0xFF756B74)
+J11 EXPLAINED Color.kt:38 Color(0xFFE2E3DE) -> Color(0xFFB8B984)  (8 tests)
+      Theme.kt:241 MaterialTheme: value 2: …1a1c1aonBackground=#e2e3desurface=#1a1c1aonSurface=#e2e3desurfaceVariant=#414941onSurfaceV… -> …1a1c1aonBackgrou
+      Button.kt:156 Surface: modifier chain: background(#e2e3de) -> background(#b8b984) in "Dark Android Button"
+      0x..B8B984 is written at Color.kt:38
+      Theme.kt:241 MaterialTheme: value 2: …1a1c1aonBackground=#e2e3desurface=#1a1c1aonSurface=#e2e3desurfaceVariant=#414941onSurfaceV… -> …1a1c1aonBackgrou
+J12 EXPLAINED Color.kt:41 Color(0xFF201A1B) -> Color(0xFF7A4041)  (30 tests)
+      Theme.kt:241 MaterialTheme: value 2: …=#b8eaffbackground=#201a1bonBackground=#ecdfe0surface=#201a1bonSurface=#ecdfe0surfaceVaria… -> …=#b8eaffbackgrou
+      Theme.kt:241 MaterialTheme: modifier chain: background(#201a1b) -> background(#7a4041)
+      Theme.kt:241 MaterialTheme: value 5: background(#201a1b).graphicsLayer(scal… -> background(#7a4041).graphicsLayer(scal…
+      0x..7A4041 is written at Color.kt:41
+J13 EXPLAINED Color.kt:46 Color(0xFF00210B) -> Color(0xFF5A7B51)  (3 tests)
+      Theme.kt:241 MaterialTheme: value 2: …onPrimaryContainer=#00210binversePrimary=#d0bcffsecondary=#4f6352onSecondary=#ffffffsecond… -> …onPrimaryContain
+      IconButton.kt:1451 rememberUpdatedState: value 1: MutableState(value=#00210b) -> MutableState(value=#5a7b51) (inside remember at SnapshotState.kt:341)
+      IconButton.kt:70 (group): modifier chain: …eColorFilter(color=#00210b, blendMode=SrcIn)) -> …eColorFilter(color=#5a7b51, blendMode=SrcIn))
+      0x..5A7B51 is written at Color.kt:46
+J14 EXPLAINED Color.kt:47 Color(0xFF003919) -> Color(0xFF5A6343)  (1 tests)
+      Theme.kt:241 MaterialTheme: value 2: …y=#0ee37conPrimary=#003919primaryContainer=#00… -> …y=#0ee37conPrimary=#5a6343primaryContainer=#00… in "Dark And
+      Button.kt:167 ProvideContentColorTextStyle: value 2: #003919 -> #5a6343 in "Dark Android Button"
+      Button.kt:264 (group): value 2: TextStyle(color=#003919, brush=null, alpha=… -> TextStyle(color=#5a6343, brush=null, alpha=… (inside BasicText at Text
+      0x..5A6343 is written at Color.kt:47
+J15 EXPLAINED Color.kt:51 Color(0xFF5AFF9D) -> Color(0xFF00A5C7)  (7 tests)
+      Theme.kt:241 MaterialTheme: value 2: …ffprimaryContainer=#5aff9donPrimaryContainer=#… -> …ffprimaryContainer=#00a5c7onPrimaryContainer=#…
+      IconButton.kt:1244 Surface: modifier chain: background(#5aff9d) -> background(#00a5c7)
+      IconButton.kt:1434 rememberUpdatedState: value 1: MutableState(value=#5aff9d) -> MutableState(value=#00a5c7) (inside remember at SnapshotState.kt:341)
+      0x..00A5C7 is written at Color.kt:51
+J16 EXPLAINED Color.kt:63 Color(0xFF36003C) -> Color(0xFF6C5A66)  (5 tests)
+      Theme.kt:241 MaterialTheme: value 2: …onPrimaryContainer=#36003cinversePrimary=#d0bcffsecondary=#a23f16onSecondary=#ffffffsecond… -> …onPrimaryContain
+      Navigation.kt:71 NavigationBarItem: modifier chain: …eColorFilter(color=#36003c, blendMode=SrcIn)) -> …eColorFilter(color=#6c5a66, blendMode=SrcIn)) i
+      0x..6C5A66 is written at Color.kt:63
+      Theme.kt:241 MaterialTheme: value 2: …onPrimaryContainer=#36003cinversePrimary=#d0bcffsecondary=#a23f16onSecondary=#ffffffsecond… -> …onPrimaryContain
+J17 EXPLAINED Color.kt:69 Color(0xFF4D444C) -> Color(0xFF171E16)  (2 tests)
+      Theme.kt:241 MaterialTheme: value 2: …e8onSurfaceVariant=#4d444csurfaceTint=#8b418fi… -> …e8onSurfaceVariant=#171e16surfaceTint=#8b418fi… in "Item"
+      Navigation.kt:101 NavigationBar: value 2: #4d444c -> #171e16 in "Item"
+      Navigation.kt:71 NavigationBarItem: modifier chain: …eColorFilter(color=#4d444c, blendMode=SrcIn)) -> …eColorFilter(color=#171e16, blendMode=SrcIn)) i
+      0x..171E16 is written at Color.kt:69
+J18 NO-DIFF  Color.kt:75 Color(0xFF690005) -> Color(0xFF335A5F)
+J19 NO-DIFF  Color.kt:78 Color(0xFFFFB4AB) -> Color(0xFFA5EEF1)
+J20 NO-DIFF  Color.kt:80 Color(0xFF001F26) -> Color(0xFF5A457C)
+J21 NO-DIFF  Color.kt:81 Color(0xFF02363F) -> Color(0xFF586C65)
+J22 NO-DIFF  Color.kt:82 Color(0xFF214D56) -> Color(0xFF7B170C)
+J23 MISSED    Theme.kt:210 2.dp -> 8.dp  (2 tests)
+      Theme.kt:241 MaterialTheme: value 3: (default) -> Typography(displayLarge=TextStyle(color=#000000@0.00, brush=null, alpha=NaN, fontSize=57.0 in "Dark 
+      Background.kt:84 Surface: modifier chain: background(#1e2028) -> background(#252933) in "Dark Default Dynamic backgroun"
+      Background.kt:84 Surface: value 5: …on=1.0).background(#1e2028).graphicsLayer(scal… -> …on=1.0).background(#252933).graphicsLayer(scal… in "Dark Defau
+      Theme.kt:241 MaterialTheme: value 3: (default) -> Typography(displayLarge=TextStyle(color=#000000@0.00, brush=null, alpha=NaN, fontSize=57.0 in "Light
+J24 NO-DIFF  Type.kt:36 64.sp -> 67.sp
+J25 NO-DIFF  Type.kt:42 FontWeight.Normal -> FontWeight.Bold
+J26 NO-DIFF  Type.kt:60 40.sp -> 43.sp
+J27 NO-DIFF  Type.kt:61 0.sp -> 3.sp
+J28 NO-DIFF  Type.kt:66 FontWeight.Normal -> FontWeight.Bold
+J29 NO-DIFF  Type.kt:75 24.sp -> 27.sp
+J30 NO-DIFF  Type.kt:76 32.sp -> 35.sp
+J31 EXPLAINED Type.kt:89 0.sp -> 3.sp  (7 tests)
+      TopAppBar.kt:52 CenterAlignedTopAppBar: value 2: …null, letterSpacing=0.0.sp, baselineShift… -> …null, letterSpacing=3.0.sp, baselineShift… (inside Si
+      TopAppBar.kt:53 Text: value 2: …null, letterSpacing=0.0.sp, baselineShift… -> …null, letterSpacing=3.0.sp, baselineShift… (inside BasicText at Text.kt
+      letterSpacing = 3.sp is written at Type.kt:89
+      TopAppBar.kt:52 CenterAlignedTopAppBar: value 2: …null, letterSpacing=0.0.sp, baselineShift… -> …null, letterSpacing=3.0.sp, baselineShift… (inside Si
+J32 NO-DIFF  Type.kt:101 0.1.sp -> 3.1.sp
+J33 NO-DIFF  Type.kt:107 14.sp -> 17.sp
+J34 NO-DIFF  Type.kt:137 16.sp -> 19.sp
+J35 EXPLAINED Type.kt:144 FontWeight.Medium -> FontWeight.Light  (23 tests)
+      Button.kt:167 ProvideContentColorTextStyle: value 3: …t=FontWeight(weight=500), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,… in "Li
+      Button.kt:264 (group): value 2: …t=FontWeight(weight=500), fontStyle=null,… -> …t=FontWeight(weight=300), fontStyle=null,… (inside BasicText at Text.k
+      Theme.kt:236 CompositionLocalProvider: layout size 838x144 -> 823x144px
+      Button.kt:167 now uses labelLarge (Type.kt:143) instead of titleSmall
+J36 EXPLAINED Type.kt:145 14.sp -> 17.sp  (23 tests)
+      Button.kt:167 ProvideContentColorTextStyle: value 3: …lpha=NaN, fontSize=14.0.sp, fontWeight=Fo… -> …lpha=NaN, fontSize=17.0.sp, fontWeight=Fo… in "Da
+      Button.kt:264 (group): value 2: …lpha=1.0, fontSize=14.0.sp, fontWeight=Fo… -> …lpha=1.0, fontSize=17.0.sp, fontWeight=Fo… (inside BasicText at Text.k
+      Theme.kt:236 CompositionLocalProvider: layout size 830x144 -> 960x167px
+      Button.kt:167 now uses labelLarge (Type.kt:143) instead of titleSmall
+J37 EXPLAINED Type.kt:147 0.1.sp -> 3.1.sp  (23 tests)
+      Button.kt:167 ProvideContentColorTextStyle: value 3: …null, letterSpacing=0.1.sp, baselineShift… -> …null, letterSpacing=3.1.sp, baselineShift… in "Li
+      Button.kt:264 (group): value 2: …null, letterSpacing=0.1.sp, baselineShift… -> …null, letterSpacing=3.1.sp, baselineShift… (inside BasicText at Text.k
+      Theme.kt:236 CompositionLocalProvider: layout size 525x144 -> 669x144px
+      Button.kt:167 now uses labelLarge (Type.kt:143) instead of titleSmall
+J38 EXPLAINED Type.kt:160 0.5.sp -> 3.5.sp  (7 tests)
+      Navigation.kt:71 NavigationBarItem: value 3: …null, letterSpacing=0.5.sp, baselineShift… -> …null, letterSpacing=3.5.sp, baselineShift… (inside Provid
+      Navigation.kt:71 NavigationBarItem: value 2: …null, letterSpacing=0.5.sp, baselineShift… -> …null, letterSpacing=3.5.sp, baselineShift… (inside BasicT
+      letterSpacing = 3.5.sp is written at Type.kt:160
+      Navigation.kt:71 NavigationBarItem: value 3: …null, letterSpacing=0.5.sp, baselineShift… -> …null, letterSpacing=3.5.sp, baselineShift… (inside Provid
+J39 EXPLAINED Type.kt:171 10.sp -> 13.sp  (20 tests)
+      Chip.kt:56 ProvideTextStyle: value 2: …lpha=NaN, fontSize=10.0.sp, fontWeight=Fo… -> …lpha=NaN, fontSize=13.0.sp, fontWeight=Fo…
+      Chip.kt:57 (group): value 2: …lpha=1.0, fontSize=10.0.sp, fontWeight=Fo… -> …lpha=1.0, fontSize=13.0.sp, fontWeight=Fo… (inside BasicText at Text.kt:1
+      Theme.kt:236 CompositionLocalProvider: layout size 354x144 -> 409x144px
+      fontSize = 13.sp is written at Type.kt:171
+J40 EXPLAINED Type.kt:173 0.sp -> 3.sp  (20 tests)
+      Tag.kt:57 ProvideTextStyle: value 2: …null, letterSpacing=0.0.sp, baselineShift… -> …null, letterSpacing=3.0.sp, baselineShift…
+      Tag.kt:58 (group): value 2: …null, letterSpacing=0.0.sp, baselineShift… -> …null, letterSpacing=3.0.sp, baselineShift… (inside BasicText at Text.kt:12
+      Theme.kt:236 CompositionLocalProvider: layout size 174x144 -> 195x144px
+      letterSpacing = 3.sp is written at Type.kt:173
+
+40 mutations run; 24 changed no preview; of 16 visible: explained 15, located 15, value named 15, missed 1

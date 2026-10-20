@@ -32,7 +32,8 @@ No model, no network, deterministic.
 
 ## Quick start
 
-You need a module with [Roborazzi](https://github.com/takahirom/roborazzi) on Robolectric.
+You need a module with [Roborazzi](https://github.com/takahirom/roborazzi) on Robolectric, or with
+[Paparazzi](https://github.com/cashapp/paparazzi) (use `paparazzi.snapshotWithCauses { … }`, see [Android setup](android/README.md#paparazzi)).
 
 ```bash
 pip install git+https://github.com/trOnk12/diffsay
@@ -134,8 +135,7 @@ never reports a change on identical screens ([details](bench/README.md)).
 
 ## Limits
 
-- Android, Jetpack Compose, Robolectric (Roborazzi). Paparazzi support for the composition part
-  is possible but not done.
+- Android, Jetpack Compose: Roborazzi (Robolectric) and Paparazzi. No iOS/SwiftUI yet.
 - Robolectric renders on the JVM; it isn't a device.
 - Each screenshot gets a gzipped composition dump beside it (~100 KB for a full screen).
 

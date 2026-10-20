@@ -859,8 +859,12 @@ def _compose_causes(actual_image: str, changes: list[Change], root: str) -> list
     from pathlib import Path
     p = Path(actual_image)
     stem = p.stem.removesuffix("_actual").removeprefix("delta-")
-    before, after = (next((c for c in (p.with_name(stem + suffix + ".gz"), p.with_name(stem + suffix)) if c.exists()),
-                          p.with_name(stem + suffix)) for suffix in (".slots.json", "_actual.slots.json"))
+    # Beside the image (Roborazzi), or with the goldens (Paparazzi: src/test/snapshots/images).
+    dirs = [p.parent] + [d / "src/test/snapshots/images" for d in [Path(root).resolve(), *p.resolve().parents]
+                         if (d / "src/test/snapshots/images").is_dir()]
+    before, after = (next((d / (stem + suffix + ext) for d in dirs for ext in (".gz", "")
+                           if (d / (stem + suffix + ext)).exists()), p.with_name(stem + suffix))
+                     for suffix in (".slots.json", "_actual.slots.json"))
     if not (before.exists() and after.exists()):
         return []
     from . import compose_slots
@@ -896,8 +900,8 @@ def _tree_beside(image: str) -> str | None:
 def _short_name(name: str) -> str:
     """com/example/ui.FooKt.FooPreview.dark.png -> FooPreview.dark"""
     from pathlib import Path
-    parts = Path(name).stem.split(".")
-    return ".".join(parts[-2:]) if len(parts) > 2 else Path(name).stem
+    parts = Path(name).stem.removeprefix("delta-").split(".")
+    return ".".join(parts[-2:]) if len(parts) > 2 else Path(name).stem.removeprefix("delta-")
 
 
 def _markdown(rows) -> str:
@@ -970,13 +974,20 @@ def init(module: str) -> int:
                     root / "src/test/java")
     target = test_src / "dev/diffsay"
     target.mkdir(parents=True, exist_ok=True)
-    for name in ("SlotRecorder.kt", "DiffsayPreviewTester.kt"):
+    build = next((root / n for n in ("build.gradle.kts", "build.gradle") if (root / n).exists()), None)
+    text = build.read_text(encoding="utf-8") if build else ""
+    paparazzi = "paparazzi" in text.lower() and "roborazzi" not in text.lower()
+    names = ("SlotRecorder.kt", "PaparazziCauses.kt") if paparazzi else         ("SlotRecorder.kt", "RoborazziCauses.kt", "DiffsayPreviewTester.kt")
+    for name in names:
         (target / name).write_text(files("diffsay").joinpath("android", name).read_text(encoding="utf-8"),
                                    encoding="utf-8")
         print(f"wrote {target / name}")
-    build = next((root / n for n in ("build.gradle.kts", "build.gradle") if (root / n).exists()), None)
-    text = build.read_text(encoding="utf-8") if build else ""
     namespace = re.search(r'namespace\s*=?\s*"([\w.]+)"', text)
+    if paparazzi:
+        print(f"\nAdd to {build}: testImplementation(\"androidx.compose.ui:ui-tooling-data\")\n"
+              "Then use paparazzi.snapshotWithCauses(name) { … } instead of paparazzi.snapshot(name) { … },\n"
+              f"record, change code, verify, and run: diffsay scan {root}/build --source {root}")
+        return 0
     print(f"\nAdd to {build or root / 'build.gradle.kts'} (Roborazzi on Robolectric already set up):\n")
     print(_GRADLE % (namespace.group(1) if namespace else "com.example.app"))
     if "generateComposePreviewRobolectricTests" in text:
