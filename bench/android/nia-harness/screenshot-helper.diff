@@ -1,0 +1,93 @@
+diff --git a/core/screenshot-testing/build.gradle.kts b/core/screenshot-testing/build.gradle.kts
+index 57a43a2..cccd60e 100644
+--- a/core/screenshot-testing/build.gradle.kts
++++ b/core/screenshot-testing/build.gradle.kts
+@@ -30,5 +30,6 @@ dependencies {
+     implementation(libs.androidx.compose.ui.test)
+     implementation(libs.androidx.activity.compose)
+     implementation(libs.robolectric)
++    implementation("androidx.compose.ui:ui-tooling-data")
+     implementation(projects.core.designsystem)
+ }
+diff --git a/core/screenshot-testing/src/main/kotlin/com/google/samples/apps/nowinandroid/core/testing/util/ScreenshotHelper.kt b/core/screenshot-testing/src/main/kotlin/com/google/samples/apps/nowinandroid/core/testing/util/ScreenshotHelper.kt
+index 20b9a5d..d9be40c 100644
+--- a/core/screenshot-testing/src/main/kotlin/com/google/samples/apps/nowinandroid/core/testing/util/ScreenshotHelper.kt
++++ b/core/screenshot-testing/src/main/kotlin/com/google/samples/apps/nowinandroid/core/testing/util/ScreenshotHelper.kt
+@@ -49,6 +49,8 @@ import com.google.android.apps.common.testing.accessibility.framework.utils.cont
+ import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
+ import org.hamcrest.Matcher
+ import org.hamcrest.Matchers
++import dev.diffsay.SlotRecorder
++import dev.diffsay.writeBeside
+ import org.robolectric.RuntimeEnvironment
+ import java.io.File
+ import java.io.FileOutputStream
+@@ -96,7 +98,9 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.c
+     // Set qualifiers from specs
+     RuntimeEnvironment.setQualifiers("w${width}dp-h${height}dp-${dpi}dpi")
+ 
++    val recorder = SlotRecorder()
+     this.activity.setContent {
++        recorder.Record {
+         CompositionLocalProvider(
+             LocalInspectionMode provides true,
+         ) {
+@@ -106,6 +110,7 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.c
+                 body()
+             }
+         }
++        }
+     }
+ 
+     // Run Accessibility checks first so logging is included
+@@ -129,6 +134,7 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.c
+             "src/test/screenshots/${screenshotName}_$deviceName.png",
+             roborazziOptions = roborazziOptions,
+         )
++    recorder.writeBeside("src/test/screenshots/${screenshotName}_$deviceName.png", onRoot())
+ 
+     // Rethrow the Accessibility exception once screenshots have passed
+     if (accessibilityException != null) {
+@@ -169,7 +175,9 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.c
+     var dynamicTheming by mutableStateOf(false)
+     var androidTheme by mutableStateOf(false)
+ 
++    val recorder = SlotRecorder()
+     this.setContent {
++        recorder.Record {
+         CompositionLocalProvider(
+             LocalInspectionMode provides true,
+         ) {
+@@ -192,6 +200,7 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.c
+                 }
+             }
+         }
++        }
+     }
+ 
+     // Create permutations
+@@ -212,16 +221,14 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.c
+ 
+                 val filename = overrideFileName ?: name
+ 
+-                this.onRoot()
+-                    .captureRoboImage(
+-                        "src/test/screenshots/" +
+-                            "$name/$filename" +
+-                            "_$darkModeDesc" +
+-                            "_$androidThemeDesc" +
+-                            "_$dynamicThemingDesc" +
+-                            ".png",
+-                        roborazziOptions = DefaultRoborazziOptions,
+-                    )
++                val path = "src/test/screenshots/" +
++                    "$name/$filename" +
++                    "_$darkModeDesc" +
++                    "_$androidThemeDesc" +
++                    "_$dynamicThemingDesc" +
++                    ".png"
++                this.onRoot().captureRoboImage(path, roborazziOptions = DefaultRoborazziOptions)
++                recorder.writeBeside(path, onRoot())
+             }
+         }
+     }

@@ -96,8 +96,9 @@ own `@Preview`s.
 **Explained** = a top cause line points at the edited line *and* names the new value.
 **Located** = it points at the edited line.
 
-| App (android/compose-samples), sample | Engine | Visible edits | Explained | Located |
+| App, sample | Engine | Visible edits | Explained | Located |
 | --- | --- | --- | --- | --- |
+| **Now in Android** design system, seed 99, **held-out** | as of e428403 | 16 | **15 (94%)** | 15 |
 | JetNews, seed 2027, **held-out** | v5, frozen | 28 | **25 (89%)** | **28 (100%)** |
 | JetNews, seed 2026, **held-out** | v4, frozen | 17 | **14 (82%)** | 14 |
 | Jetsnack, seed 7, **held-out** | v4, frozen | 19 | 12 (63%) | 12 |
