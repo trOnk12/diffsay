@@ -21,6 +21,12 @@ from pathlib import Path
 
 SEED = 42
 SAMPLE = 40
+# Other apps: DIFFSAY_MODULE=core/designsystem DIFFSAY_SOURCES="src/main/kotlin/**/*.kt"
+# DIFFSAY_TASK=compareRoborazziDemoDebug DIFFSAY_GRADLE_ARGS="--no-configuration-cache ..."
+MODULE = os.environ.get("DIFFSAY_MODULE", "app")
+SOURCES = os.environ.get("DIFFSAY_SOURCES", "src/main/java/**/ui/**/*.kt")
+TASK = os.environ.get("DIFFSAY_TASK", "compareRoborazziDebug")
+GRADLE_ARGS = os.environ.get("DIFFSAY_GRADLE_ARGS", "").split()
 
 PATTERNS = [
     ("dp", re.compile(r"(?<![\w.])(\d+(?:\.\d+)?)\.dp\b")),
@@ -61,7 +67,7 @@ def mutate(kind: str, value: str) -> tuple[str, list[str]]:
 
 
 def select(root: Path, out: Path, seed: int = SEED, exclude: Path | None = None) -> None:
-    sources = sorted((root / "app/src/main/java").rglob("ui/**/*.kt"))
+    sources = sorted((root / MODULE).glob(SOURCES))
     sites = []
     for path in sources:
         lines = path.read_text().splitlines()
@@ -92,15 +98,24 @@ def select(root: Path, out: Path, seed: int = SEED, exclude: Path | None = None)
 
 def gradle(root: Path, task: str, log: Path) -> int:
     env = {**os.environ, "ANDROID_HOME": "/opt/android-sdk", "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk-amd64"}
-    return subprocess.run(["timeout", "1500", "bash", "./gradlew", task, "--console=plain", "-q"], cwd=root,
+    return subprocess.run(["timeout", "1500", "bash", "./gradlew", task, "--console=plain", "-q", *GRADLE_ARGS], cwd=root,
                           stdout=log.open("w"), stderr=subprocess.STDOUT, env=env).returncode
+
+
+def _slots(golden: Path, actual: bool) -> Path | None:
+    """The slot dump beside a golden: <stem>[_actual].slots.json(.gz)."""
+    for suffix in (".slots.json.gz", ".slots.json"):
+        candidate = golden.with_name(golden.stem + ("_actual" if actual else "") + suffix)
+        if candidate.exists():
+            return candidate
+    return None
 
 
 def run(root: Path, sites_path: Path, out: Path, only: set[str]) -> None:
     sites = json.loads(sites_path.read_text())["sites"]
     out.mkdir(parents=True, exist_ok=True)
-    shots = root / "app/src/test/screenshots"
-    results = root / "app/build/test-results/roborazzi"
+    module = root / MODULE
+    results = module / "build/test-results/roborazzi"
     for site in sites:
         if only and site["id"] not in only:
             continue
@@ -112,10 +127,11 @@ def run(root: Path, sites_path: Path, out: Path, only: set[str]) -> None:
         lines[site["line"] - 1] = line[:site["col"]] + line[site["col"]:].replace(site["match"], site["replacement"], 1)
         path.write_text("".join(lines))
         try:
-            for f in shots.glob("*_actual.slots.json"):
+            for f in list(module.rglob("*_actual.slots.json")) + list(module.rglob("*_actual.slots.json.gz")):
                 f.unlink()
             shutil.rmtree(results, ignore_errors=True)
-            rc = gradle(root, ":app:compareRoborazziDebug", out / f"{site['id']}.log")
+            task = f":{MODULE.replace('/', ':')}:{TASK}"
+            rc = gradle(root, task, out / f"{site['id']}.log")
             dest = out / site["id"]
             shutil.rmtree(dest, ignore_errors=True)
             dest.mkdir()
@@ -125,12 +141,14 @@ def run(root: Path, sites_path: Path, out: Path, only: set[str]) -> None:
                 for item in data if isinstance(data, list) else [data]:
                     if isinstance(item, dict) and item.get("type") == "changed":
                         golden, actual = Path(item["golden_file_path"]), Path(item["actual_file_path"])
+                        if not golden.is_absolute():
+                            golden, actual = module / golden, module / actual
                         stem = golden.stem
                         shutil.copy(golden, dest / golden.name)
                         shutil.copy(actual, dest / f"{stem}_actual.png")
-                        for slots in (shots / f"{stem}.slots.json", shots / f"{stem}_actual.slots.json",
-                                      shots / f"{stem}.uitree.json", shots / f"{stem}_actual.uitree.json"):
-                            if slots.exists():
+                        for slots in (_slots(golden, False), _slots(golden, True),
+                                      golden.with_name(stem + ".uitree.json"), golden.with_name(stem + "_actual.uitree.json")):
+                            if slots and slots.exists():
                                 shutil.copy(slots, dest / slots.name)
                         changed.append(stem)
             (dest / "meta.json").write_text(json.dumps({**site, "changed": changed, "gradle_rc": rc}))
@@ -143,7 +161,7 @@ def score(root: Path, sites_path: Path, out: Path, noise_dir: Path | None = None
     sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
     from diffsay import compose_slots
     from diffsay import cli as diffsay
-    user = compose_slots.project_files(str(root / "app"))
+    user = compose_slots.project_files(str(root / MODULE))
     sites = json.loads(sites_path.read_text())["sites"]
     rows = []
     for site in sites:
@@ -157,8 +175,8 @@ def score(root: Path, sites_path: Path, out: Path, noise_dir: Path | None = None
         # Edited source tree, as a developer's checkout would be.
         import tempfile
         with tempfile.TemporaryDirectory() as tmp:
-            shutil.copytree(root / "app/src", Path(tmp) / "src")
-            path = Path(tmp) / Path(site["file"]).relative_to("app")
+            shutil.copytree(root / MODULE / "src", Path(tmp) / "src")
+            path = Path(tmp) / Path(site["file"]).relative_to(MODULE)
             lines = path.read_text().splitlines(keepends=True)
             ln = lines[site["line"] - 1]
             lines[site["line"] - 1] = ln[:site["col"]] + ln[site["col"]:].replace(site["match"], site["replacement"], 1)
@@ -168,12 +186,12 @@ def score(root: Path, sites_path: Path, out: Path, noise_dir: Path | None = None
                 d = out / site["id"]
                 a = diffsay.load(str(d / f"{stem}.png"))
                 b = diffsay.load(str(d / f"{stem}_actual.png"))
-                before, after = d / f"{stem}.slots.json", d / f"{stem}_actual.slots.json"
+                before, after = _slots(d / f"{stem}.png", False), _slots(d / f"{stem}.png", True)
                 ignore = None
-                if noise_dir and (noise_dir / f"{stem}.slots.json").exists():
-                    ignore = set(compose_slots.noise(compose_slots.load(str(noise_dir / f"{stem}.slots.json")),
-                                                     compose_slots.load(str(noise_dir / f"{stem}_actual.slots.json"))))
-                if before.exists() and after.exists():
+                if noise_dir and _slots(noise_dir / f"{stem}.png", True):
+                    ignore = set(compose_slots.noise(compose_slots.load(str(_slots(noise_dir / f"{stem}.png", False))),
+                                                     compose_slots.load(str(_slots(noise_dir / f"{stem}.png", True)))))
+                if before and after:
                     found = compose_slots.diff(compose_slots.load(str(before)), compose_slots.load(str(after)),
                                                [c.bbox for c in diffsay.compare(a, b)], user, ignore)
                     causes += compose_slots.explain(found, user, limit=3) + compose_slots.source_hits(found, tmp)

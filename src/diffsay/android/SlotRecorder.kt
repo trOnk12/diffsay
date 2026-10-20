@@ -11,6 +11,7 @@ import androidx.compose.ui.tooling.data.Group
 import androidx.compose.ui.tooling.data.UiToolingDataApi
 import androidx.compose.ui.tooling.data.asTree
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.test.SemanticsNodeInteraction
 import androidx.compose.ui.test.junit4.ComposeContentTestRule
 import androidx.compose.ui.test.onRoot
 import com.github.takahirom.roborazzi.captureRoboImage
@@ -96,9 +97,18 @@ fun ComposeContentTestRule.captureWithCauses(filePath: String, content: @Composa
     val recorder = SlotRecorder()
     setContent { recorder.Record(content) }
     onRoot().captureRoboImage(filePath)
-    val origin = onRoot().fetchSemanticsNode().positionInWindow
+    recorder.writeBeside(filePath, onRoot())
+}
+
+/**
+ * For a shared screenshot helper that calls `setContent` itself: wrap the content in
+ * `recorder.Record { … }`, and after each `captureRoboImage(filePath)` call
+ * `recorder.writeBeside(filePath, onRoot())`.
+ */
+fun SlotRecorder.writeBeside(filePath: String, root: SemanticsNodeInteraction) {
+    val origin = root.fetchSemanticsNode().positionInWindow
     val golden = File(filePath)
     val recording = System.getProperty("roborazzi.test.record") == "true"
     val name = golden.nameWithoutExtension + if (recording) ".slots.json.gz" else "_actual.slots.json.gz"
-    recorder.write(File(golden.absoluteFile.parentFile, name), origin.x.toInt(), origin.y.toInt())
+    write(File(golden.absoluteFile.parentFile, name), origin.x.toInt(), origin.y.toInt())
 }

@@ -866,11 +866,16 @@ def _compose_causes(actual_image: str, changes: list[Change], root: str) -> list
     from . import compose_slots
     import os
     user = compose_slots.project_files(root) or compose_slots.project_files(os.getcwd())
-    found = compose_slots.diff(compose_slots.load(str(before)), compose_slots.load(str(after)),
-                               [c.bbox for c in changes], user or None)
+    slots_before, slots_after = compose_slots.load(str(before)), compose_slots.load(str(after))
+    # Screenshots saved downscaled (Roborazzi's resizeScale) are smaller than the layout they show.
+    width = max((g["bounds"][2] for g in slots_before), default=0)
+    scale = width / Image.open(actual_image).width if width else 1
+    scale = scale if scale > 1.2 else 1
+    regions = [tuple(round(v * scale) for v in c.bbox) for c in changes]
+    found = compose_slots.diff(slots_before, slots_after, regions, user or None)
     module = root if compose_slots.project_files(root) else os.getcwd()
     causes = compose_slots.explain(found, user or None) + compose_slots.source_hits(found, module)
-    if not causes and not compose_slots.diff(compose_slots.load(str(before)), compose_slots.load(str(after)), None, user or None):
+    if not causes and not compose_slots.diff(slots_before, slots_after, None, user or None):
         # 7 of 68 real code edits on Jetsnack looked like this; so do nondeterministic renders.
         causes = ["composition identical: the change is in drawing code (draw lambdas, Canvas, images) "
                   "or the render isn't deterministic"]

@@ -49,6 +49,22 @@ Replace `setContent { … }` + `onRoot().captureRoboImage(path)` with `captureWi
 }
 ```
 
+## A shared screenshot helper
+
+If your tests go through one helper that calls `setContent` itself (Now in Android's
+`captureMultiTheme`, for example), wrap the content and write after each capture:
+
+```kotlin
+val recorder = SlotRecorder()
+setContent { recorder.Record { AppTheme { content() } } }
+// … for each variant:
+onRoot().captureRoboImage(path)
+recorder.writeBeside(path, onRoot())
+```
+
+Screenshots saved downscaled (`RecordOptions(resizeScale = 0.5)`) are handled: `scan` scales
+the changed regions back to layout pixels.
+
 ## Then
 
 ```bash

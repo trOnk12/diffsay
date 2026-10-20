@@ -1,0 +1,553 @@
+{
+ "seed": 99,
+ "population": 164,
+ "sites": [
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/component/Background.kt",
+   "line": 62,
+   "kind": "dp",
+   "match": "0.dp",
+   "value": "0",
+   "col": 70,
+   "id": "J01",
+   "replacement": "6.dp",
+   "expect": [
+    "6.0.dp",
+    "6.dp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/component/Button.kt",
+   "line": 272,
+   "kind": "dp",
+   "match": "50.dp",
+   "value": "50",
+   "col": 55,
+   "id": "J02",
+   "replacement": "56.dp",
+   "expect": [
+    "56.0.dp",
+    "56.dp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/component/LoadingWheel.kt",
+   "line": 113,
+   "kind": "dp",
+   "match": "8.dp",
+   "value": "8",
+   "col": 21,
+   "id": "J03",
+   "replacement": "14.dp",
+   "expect": [
+    "14.0.dp",
+    "14.dp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/component/LoadingWheel.kt",
+   "line": 140,
+   "kind": "dp",
+   "match": "60.dp",
+   "value": "60",
+   "col": 35,
+   "id": "J04",
+   "replacement": "66.dp",
+   "expect": [
+    "66.0.dp",
+    "66.dp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/component/scrollbar/AppScrollbars.kt",
+   "line": 139,
+   "kind": "dp",
+   "match": "12.dp",
+   "value": "12",
+   "col": 38,
+   "id": "J05",
+   "replacement": "18.dp",
+   "expect": [
+    "18.0.dp",
+    "18.dp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/component/scrollbar/AppScrollbars.kt",
+   "line": 189,
+   "kind": "dp",
+   "match": "16.dp",
+   "value": "16",
+   "col": 43,
+   "id": "J06",
+   "replacement": "22.dp",
+   "expect": [
+    "22.0.dp",
+    "22.dp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 28,
+   "kind": "color",
+   "match": "Color(0xFF5DD5FC)",
+   "value": "FF5DD5FC",
+   "col": 22,
+   "id": "J07",
+   "replacement": "Color(0xFF078FA6)",
+   "expect": [
+    "#078fa6"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 34,
+   "kind": "color",
+   "match": "Color(0xFFB7CCB8)",
+   "value": "FFB7CCB8",
+   "col": 27,
+   "id": "J08",
+   "replacement": "Color(0xFFED96E2)",
+   "expect": [
+    "#ed96e2"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 35,
+   "kind": "color",
+   "match": "Color(0xFFD3E8D3)",
+   "value": "FFD3E8D3",
+   "col": 27,
+   "id": "J09",
+   "replacement": "Color(0xFF89B289)",
+   "expect": [
+    "#89b289"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 37,
+   "kind": "color",
+   "match": "Color(0xFF2F312E)",
+   "value": "FF2F312E",
+   "col": 31,
+   "id": "J10",
+   "replacement": "Color(0xFF756B74)",
+   "expect": [
+    "#756b74"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 38,
+   "kind": "color",
+   "match": "Color(0xFFE2E3DE)",
+   "value": "FFE2E3DE",
+   "col": 31,
+   "id": "J11",
+   "replacement": "Color(0xFFB8B984)",
+   "expect": [
+    "#b8b984"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 41,
+   "kind": "color",
+   "match": "Color(0xFF201A1B)",
+   "value": "FF201A1B",
+   "col": 32,
+   "id": "J12",
+   "replacement": "Color(0xFF7A4041)",
+   "expect": [
+    "#7a4041"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 46,
+   "kind": "color",
+   "match": "Color(0xFF00210B)",
+   "value": "FF00210B",
+   "col": 23,
+   "id": "J13",
+   "replacement": "Color(0xFF5A7B51)",
+   "expect": [
+    "#5a7b51"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 47,
+   "kind": "color",
+   "match": "Color(0xFF003919)",
+   "value": "FF003919",
+   "col": 23,
+   "id": "J14",
+   "replacement": "Color(0xFF5A6343)",
+   "expect": [
+    "#5a6343"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 51,
+   "kind": "color",
+   "match": "Color(0xFF5AFF9D)",
+   "value": "FF5AFF9D",
+   "col": 23,
+   "id": "J15",
+   "replacement": "Color(0xFF00A5C7)",
+   "expect": [
+    "#00a5c7"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 63,
+   "kind": "color",
+   "match": "Color(0xFF36003C)",
+   "value": "FF36003C",
+   "col": 24,
+   "id": "J16",
+   "replacement": "Color(0xFF6C5A66)",
+   "expect": [
+    "#6c5a66"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 69,
+   "kind": "color",
+   "match": "Color(0xFF4D444C)",
+   "value": "FF4D444C",
+   "col": 28,
+   "id": "J17",
+   "replacement": "Color(0xFF171E16)",
+   "expect": [
+    "#171e16"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 75,
+   "kind": "color",
+   "match": "Color(0xFF690005)",
+   "value": "FF690005",
+   "col": 21,
+   "id": "J18",
+   "replacement": "Color(0xFF335A5F)",
+   "expect": [
+    "#335a5f"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 78,
+   "kind": "color",
+   "match": "Color(0xFFFFB4AB)",
+   "value": "FFFFB4AB",
+   "col": 21,
+   "id": "J19",
+   "replacement": "Color(0xFFA5EEF1)",
+   "expect": [
+    "#a5eef1"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 80,
+   "kind": "color",
+   "match": "Color(0xFF001F26)",
+   "value": "FF001F26",
+   "col": 22,
+   "id": "J20",
+   "replacement": "Color(0xFF5A457C)",
+   "expect": [
+    "#5a457c"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 81,
+   "kind": "color",
+   "match": "Color(0xFF02363F)",
+   "value": "FF02363F",
+   "col": 22,
+   "id": "J21",
+   "replacement": "Color(0xFF586C65)",
+   "expect": [
+    "#586c65"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Color.kt",
+   "line": 82,
+   "kind": "color",
+   "match": "Color(0xFF214D56)",
+   "value": "FF214D56",
+   "col": 22,
+   "id": "J22",
+   "replacement": "Color(0xFF7B170C)",
+   "expect": [
+    "#7b170c"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Theme.kt",
+   "line": 210,
+   "kind": "dp",
+   "match": "2.dp",
+   "value": "2",
+   "col": 93,
+   "id": "J23",
+   "replacement": "8.dp",
+   "expect": [
+    "8.0.dp",
+    "8.dp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 36,
+   "kind": "sp",
+   "match": "64.sp",
+   "value": "64",
+   "col": 21,
+   "id": "J24",
+   "replacement": "67.sp",
+   "expect": [
+    "67sp",
+    "67.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 42,
+   "kind": "weight",
+   "match": "FontWeight.Normal",
+   "value": "Normal",
+   "col": 21,
+   "id": "J25",
+   "replacement": "FontWeight.Bold",
+   "expect": [
+    "weight=700",
+    "FontWeight.Bold",
+    "Bold"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 60,
+   "kind": "sp",
+   "match": "40.sp",
+   "value": "40",
+   "col": 21,
+   "id": "J26",
+   "replacement": "43.sp",
+   "expect": [
+    "43sp",
+    "43.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 61,
+   "kind": "sp",
+   "match": "0.sp",
+   "value": "0",
+   "col": 24,
+   "id": "J27",
+   "replacement": "3.sp",
+   "expect": [
+    "3sp",
+    "3.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 66,
+   "kind": "weight",
+   "match": "FontWeight.Normal",
+   "value": "Normal",
+   "col": 21,
+   "id": "J28",
+   "replacement": "FontWeight.Bold",
+   "expect": [
+    "weight=700",
+    "FontWeight.Bold",
+    "Bold"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 75,
+   "kind": "sp",
+   "match": "24.sp",
+   "value": "24",
+   "col": 19,
+   "id": "J29",
+   "replacement": "27.sp",
+   "expect": [
+    "27sp",
+    "27.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 76,
+   "kind": "sp",
+   "match": "32.sp",
+   "value": "32",
+   "col": 21,
+   "id": "J30",
+   "replacement": "35.sp",
+   "expect": [
+    "35sp",
+    "35.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 89,
+   "kind": "sp",
+   "match": "0.sp",
+   "value": "0",
+   "col": 24,
+   "id": "J31",
+   "replacement": "3.sp",
+   "expect": [
+    "3sp",
+    "3.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 101,
+   "kind": "sp",
+   "match": "0.1.sp",
+   "value": "0.1",
+   "col": 24,
+   "id": "J32",
+   "replacement": "3.1.sp",
+   "expect": [
+    "3.1sp",
+    "3.1.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 107,
+   "kind": "sp",
+   "match": "14.sp",
+   "value": "14",
+   "col": 19,
+   "id": "J33",
+   "replacement": "17.sp",
+   "expect": [
+    "17sp",
+    "17.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 137,
+   "kind": "sp",
+   "match": "16.sp",
+   "value": "16",
+   "col": 21,
+   "id": "J34",
+   "replacement": "19.sp",
+   "expect": [
+    "19sp",
+    "19.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 144,
+   "kind": "weight",
+   "match": "FontWeight.Medium",
+   "value": "Medium",
+   "col": 21,
+   "id": "J35",
+   "replacement": "FontWeight.Light",
+   "expect": [
+    "weight=300",
+    "FontWeight.Light",
+    "Light"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 145,
+   "kind": "sp",
+   "match": "14.sp",
+   "value": "14",
+   "col": 19,
+   "id": "J36",
+   "replacement": "17.sp",
+   "expect": [
+    "17sp",
+    "17.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 147,
+   "kind": "sp",
+   "match": "0.1.sp",
+   "value": "0.1",
+   "col": 24,
+   "id": "J37",
+   "replacement": "3.1.sp",
+   "expect": [
+    "3.1sp",
+    "3.1.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 160,
+   "kind": "sp",
+   "match": "0.5.sp",
+   "value": "0.5",
+   "col": 24,
+   "id": "J38",
+   "replacement": "3.5.sp",
+   "expect": [
+    "3.5sp",
+    "3.5.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 171,
+   "kind": "sp",
+   "match": "10.sp",
+   "value": "10",
+   "col": 19,
+   "id": "J39",
+   "replacement": "13.sp",
+   "expect": [
+    "13sp",
+    "13.0.sp"
+   ]
+  },
+  {
+   "file": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/theme/Type.kt",
+   "line": 173,
+   "kind": "sp",
+   "match": "0.sp",
+   "value": "0",
+   "col": 24,
+   "id": "J40",
+   "replacement": "3.sp",
+   "expect": [
+    "3sp",
+    "3.0.sp"
+   ]
+  }
+ ]
+}
