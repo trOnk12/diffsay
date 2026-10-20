@@ -253,5 +253,20 @@ class ExplainRankingTest(unittest.TestCase):
         self.assertTrue(lines[-1].startswith("List.kt:189"))
 
 
+class SlotDumpTest(unittest.TestCase):
+    def test_gzipped_and_plain_dumps_load_the_same(self):
+        import gzip
+        import json
+        from diffsay import compose_slots
+        tree = [{"name": "Text", "file": "A.kt", "line": 3, "bounds": [0, 0, 1, 1], "params": [], "data": ["hi"],
+                 "modifiers": "", "children": []}]
+        with tempfile.TemporaryDirectory() as tmp:
+            plain, packed = Path(tmp) / "a.slots.json", Path(tmp) / "a.slots.json.gz"
+            plain.write_text(json.dumps(tree), encoding="utf-8")
+            with gzip.open(packed, "wt", encoding="utf-8") as f:
+                json.dump(tree, f)
+            self.assertEqual(compose_slots.load(str(plain)), compose_slots.load(str(packed)))
+
+
 if __name__ == "__main__":
     unittest.main()

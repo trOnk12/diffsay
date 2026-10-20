@@ -59,12 +59,14 @@ instead of `setContent` + `captureRoboImage` ([details](android/README.md)).
 Then, as usual:
 
 ```bash
-./gradlew recordRoborazziDebug          # goldens (+ <name>.slots.json beside each)
+./gradlew recordRoborazziDebug          # goldens (+ <name>.slots.json.gz beside each)
 # … change code …
 ./gradlew compareRoborazziDebug         # or verifyRoborazziDebug
 diffsay scan app/build --source app     # why each screenshot changed
 diffsay scan app/build --source app --markdown   # the same, as a PR-comment table
 ```
+
+In CI: [post the causes on the pull request](docs/github-actions.md).
 
 ## How it works
 
@@ -135,7 +137,7 @@ never reports a change on identical screens ([details](bench/README.md)).
 - Android, Jetpack Compose, Robolectric (Roborazzi). Paparazzi support for the composition part
   is possible but not done.
 - Robolectric renders on the JVM; it isn't a device.
-- Slot dumps are large (1–3 MB per screenshot on a full screen). They live in `build/`.
+- Each screenshot gets a gzipped composition dump beside it (~100 KB for a full screen).
 
 ## License
 

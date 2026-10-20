@@ -859,7 +859,8 @@ def _compose_causes(actual_image: str, changes: list[Change], root: str) -> list
     from pathlib import Path
     p = Path(actual_image)
     stem = p.stem.removesuffix("_actual").removeprefix("delta-")
-    before, after = p.with_name(stem + ".slots.json"), p.with_name(stem + "_actual.slots.json")
+    before, after = (next((c for c in (p.with_name(stem + suffix + ".gz"), p.with_name(stem + suffix)) if c.exists()),
+                          p.with_name(stem + suffix)) for suffix in (".slots.json", "_actual.slots.json"))
     if not (before.exists() and after.exists()):
         return []
     from . import compose_slots

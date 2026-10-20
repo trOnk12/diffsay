@@ -19,6 +19,7 @@ import androidx.compose.ui.platform.isDebugInspectorInfoEnabled
 import java.io.File
 import java.util.Collections
 import java.util.WeakHashMap
+import java.util.zip.GZIPOutputStream
 
 /**
  * Records the composition's slot table like Android Studio's Layout Inspector does, so each
@@ -44,7 +45,10 @@ class SlotRecorder {
         dy = offsetY
         val roots = tables.map { it.asTree() }
         file.parentFile.mkdirs()
-        file.writeText("[" + roots.joinToString(",") { json(it) } + "]")
+        val text = "[" + roots.joinToString(",") { json(it) } + "]"
+        // Full screens dump 1-3 MB of JSON; gzipped it's ~20x smaller.
+        if (file.name.endsWith(".gz")) GZIPOutputStream(file.outputStream()).bufferedWriter().use { it.write(text) }
+        else file.writeText(text)
     }
 
     private var dx = 0
@@ -84,8 +88,8 @@ class SlotRecorder {
 
 /**
  * The one call a Roborazzi test needs: sets [content], captures it to [filePath] like
- * `captureRoboImage(filePath)`, and writes the composition beside it — `<name>.slots.json` when
- * recording goldens, `<name>_actual.slots.json` when comparing or verifying. `diffsay scan` turns a
+ * `captureRoboImage(filePath)`, and writes the composition beside it — `<name>.slots.json.gz` when
+ * recording goldens, `<name>_actual.slots.json.gz` when comparing or verifying. `diffsay scan` turns a
  * failure into causes in code from those two files.
  */
 fun ComposeContentTestRule.captureWithCauses(filePath: String, content: @Composable () -> Unit) {
@@ -95,6 +99,6 @@ fun ComposeContentTestRule.captureWithCauses(filePath: String, content: @Composa
     val origin = onRoot().fetchSemanticsNode().positionInWindow
     val golden = File(filePath)
     val recording = System.getProperty("roborazzi.test.record") == "true"
-    val name = golden.nameWithoutExtension + if (recording) ".slots.json" else "_actual.slots.json"
+    val name = golden.nameWithoutExtension + if (recording) ".slots.json.gz" else "_actual.slots.json.gz"
     recorder.write(File(golden.absoluteFile.parentFile, name), origin.x.toInt(), origin.y.toInt())
 }

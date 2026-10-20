@@ -46,7 +46,7 @@ private class SlotCapture(private val image: File, private val recording: Boolea
 
     override fun afterCapture() {
         // The preview fills a full-screen ComposeView at the window origin, so no offset.
-        val suffix = if (recording) ".slots.json" else "_actual.slots.json"
+        val suffix = if (recording) ".slots.json.gz" else "_actual.slots.json.gz"
         recorder.write(File(image.parentFile, image.nameWithoutExtension + suffix))
     }
 }

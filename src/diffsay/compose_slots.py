@@ -429,6 +429,10 @@ def _context_score(lines: list[str], number: int, context: list, own) -> int:
 
 
 def load(path: str):
+    if str(path).endswith(".gz"):
+        import gzip
+        with gzip.open(path, "rt", encoding="utf-8") as f:
+            return json.load(f)
     return json.load(open(path, encoding="utf-8"))
 
 
