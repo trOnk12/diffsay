@@ -904,7 +904,66 @@ def _short_name(name: str) -> str:
     return ".".join(parts[-2:]) if len(parts) > 2 else Path(name).stem.removeprefix("delta-")
 
 
-def _markdown(rows) -> str:
+def _diff_lines(source: str, ref: str) -> dict[str, set[int]]:
+    """{file name: line numbers changed (new side)} for `git diff REF` over the working tree."""
+    import re
+    import subprocess
+    out = subprocess.run(["git", "-C", source, "diff", "-U0", ref, "--", "."], capture_output=True, text=True).stdout
+    changed: dict[str, set[int]] = {}
+    current = None
+    for line in out.splitlines():
+        if line.startswith("+++ "):
+            current = None if line.endswith("/dev/null") else line.rsplit("/", 1)[-1]
+        m = re.match(r"@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@", line)
+        if m and current:
+            start, count = int(m.group(3)), int(m.group(4) or 1)
+            # A pure deletion has no new lines: count the line it sat next to.
+            changed.setdefault(current, set()).update(range(start, start + max(count, 1)))
+    return changed
+
+
+def _locations(cause: str) -> list[tuple[str, int]]:
+    import re
+    return [(f, int(n)) for f, n in re.findall(r"([\w.]+\.kt):(\d+)", cause)]
+
+
+def _triage(rows, changed: dict[str, set[int]]):
+    """Per failure: the headline causes this diff explains, and those it doesn't."""
+    def explained(cause: str) -> bool:
+        # A call's line is where it starts; the edited argument can be a few lines below.
+        return any(any(n - 1 <= c <= n + 12 for c in changed.get(f, ())) for f, n in _locations(cause))
+    result = []
+    for name, causes, _ in rows:
+        heads = [c for c in causes if " is written at " in c or " now uses " in c] or \
+            [c for c in causes if _locations(c) and ": layout " not in c][:3]
+        if not heads:
+            result.append((name, [], [], causes[:1]))
+            continue
+        result.append((name, [c for c in heads if explained(c)], [c for c in heads if not explained(c)], []))
+    return result
+
+
+def _triage_text(triage, ref: str) -> str:
+    total = len(triage)
+    ok = [t for t in triage if t[1] and not t[2]]
+    odd = [t for t in triage if t[2]]
+    unknown = [t for t in triage if not t[1] and not t[2]]
+    lines = [f"Against {ref}: {len(ok)} of {total} changed screenshots are explained by lines this diff changes."]
+    if odd:
+        lines.append(f"! {len(odd)} not explained by this diff:")
+        by: dict[str, list[str]] = {}
+        for name, _, unexplained, _ in odd:
+            for c in unexplained:
+                by.setdefault(c, []).append(_short_name(name))
+        for cause, names in sorted(by.items(), key=lambda kv: -len(kv[1])):
+            lines.append(f"  {cause}\n      in {len(names)}: {', '.join(names[:3])}{', …' if len(names) > 3 else ''}")
+    if unknown:
+        lines.append(f"? {len(unknown)} without a cause in code (drawing code, a library or the renderer): "
+                     + ", ".join(_short_name(t[0]) for t in unknown[:4]) + (", …" if len(unknown) > 4 else ""))
+    return "\n".join(lines)
+
+
+def _markdown(rows, triage=None) -> str:
     """Failures grouped by cause, as a PR comment."""
     groups: dict[str, list[str]] = {}
     for name, causes, changes in rows:
@@ -912,10 +971,27 @@ def _markdown(rows) -> str:
         keys = written or causes[:1] or [changes[0].summary if changes else "no visible change"]
         for key in keys:  # a screenshot showing two edits is listed under both
             groups.setdefault(key, []).append(_short_name(name))
-    out = [f"### {len(rows)} screenshot test(s) changed", "", "| Cause | Screenshots |", "| --- | --- |"]
+    out = [f"### {len(rows)} screenshot test(s) changed", ""]
+    if triage:
+        odd = {_short_name(t[0]): t[2] for t in triage if t[2]}
+        unknown = [_short_name(t[0]) for t in triage if not t[1] and not t[2]]
+        explained = len(triage) - len(odd) - len(unknown)
+        out.append(f"**{explained} of {len(triage)} explained by lines this PR changes.**")
+        if odd:
+            out += ["", f"⚠️ **{len(odd)} not explained by this PR's changes:**", "",
+                    "| Screenshot | Cause in code |", "| --- | --- |"]
+            out += [f"| {n} | " + "<br>".join(f"`{c.replace('|', chr(92) + '|')}`" for c in causes) + " |"
+                    for n, causes in odd.items()]
+        if unknown:
+            out += ["", f"❔ {len(unknown)} without a cause in code (drawing code, a library or the renderer): "
+                    + ", ".join(unknown[:8]) + (" …" if len(unknown) > 8 else "")]
+        out += ["", "<details><summary>All causes</summary>", ""]
+    out += ["| Cause | Screenshots |", "| --- | --- |"]
     for key, names in sorted(groups.items(), key=lambda kv: -len(kv[1])):
         cell = key.replace("|", "\\|")
         out.append(f"| `{cell}` | {len(names)}: {', '.join(names[:5])}{' …' if len(names) > 5 else ''} |")
+    if triage:
+        out += ["", "</details>"]
     return "\n".join(out)
 
 
@@ -1014,6 +1090,8 @@ def main(argv: list[str] | None = None) -> int:
         parser.add_argument("--crops", metavar="DIR", help="write zoomed before/after strips here")
         parser.add_argument("--source", help="module directory with src/ (default: found above ROOT or the cwd)")
         parser.add_argument("--markdown", action="store_true", help="a PR-comment summary instead of the full report")
+        parser.add_argument("--diff", metavar="REF", help="split failures into those explained by `git diff REF` "
+                            "(this PR) and those no changed line explains")
         args = parser.parse_args(argv[1:])
         failures = scan(args.root)
         if not failures:
@@ -1039,9 +1117,12 @@ def main(argv: list[str] | None = None) -> int:
             cause_text = ("cause in code (composition diff):\n" + "\n".join(f"  {c}" for c in causes) + "\npixels:\n") if causes else ""
             details.append(f"== {name}\n{cause_text}{report(changes, crops)}\n")
             rows.append((name, causes, changes))
+        triage = _triage(rows, _diff_lines(args.source or args.root, args.diff)) if args.diff else None
         if args.markdown:
-            print(_markdown(rows))
+            print(_markdown(rows, triage))
             return 1
+        if triage:
+            print(_triage_text(triage, args.diff) + "\n")
         if len(failures) > 1 and by_cause:
             print(_cause_summary(len(failures), by_cause) + "\n")
         print("\n".join(details))

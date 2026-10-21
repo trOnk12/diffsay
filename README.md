@@ -73,7 +73,24 @@ diffsay scan app/build --source app     # why each screenshot changed
 diffsay scan app/build --source app --markdown   # the same, as a PR-comment table
 ```
 
-In CI: [post the causes on the pull request](docs/github-actions.md).
+### Which changes did this PR *not* intend?
+
+`--diff <ref>` joins the causes with `git diff <ref>`: screenshots explained by lines the PR changes
+are counted, the rest are listed with their cause. Here a PR changed one theme line; a padding change
+that was already on the branch hides among the 16 failures:
+
+```text
+$ diffsay scan app/build --source app --diff origin/main
+Against origin/main: 12 of 16 changed screenshots are explained by lines this diff changes.
+! 4 not explained by this diff:
+  padding(22.dp) is written at HomeScreens.kt:470
+      in 4: PreviewHomeListDrawerScreenDark, PreviewHomeListDrawerScreen, PreviewHomeListNavRailScreenDark, …
+```
+
+Screenshots with no cause in code at all (drawing code, a library or the renderer changed) are listed
+separately, which is what a dependency or tooling upgrade looks like.
+
+In CI: [post the causes on the pull request](docs/github-actions.md), with `--diff` for the triage.
 
 ## How it works
 

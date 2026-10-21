@@ -331,7 +331,8 @@ def source_hits(changes: list[SlotChange], module: str, limit: int = 3) -> list[
             top = [(f, n) for s, f, n in scored if s == best]
             if best >= 2 and len(top) <= 2:
                 where = top
-        if 1 <= len(where) <= 2:  # a near-unique literal points somewhere; a common one would just add noise
+        if 1 <= len(where) <= 2 and not any(h.endswith(" is written at " + ", ".join(f"{f}:{n}" for f, n in where))
+                                            for h in hits):  # one line per place, not per pattern that finds it
             hits.append(f"{label} is written at " + ", ".join(f"{f}:{n}" for f, n in where))
         if len(hits) >= limit:
             return hits

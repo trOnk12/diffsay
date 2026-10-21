@@ -268,5 +268,34 @@ class SlotDumpTest(unittest.TestCase):
             self.assertEqual(compose_slots.load(str(plain)), compose_slots.load(str(packed)))
 
 
+class TriageTest(unittest.TestCase):
+    def test_failures_split_by_whether_the_diff_explains_them(self):
+        import subprocess
+        with tempfile.TemporaryDirectory() as tmp:
+            src = Path(tmp) / "app/src/main"
+            src.mkdir(parents=True)
+            (src / "Type.kt").write_text("".join(f"line {i}\n" for i in range(1, 80)))
+            (src / "Home.kt").write_text("".join(f"line {i}\n" for i in range(1, 500)))
+            git = lambda *a: subprocess.run(["git", "-C", tmp, "-c", "user.name=t", "-c", "user.email=t@t", *a],
+                                            check=True, capture_output=True)
+            git("init", "-q"); git("add", "-A"); git("commit", "-qm", "base")
+            lines = (src / "Type.kt").read_text().splitlines(keepends=True)
+            lines[70] = "lineHeight = 27.sp\n"
+            (src / "Type.kt").write_text("".join(lines))
+            changed = diffsay._diff_lines(str(Path(tmp) / "app"), "HEAD")
+        self.assertEqual({"Type.kt": {71}}, changed)
+        rows = [("a/Post.png", ["lineHeight = 27.sp is written at Type.kt:71"], []),
+                ("a/Home.png", ["lineHeight = 27.sp is written at Type.kt:71", "padding(22.dp) is written at Home.kt:470"], []),
+                ("a/Logo.png", ["composition identical: the change is in drawing code"], [])]
+        triage = diffsay._triage(rows, changed)
+        self.assertEqual(["Type.kt:71"], [c.split(" at ")[1] for c in triage[0][1]])
+        self.assertEqual(["padding(22.dp) is written at Home.kt:470"], triage[1][2])
+        self.assertEqual(([], []), (triage[2][1], triage[2][2]))
+        text = diffsay._triage_text(triage, "HEAD")
+        self.assertIn("1 of 3 changed screenshots are explained", text)
+        self.assertIn("! 1 not explained by this diff", text)
+        self.assertIn("? 1 without a cause in code", text)
+
+
 if __name__ == "__main__":
     unittest.main()

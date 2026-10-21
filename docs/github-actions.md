@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }   # --diff needs the base branch
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 21 }
       - uses: actions/setup-python@v5
@@ -27,7 +28,7 @@ jobs:
       - run: ./gradlew :app:compareRoborazziDebug
       - run: pip install git+https://github.com/trOnk12/diffsay
       - name: Explain changed screenshots
-        run: diffsay scan app/build --source app --markdown > causes.md || true
+        run: diffsay scan app/build --source app --markdown --diff origin/${{ github.base_ref }} > causes.md || true
       - name: Comment
         if: hashFiles('causes.md') != ''
         env:
