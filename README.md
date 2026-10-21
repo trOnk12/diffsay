@@ -26,6 +26,23 @@ sample, after a two-line change. Theme edits are traced to the theme file, not t
       breaks 16: HistoryPostPreviewDark, HistoryPostPreview, PreviewHomeListDrawerScreenDark, +13 more
 ```
 
+### A real upgrade, explained
+
+Element X's AGP 9 upgrade re-recorded 143 screenshots; the maintainer found regressions by eye and merged
+without a root cause. diffsay, on the same two commits:
+
+```text
+61 failed screenshots: 8 changed by your code (5 cause(s)); 18 changed inside a library (1); 35 with an identical composition (renderer or drawing):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+  QrCodeImage.kt:66 remember: value 1: MutableState(value=1080 x 1920) -> MutableState(value=128 x 1920)
+  AsyncIndicatorHost.kt:110 Box: … children: 1 … -> … children: 0 …
+  …
+```
+
+The tiny QR code is a measured width of 128 instead of 1080; the vanished progress indicator is no longer
+composed; 35 screenshots are the same UI drawn by a different renderer. [The case study](docs/case-element-x-agp9.md)
+checks each against the images.
+
 **Where it helps:** when many screenshots change at once (a theme edit, a large PR, a dependency
 or tooling upgrade) and someone has to decide which changes were intended. Today that's a person
 paging through image pairs, or a bot that re-records the goldens: in Element X, 74% of 23,140

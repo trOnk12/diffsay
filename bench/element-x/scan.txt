@@ -1,0 +1,540 @@
+61 failed screenshots: 8 changed by your code (5 cause(s)); 18 changed inside a library (1); 35 with an identical composition (renderer or drawing):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+      breaks 18: impl.viewer_MediaViewerViewLandscape_18_en, +17 more
+  ModalBottomSheet.kt:148 remember: remember removed
+      breaks 3: sendfailure.resolve_ResolveVerifiedUserSendFailureView_Day_1_en, +2 more
+  AsyncIndicatorHost.kt:110 Box: value 1: …ayoutNode children: 1 measurePolicy: BoxM… -> …ayoutNode children: 0 measurePolicy: BoxM…
+      breaks 2: roommembermoderation.impl_RoomMemberModerationView_Day_7_en, +1 more
+  ShowQrCodeView.kt:67 AnimatedContent: value 2: (default) -> DATA in "Open MyApp on the other device"
+      breaks 1: screens.qrcode_ShowQrCodeView_Night_0_en
+  ElementTheme.kt:106 isDark: isDark added
+      breaks 1: impl.blockedusers_BlockedUsersView_Day_5_en
+  QrCodeImage.kt:66 remember: value 1: MutableState(value=1080 x 1920) -> MutableState(value=128 x 1920)
+      breaks 1: libraries.qrcode_QrCodeView_en
+  composition identical: the same UI drawn differently
+      in 35: impl.share_ShareLocationView_Day_2_en, impl.share_ShareLocationView_Day_3_en, impl.share_ShareLocationView_Day_6_en, +32 more
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.linknewdevice.impl.screens.qrcode_ShowQrCodeView_Night_0_en.png
+cause in code (composition diff):
+  ShowQrCodeView.kt:67 AnimatedContent: value 2: (default) -> DATA in "Open MyApp on the other device"
+  ShowQrCodeView.kt:74 QrCodeOrLoading: value 2: DATA -> (default) in "Open MyApp on the other device"
+pixels:
+1 change
+1. text became smaller: glyph height 345px -> 67px  [region x=109 y=365 w=344 h=345]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Day_2_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+1 change
+1. text became larger: glyph height 32px -> 54px  [region x=248 y=100 w=66 h=79]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Day_3_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+1 change
+1. text became larger: glyph height 32px -> 54px  [region x=248 y=100 w=66 h=79]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Day_6_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. text became larger: glyph height 32px -> 54px  [region x=248 y=100 w=66 h=79]
+2. content disappeared  [region x=248 y=368 w=66 h=79]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Day_7_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+1 change
+1. text became larger: glyph height 31px -> 53px  [region x=248 y=101 w=66 h=78]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Night_0_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. text became larger: glyph height 32px -> 111px  [region x=248 y=100 w=66 h=79]
+2. content disappeared  [region x=248 y=412 w=66 h=79]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Night_1_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+1 change
+1. text became larger: glyph height 32px -> 54px  [region x=248 y=100 w=66 h=79]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Night_4_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. text became larger: glyph height 32px -> 111px  [region x=248 y=100 w=66 h=79]
+2. content disappeared  [region x=248 y=412 w=66 h=79]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Night_5_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. text became larger: glyph height 32px -> 54px  [region x=248 y=100 w=66 h=79]
+2. content disappeared  [region x=248 y=412 w=66 h=79]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Night_8_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+1 change
+1. text became larger: glyph height 31px -> 53px  [region x=249 y=101 w=64 h=77]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.location.impl.share_ShareLocationView_Night_9_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. new content appeared  [region x=248 y=100 w=66 h=79]
+2. text became smaller: glyph height 42px -> 4px  [region x=248 y=412 w=66 h=79]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Day_0_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=32]
+3. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=33]
+4. text content changed (line metrics unchanged)  [region x=271 y=673 w=22 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=673 w=23 h=31]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Day_1_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=32]
+3. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=33]
+4. text content changed (line metrics unchanged)  [region x=271 y=673 w=22 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=673 w=23 h=31]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Day_2_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=32]
+3. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=33]
+4. text content changed (line metrics unchanged)  [region x=271 y=673 w=22 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=673 w=23 h=31]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Day_4_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=32]
+3. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=33]
+4. text content changed (line metrics unchanged)  [region x=271 y=673 w=22 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=673 w=23 h=31]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Day_9_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=32]
+3. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=33]
+4. text content changed (line metrics unchanged)  [region x=271 y=673 w=22 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=673 w=23 h=31]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Night_0_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. corners became less rounded  [region x=269 y=436 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+3. corners became less rounded  [region x=388 y=554 w=24 h=33]
+4. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=34]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Night_1_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. corners became less rounded  [region x=269 y=436 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+3. corners became less rounded  [region x=388 y=554 w=24 h=33]
+4. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=34]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Night_2_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. corners became less rounded  [region x=269 y=436 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+3. corners became less rounded  [region x=388 y=554 w=24 h=33]
+4. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=34]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Night_4_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. corners became less rounded  [region x=269 y=436 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+3. corners became less rounded  [region x=388 y=554 w=24 h=33]
+4. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=34]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.lockscreen.impl.unlock_PinUnlockView_Night_9_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. corners became less rounded  [region x=269 y=436 w=25 h=34]
+2. text content changed (line metrics unchanged)  [region x=151 y=555 w=25 h=34]
+3. corners became less rounded  [region x=388 y=554 w=24 h=33]
+4. text content changed (line metrics unchanged)  [region x=151 y=673 w=24 h=33]
+5. text content changed (line metrics unchanged)  [region x=388 y=436 w=23 h=34]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl.crypto.identity_MessagesViewWithIdentityChange_Day_2_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+1 change
+1. text became lighter: ink 35% of before, width 68%  [region x=0 y=200 w=562 h=791]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl.crypto.identity_MessagesViewWithIdentityChange_Night_0_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. text became larger: glyph height 15px -> 22px  [region x=0 y=470 w=562 h=530]
+2. element moved 28px down  [region x=371 y=200 w=166 h=286]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl.crypto.sendfailure.resolve_ResolveVerifiedUserSendFailureView_Day_1_en.png
+cause in code (composition diff):
+  ModalBottomSheet.kt:148 remember: remember removed
+  ResolveVerifiedUserSendFailureView.kt:70 Box: remember removed (inside remember at ComposableLambda.kt:1373)
+  ModalBottomSheet.kt:70 <get-current>: <get-current> removed
+pixels:
+1 change
+1. text became larger: glyph height 26px -> 896px  [region x=0 y=136 w=562 h=864]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl.crypto.sendfailure.resolve_ResolveVerifiedUserSendFailureView_Night_1_en.png
+cause in code (composition diff):
+  ModalBottomSheet.kt:148 remember: remember removed
+  ResolveVerifiedUserSendFailureView.kt:70 Box: remember removed (inside remember at ComposableLambda.kt:1373)
+  ModalBottomSheet.kt:70 <get-current>: <get-current> removed
+pixels:
+1 change
+1. content disappeared  [region x=0 y=136 w=562 h=864]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl.crypto.sendfailure.resolve_ResolveVerifiedUserSendFailureView_Night_2_en.png
+cause in code (composition diff):
+  ModalBottomSheet.kt:148 remember: remember removed
+  ResolveVerifiedUserSendFailureView.kt:70 Box: remember removed (inside remember at ComposableLambda.kt:1373)
+  ModalBottomSheet.kt:70 <get-current>: <get-current> removed
+pixels:
+1 change
+1. content disappeared  [region x=0 y=167 w=562 h=833]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Day_10_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+4 changes
+1. text became larger: glyph height 12px -> 18px  [region x=19 y=538 w=525 h=462]
+2. element moved 28px down  [region x=358 y=146 w=179 h=346]
+3. element moved 28px down  [region x=182 y=100 w=186 h=50]
+4. element moved 28px down  [region x=216 y=496 w=130 h=45]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Day_11_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+1 change
+1. text became lighter: ink 33% of before, width 109%  [region x=0 y=200 w=562 h=800]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Day_2_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. element moved 19px down  [region x=0 y=479 w=562 h=496]
+2. element moved 19px down  [region x=372 y=200 w=165 h=286]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Day_3_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+3 changes
+1. text became smaller: glyph height 56px -> 18px  [region x=0 y=548 w=562 h=452]
+2. text became larger: glyph height 85px -> 91px  [region x=391 y=200 w=133 h=277]
+3. text content changed (line metrics unchanged)  [region x=499 y=548 w=63 h=30]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Day_6_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. text became smaller: glyph height 15px -> 13px  [region x=0 y=548 w=429 h=435]
+2. text became larger: glyph height 62px -> 68px  [region x=391 y=200 w=133 h=232]
+3. text became smaller: glyph height 56px -> 47px  [region x=485 y=850 w=58 h=142]
+4. text content changed (line metrics unchanged)  [region x=505 y=548 w=57 h=30]
+5. element moved 14px down  [region x=29 y=940 w=26 h=43]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Day_7_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. element moved 28px down  [region x=0 y=470 w=562 h=530]
+2. element moved 28px down  [region x=372 y=200 w=165 h=286]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Night_10_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+4 changes
+1. text content changed (line metrics unchanged)  [region x=19 y=538 w=524 h=462]
+2. element moved 28px down  [region x=358 y=146 w=179 h=346]
+3. element moved 28px down  [region x=182 y=100 w=186 h=50]
+4. element moved 28px down  [region x=216 y=496 w=130 h=45]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Night_11_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+1 change
+1. text became lighter: ink 30% of before, width 90%  [region x=0 y=200 w=562 h=800]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Night_2_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. element moved 18px down  [region x=0 y=479 w=562 h=496]
+2. element moved 19px down  [region x=371 y=200 w=166 h=286]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Night_3_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+4 changes
+1. letter spacing wider: line width 685px -> 790px, ink 107%  [region x=0 y=548 w=201 h=444]
+2. element moved 28px down  [region x=391 y=200 w=134 h=277]
+3. text became smaller: glyph height 56px -> 46px  [region x=485 y=851 w=58 h=141]
+4. pixels changed (unclassified)  [region x=500 y=548 w=62 h=1]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Night_6_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. letter spacing wider: line width 14px -> 111px, ink 255%  [region x=0 y=548 w=429 h=435]
+2. element moved 28px down  [region x=391 y=200 w=134 h=232]
+3. text became smaller: glyph height 56px -> 46px  [region x=485 y=851 w=58 h=141]
+4. element moved 14px down  [region x=29 y=940 w=26 h=43]
+5. pixels changed (unclassified)  [region x=505 y=548 w=57 h=1]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.messages.impl_MessagesView_Night_7_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+2 changes
+1. text became larger: glyph height 19px -> 26px  [region x=0 y=470 w=562 h=530]
+2. element moved 28px down  [region x=371 y=200 w=166 h=286]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.preferences.impl.blockedusers_BlockedUsersView_Day_5_en.png
+cause in code (composition diff):
+  ElementTheme.kt:106 isDark: isDark added
+  Scaffold.kt:163 Box: Box removed
+  ElementTheme.kt:106 isDark: isDark removed
+  Scaffold.kt:163 Box: Box added
+pixels:
+1 change
+1. letter spacing tighter: line width 88px -> 74px, ink 119%  [region x=190 y=9 w=182 h=71]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.roommembermoderation.impl_RoomMemberModerationView_Day_7_en.png
+cause in code (composition diff):
+  AsyncIndicatorHost.kt:110 Box: value 1: …ayoutNode children: 1 measurePolicy: BoxM… -> …ayoutNode children: 0 measurePolicy: BoxM…
+  RoomMemberModerationView.kt:156 stringResource: stringResource removed
+pixels:
+1 change
+1. text became smaller: glyph height 17px -> 12px  [region x=151 y=9 w=260 h=71]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-features.roommembermoderation.impl_RoomMemberModerationView_Night_5_en.png
+cause in code (composition diff):
+  AsyncIndicatorHost.kt:110 Box: value 1: …ayoutNode children: 1 measurePolicy: BoxM… -> …ayoutNode children: 0 measurePolicy: BoxM…
+  RoomMemberModerationView.kt:116 stringResource: stringResource removed
+pixels:
+1 change
+1. content disappeared  [region x=139 y=13 w=284 h=62]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.designsystem.components.avatar.internal_AvatarCluster_Avatars_en.png
+cause in code (composition diff):
+  composition identical: the change is in drawing code (draw lambdas, Canvas, images), the renderer, or the render isn't deterministic
+pixels:
+5 changes
+1. text content changed (line metrics unchanged)  [region x=304 y=209 w=48 h=139]
+2. text content changed (line metrics unchanged)  [region x=398 y=209 w=48 h=139]
+3. corners became more rounded  [region x=304 y=21 w=48 h=52]
+4. corners became more rounded  [region x=398 y=21 w=48 h=52]
+5. corners became more rounded  [region x=304 y=115 w=48 h=52]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerViewLandscape_18_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. gradient direction changed: darker toward bottom -> darker toward bottom  [region x=25 y=508 w=897 h=54]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerViewLandscape_19_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. gradient direction changed: darker toward bottom -> darker toward bottom  [region x=25 y=508 w=897 h=54]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerViewLandscape_20_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. gradient direction changed: darker toward bottom -> darker toward bottom  [region x=25 y=508 w=897 h=54]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerViewLandscape_21_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. gradient direction changed: darker toward bottom -> darker toward bottom  [region x=41 y=507 w=881 h=55]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerViewLandscape_22_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. fill colour #223d1a -> #142315 (consistent with opacity ~68%)  [region x=25 y=508 w=897 h=54]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerViewLandscape_3_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. gradient direction changed: darker toward bottom-left -> darker toward bottom  [region x=25 y=508 w=897 h=54]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerViewLandscape_4_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+4 changes
+1. text became larger: glyph height 40px -> 48px  [region x=0 y=394 w=781 h=152]
+2. pixels changed (unclassified)  [region x=922 y=394 w=78 h=80]
+3. content disappeared  [region x=823 y=426 w=29 h=24]
+4. new content appeared  [region x=823 y=506 w=29 h=24]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_13_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+2 changes
+1. new content appeared  [region x=0 y=755 w=562 h=87]
+2. content disappeared  [region x=0 y=913 w=562 h=87]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_18_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. text colour #ebeef2 -> #a2a5a9 (consistent with opacity ~71%)  [region x=25 y=950 w=236 h=24]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_19_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. text colour #ebeef2 -> #a2a5a9 (consistent with opacity ~71%)  [region x=25 y=950 w=252 h=24]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_20_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. text colour #ebeef2 -> #a2a5a9 (consistent with opacity ~71%)  [region x=25 y=950 w=237 h=25]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_21_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. text colour #ebeef2 -> #a2a5a9 (consistent with opacity ~71%)  [region x=40 y=945 w=267 h=30]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_22_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. text content changed (line metrics unchanged)  [region x=25 y=924 w=407 h=50]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_3_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. text colour #ebeef2 -> #b3b6ba (consistent with opacity ~70%)  [region x=25 y=951 w=104 h=23]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_4_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+1 change
+1. text content changed (line metrics unchanged)  [region x=0 y=755 w=562 h=219]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_7_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+2 changes
+1. line spacing tighter: pitch 222px -> 221px  [region x=84 y=313 w=478 h=374]
+2. pixels changed (unclassified)  [region x=511 y=396 w=51 h=75]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_8_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+2 changes
+1. new content appeared  [region x=0 y=755 w=562 h=87]
+2. content disappeared  [region x=0 y=913 w=562 h=87]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.mediaviewer.impl.viewer_MediaViewerView_9_en.png
+cause in code (composition diff):
+  inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0
+pixels:
+2 changes
+1. new content appeared  [region x=0 y=755 w=562 h=87]
+2. content disappeared  [region x=0 y=913 w=562 h=87]
+
+== $EX/tests/uitests/build/paparazzi/failures/debug/delta-libraries.qrcode_QrCodeView_en.png
+cause in code (composition diff):
+  QrCodeImage.kt:66 remember: value 1: MutableState(value=1080 x 1920) -> MutableState(value=128 x 1920)
+  QrCodeImage.kt:67 Box: value 5: …et=(0, 0), srcSize=1920 x 1920, filterQuality=Low) -> …et=(0, 0), srcSize=128 x 128, filterQuality=Low)
+  QrCodeImage.kt:74 remember: value 2: <hash> -> 0
+  QrCodeImage.kt:78 Image: modifier chain: …et=(0, 0), srcSize=1920 x 1920, filterQuality=Low)… -> …et=(0, 0), srcSize=128 x 128, filterQuality=Low)…
+  QrCodeImage.kt:78 Image: value 4: …et=(0, 0), srcSize=1920 x 1920, filterQuality=Low)… -> …et=(0, 0), srcSize=128 x 128, filterQuality=Low)…
+  ElementTheme.kt:159 CompositionLocalProvider: layout size 1080x1920 -> 128x1920px
+pixels:
+1 change
+1. text became larger: glyph height 425px -> 1000px  [region x=13 y=0 w=549 h=1000]
+

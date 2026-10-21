@@ -36,16 +36,30 @@ class SlotRecorder {
         CompositionLocalProvider(LocalInspectionTables provides tables) { content() }
     }
 
+    /** Where [writeTarget] writes; set before the content is composed. */
+    var target: File? = null
+
+    fun writeTarget() {
+        target?.let { write(it) }
+    }
+
+    override fun toString() = "SlotRecorder"  // stable when a composition remembers a lambda that captures it
+
     /** [offsetX]/[offsetY]: where the captured node sits in the window, so boxes line up with screenshot pixels. */
     fun write(file: File, offsetX: Int = 0, offsetY: Int = 0) {
-        dx = offsetX
-        dy = offsetY
-        val roots = tables.map { it.asTree() }
-        file.parentFile.mkdirs()
-        val text = "[" + roots.joinToString(",") { json(it) } + "]"
-        // Full screens dump 1-3 MB of JSON; gzipped it's ~20x smaller.
-        if (file.name.endsWith(".gz")) GZIPOutputStream(file.outputStream()).bufferedWriter().use { it.write(text) }
-        else file.writeText(text)
+        // A recorder must never fail the test it observes: on any error, write nothing and say why.
+        try {
+            dx = offsetX
+            dy = offsetY
+            val roots = tables.map { it.asTree() }
+            file.parentFile.mkdirs()
+            val text = "[" + roots.joinToString(",") { json(it) } + "]"
+            // Full screens dump 1-3 MB of JSON; gzipped it's ~20x smaller.
+            if (file.name.endsWith(".gz")) GZIPOutputStream(file.outputStream()).bufferedWriter().use { it.write(text) }
+            else file.writeText(text)
+        } catch (e: Throwable) {
+            System.err.println("diffsay: no composition dump for ${file.name}: $e")
+        }
     }
 
     private var dx = 0
@@ -55,12 +69,14 @@ class SlotRecorder {
         val r = g.box
         val b = if (r.width == 0 && r.height == 0) r else r.translate(-dx, -dy)
         val loc = g.location
-        val params = g.parameters.filter { !it.fromDefault || it.name in setOf("shape", "colors", "modifier") }
+        // Parameter metadata goes through Kotlin reflection, which throws on some function references.
+        val parameters = runCatching { g.parameters }.getOrDefault(emptyList())
+        val params = parameters.filter { !it.fromDefault || it.name in setOf("shape", "colors", "modifier") }
             .joinToString(",") { "{\"name\":${str(it.name)},\"value\":${str(render(it.value))}}" }
         val kids = g.children.joinToString(",") { json(it) }
         val mods = g.modifierInfo.joinToString(".") { render(it.modifier) }
         // Raw slot values: what the composer remembered for this group, when parameter metadata is missing.
-        val data = if (g.parameters.isEmpty()) g.data.filter { it !is Function<*> && it != null }.take(8)
+        val data = if (parameters.isEmpty()) g.data.filter { it !is Function<*> && it != null }.take(8)
             .joinToString(",") { str(render(it)) } else ""
         return "{\"modifiers\":${str(mods)},\"name\":${str(g.name ?: "")},\"file\":${str(loc?.sourceFile ?: "")},\"line\":${loc?.lineNumber ?: -1}," +
             "\"bounds\":[${b.left},${b.top},${b.right},${b.bottom}],\"params\":[$params],\"data\":[$data],\"children\":[$kids]}"
@@ -77,7 +93,8 @@ class SlotRecorder {
             } ?: element.javaClass.simpleName
             acc
         }.joinToString(".").ifEmpty { "Modifier" }
-        else -> v.toString().take(6000)
+        // toString() of a value holding a function reference can go through Kotlin reflection and throw an Error.
+        else -> try { v.toString().take(6000) } catch (e: Throwable) { "<${v.javaClass.simpleName}>" }
     }
 
     private fun str(s: String) = "\"" + s.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", " ") + "\""

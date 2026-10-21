@@ -68,10 +68,10 @@ whatever the code now renders.
 - **Attribution accuracy** (random, pre-registered edits to Google's compose-samples and Now in
   Android, engine frozen before each sample): 82–94% of edits that changed a screenshot are named at
   the edited line with the new value ([README](../README.md#evidence)).
-- **Agent study, single edit** ([details](../bench/AGENT_STUDY.md)): when one edit causes the failure,
-  a strong coding agent finds it from the images and the code just as well without diffsay, at the
-  same or lower cost. diffsay is **not** worth adding for that case.
-- **Agent study, triage** (an intended change plus a hidden one among many failing screenshots): see
-  [AGENT_STUDY.md](../bench/AGENT_STUDY.md#study-2-triage-at-scale-pre-registered-seed-424242).
-- **Not yet shown:** explaining dependency bumps (the cause lies inside a library). It's the case in
-  section 2, and the next thing to measure.
+- **Dependency and tooling upgrades** (section 2): on Element X's real AGP 9 upgrade, diffsay split 61
+  changed screenshots into 8 UI-state changes at named composables (the tiny QR code is a measured width of
+  128 instead of 1080), 18 from one value inside a library, and 35 that are the same UI drawn by a
+  different renderer, each checked against the images ([case study](case-element-x-agp9.md)).
+- **Agent study** ([details](../bench/AGENT_STUDY.md)): across 46 paired tasks, a coding agent with vision
+  was as accurate without diffsay; with it, diagnosis cost a third to a half as much when there was an edit
+  to find. For agents it's a cost saving, not a new capability.

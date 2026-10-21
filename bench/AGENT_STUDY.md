@@ -66,3 +66,43 @@ mutation benchmarks), but on this task an agent doesn't need it.
 Scoring note for 1b: the first scoring compared the whole replaced fragment (`aspectRatio(2.0f)`)
 with the answer's value (`2.0f`) and failed every answer in both arms. Rescored, for both arms
 alike, against the token that differs between the old and new fragment (`study1b_truth.json`).
+
+## Results: study 2 (triage), and study 2b (pre-registered after it)
+
+| Arm | Correct | Total cost | Median cost | Median turns | Median time |
+| --- | --- | --- | --- | --- | --- |
+| A, screenshots | 7/8 | $2.18 | $0.16 | 14 | 26 s |
+| B, diffsay | 7/8 | $2.23 | $0.09 | 4.5 | 41 s |
+
+Both arms found the hidden edit in all 6 tasks that had one. A raised a false alarm on control T2
+(an invented `Shape.kt` change). B ran out of turns on control T1: it read diffsay's single cause,
+distrusted it ("the tool reports the same cause for every screenshot; I want to see what else
+changed") and hand-diffed the dumps for 60 turns. On the six hidden-edit tasks B cost about half of A
+($0.07 vs $0.15 median) in a third of the turns; on controls both were expensive.
+
+That transcript led to a change (5e0b9e1): diffsay now states whether its causes account for every
+change in each composition. **Study 2b** tests it on fresh tasks, so the change isn't scored on the
+task that prompted it: 8 new combinations (seed 77, `agent_study_2b_tasks.json`; T1's intended edit
+excluded, hidden edits unused before), 4 controls and 4 with a hidden edit, both arms rerun, same
+protocol and prompts.
+
+### Study 2b results
+
+| Arm | Correct | Total cost | Median cost | Median turns | Median time |
+| --- | --- | --- | --- | --- | --- |
+| A, screenshots | 7/8 | $3.72 | $0.19 | 12 | 34 s |
+| B, diffsay (with coverage statement) | 6/8 | $3.42 | $0.07 | 4 | 23 s |
+
+The coverage statement did not help. On control U1 the agent read "these causes account for every
+composition change in 16 of 16", then saw diffsay's pixel-heuristic section ("corner", "moved") and
+hunted for those "unexplained" changes until it ran out of turns. On control U3 it reported an
+invented `Shape.kt` change, the same kind of false alarm arm A made in study 2. On the four
+hidden-edit tasks both arms were right, and B cost about a third ($0.07 vs $0.15 median).
+
+## Conclusion across studies 1, 1b, 2 and 2b (46 paired tasks)
+
+For a coding agent with vision, diffsay does **not** improve accuracy: the agent finds the edit from
+the images and the code, whether it is the only change or hidden among intended ones. diffsay makes
+the diagnosis cheaper (often a third to a half of the tokens) when there is something to find, and
+does not settle "nothing else changed": agents still verify that themselves, at length, and its pixel
+section can send them looking for more. That is a cost optimisation, not a capability.

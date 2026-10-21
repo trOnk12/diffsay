@@ -14,12 +14,12 @@ import java.util.Locale
  * `<golden name>_actual.slots.json.gz` in Paparazzi's failures directory when verifying.
  */
 fun Paparazzi.snapshotWithCauses(name: String? = null, content: @Composable () -> Unit) {
-    val recorder = SlotRecorder()
-    val file = slotsFile(name)
+    val recorder = SlotRecorder().apply { target = slotsFile(name) }
     snapshot(name) {
         recorder.Record {
-            // Written once laid out, while the composition is alive; a later layout pass overwrites it.
-            Box(Modifier.onGloballyPositioned { file?.let { recorder.write(it) } }) { content() }
+            // Written once laid out, while the composition is alive; a later layout pass overwrites it. The lambda
+            // captures only the recorder, so the dump's own path isn't remembered in the composition it records.
+            Box(Modifier.onGloballyPositioned { recorder.writeTarget() }) { content() }
         }
     }
 }

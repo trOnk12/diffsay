@@ -191,13 +191,15 @@ def _sort_maps(value: str) -> str:
 
 def _decode(name: str, value: str) -> str:
     value = _COLOR_CTOR.sub(_hex, _IDENTITY.sub("", value))
+    value = re.sub(r"\baid=\d+", "aid=?", value)  # a view's accessibility id: allocation order, not UI
+    value = re.sub(r"\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b", "<uuid>", value)
     if name.startswith("value "):
         if re.fullmatch(r"-?\d{10,}", value):
             decoded = _decode_packed(value)
             return decoded if decoded != value else "<hash>"
         if _PLUMBING.search(value) or re.fullmatch(r"[\w.$]+", value) and "." in value:
             return "<runtime>"  # composition plumbing or a bare object identity, not UI data
-        if re.fullmatch(r"-?\d{8,}", value):
+        if re.fullmatch(r"-?\d{6,}", value):  # run-dependent hash codes; real counts and sizes are shorter
             return "<hash>"
         if re.fullmatch(r"-?[0-9a-z]{9,14}", value) and re.search(r"\d", value) and re.search(r"[a-z]", value):
             return "<key>"  # rememberSaveable's generated keys
@@ -231,27 +233,40 @@ def _short(old: str, new: str, limit: int = 90) -> tuple[str, str]:
     return cut(old), cut(new)
 
 
-def project_files(start: str) -> set[str]:
-    """Kotlin file names under the nearest enclosing directory that has a src/ folder."""
+_SOURCES: dict[str, list] = {}
+
+
+def _source_files(start: str) -> list:
+    """(path, lines) of the project's main Kotlin sources: the enclosing module's src/ (test sources hold the
+    harness, not the UI under test), or, from a multi-module root, every src/main and src/commonMain below it."""
     from pathlib import Path
     here = Path(start).resolve()
-    for d in [here, *here.parents]:
-        if (d / "src").is_dir():
-            # Test sources hold the harness (captureWithCauses, previews' wrappers), not the UI under test.
-            return {p.name for p in (d / "src").rglob("*.kt") if not any(part.startswith("test") or
-                    part.startswith("androidTest") for part in p.relative_to(d / "src").parts[:1])}
-    return set()
+    if str(here) in _SOURCES:
+        return _SOURCES[str(here)]
+    paths = []
+    module = next((d for d in [here, *here.parents] if (d / "src").is_dir()), None)
+    if module:
+        paths = [p for p in (module / "src").rglob("*.kt")
+                 if not p.relative_to(module / "src").parts[0].startswith(("test", "androidTest"))]
+    if not paths and here.is_dir():
+        paths = [p for pattern in ("**/src/main/**/*.kt", "**/src/commonMain/**/*.kt") for p in here.glob(pattern)
+                 if "build" not in p.relative_to(here).parts]
+    files = [(p, p.read_text(encoding="utf-8", errors="replace").splitlines()) for p in sorted(paths)]
+    _SOURCES[str(here)] = files
+    return files
+
+
+def project_files(start: str) -> set[str]:
+    """Kotlin file names of the project's main sources (see _source_files)."""
+    return {p.name for p, _ in _source_files(start)}
 
 
 def source_hits(changes: list[SlotChange], module: str, limit: int = 3) -> list[str]:
     """Where new text literals live in the project's sources. Data-driven changes (a list item's title,
     a flag that makes a badge appear) render in one place but are written in another."""
-    from pathlib import Path
-    here = Path(module).resolve()
-    src = next((d / "src" for d in [here, *here.parents] if (d / "src").is_dir()), None)
-    if not src:
+    files = _source_files(module)
+    if not files:
         return []
-    files = [(p, p.read_text(encoding="utf-8", errors="replace").splitlines()) for p in sorted(src.rglob("*.kt"))]
     wanted = []
     for c in changes:
         m = re.match(r"text: .* -> (.+)$", c.detail)

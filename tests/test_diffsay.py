@@ -138,7 +138,16 @@ class CauseSummaryTest(unittest.TestCase):
         summary = diffsay._cause_summary(4, {cause: names})
         self.assertIn("4 failed screenshots; 3 traced to 1 cause(s) in code:", summary)
         self.assertIn("breaks 3: QsPreview.default, QsPreview.dark, QsPreview.rtl", summary)
-        self.assertIn("1 without a cause in code", summary)
+        self.assertIn("1 without a cause:", summary)
+
+    def test_an_upgrade_is_split_into_code_library_and_renderer(self):
+        by_cause = {"QrCodeImage.kt:66 remember: value 1: 1080 x 1920 -> 128 x 1920": ["a/Qr.png"],
+                    "inside a library, not in your code: LazyLayoutPager.kt:223 (group): value 2: (default) -> 0":
+                        ["a/M1.png", "a/M2.png"]}
+        summary = diffsay._cause_summary(6, by_cause, ["a/P1.png", "a/P2.png", "a/P3.png"])
+        self.assertIn("6 failed screenshots: 1 changed by your code (1 cause(s)); 2 changed inside a library (1); "
+                      "3 with an identical composition (renderer or drawing):", summary)
+        self.assertIn("composition identical: the same UI drawn differently\n      in 3:", summary)
 
     def test_markdown_groups_rows_and_escapes_pipes(self):
         rows = [(n, ["a | b"], []) for n in ("x/A.one.png", "x/A.two.png")]

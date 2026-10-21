@@ -1,0 +1,223 @@
+{
+ "seed": 77,
+ "tasks": [
+  {
+   "id": "U8",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+    "line": 50,
+    "kind": "color",
+    "match": "Color(0xFF680016)",
+    "value": "FF680016",
+    "col": 30,
+    "id": "J32",
+    "replacement": "Color(0xFF325A4C)",
+    "expect": [
+     "#325a4c"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 6
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/home/HomeScreens.kt",
+    "line": 565,
+    "kind": "alpha",
+    "match": "alpha = 0.08f",
+    "value": "0.08",
+    "col": 57,
+    "id": "J06",
+    "replacement": "alpha = 0.38f",
+    "expect": [
+     "alpha=0.38",
+     "0.38"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 4
+   }
+  },
+  {
+   "id": "U4",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 67,
+    "kind": "sp",
+    "match": "0.sp",
+    "value": "0",
+    "col": 62,
+    "id": "J35",
+    "replacement": "3.sp",
+    "expect": [
+     "3sp",
+     "3.0.sp"
+    ],
+    "src": "jetnews_run",
+    "n": 8
+   },
+   "hidden": null
+  },
+  {
+   "id": "U2",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 72,
+    "kind": "sp",
+    "match": "0.15.sp",
+    "value": "0.15",
+    "col": 24,
+    "id": "J37",
+    "replacement": "3.15.sp",
+    "expect": [
+     "3.15sp",
+     "3.1.sp"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 16
+   },
+   "hidden": null
+  },
+  {
+   "id": "U1",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 71,
+    "kind": "sp",
+    "match": "24.sp",
+    "value": "24",
+    "col": 21,
+    "id": "J36",
+    "replacement": "27.sp",
+    "expect": [
+     "27sp",
+     "27.0.sp"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 16
+   },
+   "hidden": null
+  },
+  {
+   "id": "U7",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+    "line": 22,
+    "kind": "color",
+    "match": "Color(0xFFFFFFFF)",
+    "value": "FFFFFFFF",
+    "col": 31,
+    "id": "J25",
+    "replacement": "Color(0xFFA5A5A5)",
+    "expect": [
+     "#a5a5a5"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 6
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/interests/InterestsScreen.kt",
+    "line": 298,
+    "kind": "alpha",
+    "match": "alpha = 0.1f",
+    "value": "0.1",
+    "col": 61,
+    "id": "J10",
+    "replacement": "alpha = 0.4f",
+    "expect": [
+     "alpha=0.4",
+     "0.4"
+    ],
+    "src": "jetnews_run",
+    "n": 2
+   }
+  },
+  {
+   "id": "U6",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 84,
+    "kind": "sp",
+    "match": "20.sp",
+    "value": "20",
+    "col": 39,
+    "id": "J38",
+    "replacement": "23.sp",
+    "expect": [
+     "23sp",
+     "23.0.sp"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 12
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/components/AppNavRail.kt",
+    "line": 53,
+    "kind": "dp",
+    "match": "12.dp",
+    "value": "12",
+    "col": 44,
+    "id": "J04",
+    "replacement": "18.dp",
+    "expect": [
+     "18.0.dp",
+     "18.dp"
+    ],
+    "src": "jetnews_run",
+    "n": 2
+   }
+  },
+  {
+   "id": "U5",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 64,
+    "kind": "sp",
+    "match": "24.sp",
+    "value": "24",
+    "col": 19,
+    "id": "J34",
+    "replacement": "27.sp",
+    "expect": [
+     "27sp",
+     "27.0.sp"
+    ],
+    "src": "jetnews_run",
+    "n": 6
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/post/PostScreen.kt",
+    "line": 350,
+    "kind": "dp",
+    "match": "16.dp",
+    "value": "16",
+    "col": 42,
+    "id": "J24",
+    "replacement": "22.dp",
+    "expect": [
+     "22.0.dp",
+     "22.dp"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 2
+   }
+  },
+  {
+   "id": "U3",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 67,
+    "kind": "sp",
+    "match": "22.sp",
+    "value": "22",
+    "col": 19,
+    "id": "J35",
+    "replacement": "25.sp",
+    "expect": [
+     "25sp",
+     "25.0.sp"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 8
+   },
+   "hidden": null
+  }
+ ]
+}

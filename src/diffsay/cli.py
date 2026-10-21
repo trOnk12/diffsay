@@ -883,10 +883,18 @@ def _compose_causes(actual_image: str, changes: list[Change], root: str) -> list
         other = _unaccounted(found, causes, user)
         causes.append("accounts for every change in this composition" if not other else
                       f"{len(other)} other composition change(s) not accounted for: " + "; ".join(other[:2]))
-    if not causes and not compose_slots.diff(slots_before, slots_after, None, user or None):
-        # 7 of 68 real code edits on Jetsnack looked like this; so do nondeterministic renders.
-        causes = ["composition identical: the change is in drawing code (draw lambdas, Canvas, images) "
-                  "or the render isn't deterministic"]
+    if not causes:
+        everything = [c for c in compose_slots.diff(slots_before, slots_after, None, None)
+                      if not c.detail.startswith("layout") and not compose_slots._reordered(c)]
+        if everything:
+            # Nothing changed in the project's code, something did inside a library: a dependency upgrade.
+            top = everything[0]
+            causes = [f"inside a library, not in your code: {top.file}:{top.line} {top.name}: "
+                      f"{compose_slots._ROW.sub('', top.detail)}"[:220]]
+        else:
+            # 7 of 68 real code edits on Jetsnack looked like this; so do renderer upgrades and nondeterministic renders.
+            causes = ["composition identical: the change is in drawing code (draw lambdas, Canvas, images), "
+                      "the renderer, or the render isn't deterministic"]
     return causes
 
 
@@ -1032,10 +1040,19 @@ def _markdown(rows, triage=None) -> str:
     return "\n".join(out)
 
 
-def _cause_summary(total: int, by_cause: dict[str, list[str]]) -> str:
+def _cause_summary(total: int, by_cause: dict[str, list[str]], identical: list[str] = ()) -> str:
     """One line per distinct top cause, with the screenshots it broke: many failures, few edits."""
     explained = len({n for names in by_cause.values() for n in names})
-    lines = [f"{total} failed screenshots; {explained} traced to {len(by_cause)} cause(s) in code:"]
+    library = {c: n for c, n in by_cause.items() if c.startswith("inside a library")}
+    in_code = len({n for c, names in by_cause.items() if c not in library for n in names})
+    in_library = len({n for names in library.values() for n in names})
+    if library or identical:  # e.g. a dependency or tooling upgrade: say which kind of change each one is
+        parts = [f"{in_code} changed by your code ({len(by_cause) - len(library)} cause(s))"] if in_code else []
+        parts += [f"{in_library} changed inside a library ({len(library)})"] if library else []
+        parts += [f"{len(identical)} with an identical composition (renderer or drawing)"] if identical else []
+        lines = [f"{total} failed screenshots: " + "; ".join(parts) + ":"]
+    else:
+        lines = [f"{total} failed screenshots; {explained} traced to {len(by_cause)} cause(s) in code:"]
     for cause, names in sorted(by_cause.items(), key=lambda kv: -len(kv[1])):
         shown = ""
         for i, n in enumerate(names):  # as many names as fit on one line
@@ -1045,8 +1062,11 @@ def _cause_summary(total: int, by_cause: dict[str, list[str]]) -> str:
                 break
             shown += (", " if i else "") + _short_name(n)
         lines.append(f"  {cause}\n      breaks {len(names)}: {shown}")
-    if explained < total:
-        lines.append(f"  {total - explained} without a cause in code: see the pixel reports below")
+    if identical:
+        shown = ", ".join(_short_name(n) for n in identical[:3]) + (f", +{len(identical) - 3} more" if len(identical) > 3 else "")
+        lines.append(f"  composition identical: the same UI drawn differently\n      in {len(identical)}: {shown}")
+    if explained + len(identical) < total:
+        lines.append(f"  {total - explained - len(identical)} without a cause: see the pixel reports below")
     return "\n".join(lines)
 
 
@@ -1134,14 +1154,16 @@ def main(argv: list[str] | None = None) -> int:
         if not failures:
             print(f"no screenshot-test failures found under {args.root}")
             return 0
-        details, by_cause, rows = [], {}, []
+        details, by_cause, rows, identical = [], {}, [], []
         for name, a, b in failures:
             changes = compare(a, b)
             tree = _tree_beside(name)
             if tree:
                 name_changes(changes, load_tree(tree))
             causes = _compose_causes(name, changes, args.source or args.root)
-            if causes and not causes[0].startswith("composition identical"):
+            if causes and causes[0].startswith("composition identical"):
+                identical.append(name)
+            elif causes:
                 # Where the value is written (Type.kt) beats where it's used (each Text): one edit, one group.
                 written = [c for c in causes if " is written at " in c or " now uses " in c]
                 for cause in written or causes[:1]:  # a change of two edits lists both
@@ -1152,7 +1174,15 @@ def main(argv: list[str] | None = None) -> int:
                 os.makedirs(args.crops, exist_ok=True)
                 crops = write_crops(a, b, changes, os.path.join(args.crops, os.path.splitext(os.path.basename(name))[0]))
             cause_text = ("cause in code (composition diff):\n" + "\n".join(f"  {c}" for c in causes) + "\npixels:\n") if causes else ""
-            details.append(f"== {name}\n{cause_text}{report(changes, crops)}\n")
+            if "accounts for every change in this composition" in causes:
+                # The pixel heuristics would only re-describe the same change, sometimes wrongly; in a study, an
+                # agent went hunting for those "other" changes. Say what they are instead.
+                pixels = f"{len(changes)} changed region(s), all effects of the causes above"
+                if crops:
+                    pixels += "; zoom: " + ", ".join(crops)
+                details.append(f"== {name}\n{cause_text}{pixels}\n")
+            else:
+                details.append(f"== {name}\n{cause_text}{report(changes, crops)}\n")
             rows.append((name, causes, changes))
         triage = _triage(rows, _diff_lines(args.source or args.root, args.diff)) if args.diff else None
         if args.markdown:
@@ -1160,8 +1190,8 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         if triage:
             print(_triage_text(triage, args.diff) + "\n")
-        if len(failures) > 1 and by_cause:
-            print(_cause_summary(len(failures), by_cause))
+        if len(failures) > 1 and (by_cause or identical):
+            print(_cause_summary(len(failures), by_cause, identical))
             complete = sum(any(c == "accounts for every change in this composition" for c in r[1]) for r in rows)
             partial = sum(any("not accounted for" in c for c in r[1]) for r in rows)
             if complete or partial:
