@@ -879,11 +879,48 @@ def _compose_causes(actual_image: str, changes: list[Change], root: str) -> list
     found = compose_slots.diff(slots_before, slots_after, regions, user or None)
     module = root if compose_slots.project_files(root) else os.getcwd()
     causes = compose_slots.explain(found, user or None) + compose_slots.source_hits(found, module)
+    if causes and any(" is written at " in c or " now uses " in c for c in causes):
+        other = _unaccounted(found, causes, user)
+        causes.append("accounts for every change in this composition" if not other else
+                      f"{len(other)} other composition change(s) not accounted for: " + "; ".join(other[:2]))
     if not causes and not compose_slots.diff(slots_before, slots_after, None, user or None):
         # 7 of 68 real code edits on Jetsnack looked like this; so do nondeterministic renders.
         causes = ["composition identical: the change is in drawing code (draw lambdas, Canvas, images) "
                   "or the render isn't deterministic"]
     return causes
+
+
+def _cause_values(cause: str) -> list[str]:
+    """How a cause's value appears in recorded values: 0x..7A4040 -> #7a4040, 27.sp -> 27.0.sp, …"""
+    import re
+    head = cause.split(" is written at ")[0]
+    values = [f"#{h.lower()}" for h in re.findall(r"0x\.\.([0-9A-Fa-f]{6})", head)]
+    for number, unit in re.findall(r"(-?\d+(?:\.\d+)?)\.(dp|sp|em)\b", head):
+        values += [f"{float(number):g}.0.{unit}" if "." not in number else f"{number}.{unit}", f"={number}.{unit}"]
+    weights = {"Thin": 100, "ExtraLight": 200, "Light": 300, "Normal": 400, "Medium": 500, "SemiBold": 600,
+               "Bold": 700, "ExtraBold": 800, "Black": 900}
+    values += [f"weight={weights[w]}" for w in re.findall(r"FontWeight\.(\w+)", head) if w in weights]
+    values += re.findall(r'^"(.+)"$', head)
+    return values
+
+
+def _unaccounted(found, causes: list[str], user) -> list[str]:
+    """Composition changes that none of the reported causes explains (layout moves are consequences)."""
+    from . import compose_slots
+    values = [v for c in causes if " is written at " in c for v in _cause_values(c)]
+    sites = {loc for c in causes if " now uses " in c for loc in _locations(c)[:1]}
+    styles = {ch.new for ch in found if (ch.file, ch.line) in sites}
+    def explained(ch):
+        return (ch.file, ch.line) in sites or ch.new in styles or any(v in ch.new or v in ch.detail for v in values)
+    calls = {(ch.file, ch.line) for ch in found if explained(ch)}  # other values of an explained call go with it
+    other = []
+    for ch in found:
+        if ch.detail.startswith("layout") or compose_slots._reordered(ch) or (user and ch.file not in user):
+            continue
+        if explained(ch) or (ch.file, ch.line) in calls:
+            continue
+        other.append(str(ch)[:140])
+    return list(dict.fromkeys(other))
 
 
 def _tree_beside(image: str) -> str | None:
@@ -935,7 +972,7 @@ def _triage(rows, changed: dict[str, set[int]]):
     result = []
     for name, causes, _ in rows:
         heads = [c for c in causes if " is written at " in c or " now uses " in c] or \
-            [c for c in causes if _locations(c) and ": layout " not in c][:3]
+            [c for c in causes if _locations(c) and ": layout " not in c and "not accounted" not in c][:3]
         if not heads:
             result.append((name, [], [], causes[:1]))
             continue
@@ -1124,7 +1161,13 @@ def main(argv: list[str] | None = None) -> int:
         if triage:
             print(_triage_text(triage, args.diff) + "\n")
         if len(failures) > 1 and by_cause:
-            print(_cause_summary(len(failures), by_cause) + "\n")
+            print(_cause_summary(len(failures), by_cause))
+            complete = sum(any(c == "accounts for every change in this composition" for c in r[1]) for r in rows)
+            partial = sum(any("not accounted for" in c for c in r[1]) for r in rows)
+            if complete or partial:
+                print(f"  these causes account for every composition change in {complete} of {len(rows)}"
+                      + (f"; {partial} also show other changes (see below)" if partial else ""))
+            print()
         print("\n".join(details))
         return 1
     parser = argparse.ArgumentParser(prog="diffsay", description=__doc__.split("\n\n")[0])

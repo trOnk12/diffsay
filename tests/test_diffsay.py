@@ -297,5 +297,29 @@ class TriageTest(unittest.TestCase):
         self.assertIn("? 1 without a cause in code", text)
 
 
+class CoverageTest(unittest.TestCase):
+    @staticmethod
+    def change(file, line, detail, new=""):
+        from diffsay import compose_slots
+        return compose_slots.SlotChange(file, line, "X", (0, 0, 1, 1), detail, 1, (), new, "")
+
+    def test_values_of_a_cause_as_they_appear_in_recorded_values(self):
+        self.assertIn("#7a4040", diffsay._cause_values("0x..7A4040 is written at Color.kt:65"))
+        self.assertIn("27.0.sp", diffsay._cause_values("lineHeight = 27.sp is written at Type.kt:71"))
+        self.assertIn("weight=600", diffsay._cause_values("FontWeight.SemiBold is written at Type.kt:51"))
+
+    def test_changes_outside_the_reported_causes_are_listed(self):
+        found = [self.change("Home.kt", 252, "modifier chain: background(#201a1a) -> background(#7a4040)",
+                             "background(#7a4040)"),
+                 self.change("Home.kt", 252, "value 4: <hash> -> -3899021", "-3899021"),
+                 self.change("Home.kt", 40, "layout moved (+0, +12)px"),
+                 self.change("Card.kt", 12, "modifier chain: padding(16.0.dp) -> padding(22.0.dp)", "padding(22.0.dp)")]
+        causes = ["0x..7A4040 is written at Color.kt:65"]
+        other = diffsay._unaccounted(found, causes, {"Home.kt", "Card.kt"})
+        self.assertEqual(1, len(other))
+        self.assertIn("Card.kt:12", other[0])
+        self.assertEqual([], diffsay._unaccounted(found[:3], causes, {"Home.kt", "Card.kt"}))
+
+
 if __name__ == "__main__":
     unittest.main()
