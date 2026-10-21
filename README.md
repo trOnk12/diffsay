@@ -26,9 +26,15 @@ sample, after a two-line change. Theme edits are traced to the theme file, not t
       breaks 16: HistoryPostPreviewDark, HistoryPostPreview, PreviewHomeListDrawerScreenDark, +13 more
 ```
 
-It's built for coding agents (Claude Code, Cursor, Codex…) as much as for people: a ~30-token
-answer instead of loading two or three screenshots per failure and searching the code for a cause.
-No model, no network, deterministic.
+**Where it helps:** when many screenshots change at once (a theme edit, a large PR, a dependency
+or tooling upgrade) and someone has to decide which changes were intended. Today that's a person
+paging through image pairs, or a bot that re-records the goldens: in Element X, 74% of 23,140
+golden changes since 2025 were bot re-records ([the evidence](docs/problem.md)). diffsay turns the
+pile into one line per cause, for people, CI comments and coding agents alike. No model, no
+network, deterministic.
+
+**Where it doesn't:** one failure from one edit. We measured it: a coding agent with vision finds
+that cause from the images and the code just as well without diffsay ([agent study](bench/AGENT_STUDY.md)).
 
 ## Quick start
 

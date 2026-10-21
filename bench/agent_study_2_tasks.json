@@ -1,0 +1,252 @@
+{
+ "seed": 424242,
+ "tasks": [
+  {
+   "id": "T2",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 67,
+    "kind": "sp",
+    "match": "22.sp",
+    "value": "22",
+    "col": 19,
+    "id": "J35",
+    "replacement": "25.sp",
+    "expect": [
+     "25sp",
+     "25.0.sp"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 8
+   },
+   "hidden": null
+  },
+  {
+   "id": "T5",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 71,
+    "kind": "sp",
+    "match": "24.sp",
+    "value": "24",
+    "col": 21,
+    "id": "J36",
+    "replacement": "27.sp",
+    "expect": [
+     "27sp",
+     "27.0.sp"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 16
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/home/HomeScreens.kt",
+    "line": 470,
+    "kind": "dp",
+    "match": "16.dp",
+    "value": "16",
+    "col": 44,
+    "id": "J07",
+    "replacement": "22.dp",
+    "expect": [
+     "22.0.dp",
+     "22.dp"
+    ],
+    "src": "jetnews_run",
+    "n": 4
+   }
+  },
+  {
+   "id": "T1",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+    "line": 65,
+    "kind": "color",
+    "match": "Color(0xFF201A1A)",
+    "value": "FF201A1A",
+    "col": 31,
+    "id": "J30",
+    "replacement": "Color(0xFF7A4040)",
+    "expect": [
+     "#7a4040"
+    ],
+    "src": "jetnews_run",
+    "n": 5
+   },
+   "hidden": null
+  },
+  {
+   "id": "T7",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+    "line": 50,
+    "kind": "color",
+    "match": "Color(0xFF680016)",
+    "value": "FF680016",
+    "col": 30,
+    "id": "J32",
+    "replacement": "Color(0xFF325A4C)",
+    "expect": [
+     "#325a4c"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 6
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/post/PostContent.kt",
+    "line": 85,
+    "kind": "dp",
+    "match": "0.dp",
+    "value": "0",
+    "col": 50,
+    "id": "J15",
+    "replacement": "6.dp",
+    "expect": [
+     "6.0.dp",
+     "6.dp"
+    ],
+    "src": "jetnews_run",
+    "n": 2
+   }
+  },
+  {
+   "id": "T8",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+    "line": 49,
+    "kind": "color",
+    "match": "Color(0xFFFFB3B4)",
+    "value": "FFFFB3B4",
+    "col": 28,
+    "id": "J31",
+    "replacement": "Color(0xFFA5E9EE)",
+    "expect": [
+     "#a5e9ee"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 11
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/home/PostCards.kt",
+    "line": 154,
+    "kind": "dp",
+    "match": "4.dp",
+    "value": "4",
+    "col": 50,
+    "id": "J11",
+    "replacement": "10.dp",
+    "expect": [
+     "10.0.dp",
+     "10.dp"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 2
+   }
+  },
+  {
+   "id": "T6",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Color.kt",
+    "line": 22,
+    "kind": "color",
+    "match": "Color(0xFFFFFFFF)",
+    "value": "FFFFFFFF",
+    "col": 31,
+    "id": "J25",
+    "replacement": "Color(0xFFA5A5A5)",
+    "expect": [
+     "#a5a5a5"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 6
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/home/PostCards.kt",
+    "line": 145,
+    "kind": "dp",
+    "match": "12.dp",
+    "value": "12",
+    "col": 36,
+    "id": "J09",
+    "replacement": "18.dp",
+    "expect": [
+     "18.0.dp",
+     "18.dp"
+    ],
+    "src": "jetnews_run",
+    "n": 2
+   }
+  },
+  {
+   "id": "T4",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 84,
+    "kind": "weight",
+    "match": "FontWeight.Medium",
+    "value": "Medium",
+    "col": 83,
+    "id": "J40",
+    "replacement": "FontWeight.Light",
+    "expect": [
+     "weight=300",
+     "FontWeight.Light",
+     "Light"
+    ],
+    "src": "jetnews_run",
+    "n": 12
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/home/PostCards.kt",
+    "line": 145,
+    "kind": "dp",
+    "match": "12.dp",
+    "value": "12",
+    "col": 36,
+    "id": "J09",
+    "replacement": "18.dp",
+    "expect": [
+     "18.0.dp",
+     "18.dp"
+    ],
+    "src": "jetnews_run",
+    "n": 2
+   }
+  },
+  {
+   "id": "T3",
+   "intended": {
+    "file": "app/src/main/java/com/example/jetnews/ui/theme/Type.kt",
+    "line": 72,
+    "kind": "sp",
+    "match": "0.15.sp",
+    "value": "0.15",
+    "col": 24,
+    "id": "J37",
+    "replacement": "3.15.sp",
+    "expect": [
+     "3.15sp",
+     "3.1.sp"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 16
+   },
+   "hidden": {
+    "file": "app/src/main/java/com/example/jetnews/ui/home/PostCardYourNetwork.kt",
+    "line": 75,
+    "kind": "maxLines",
+    "match": "maxLines = 2",
+    "value": "2",
+    "col": 20,
+    "id": "J07",
+    "replacement": "maxLines = 3",
+    "expect": [
+     "maxLines",
+     "3"
+    ],
+    "src": "jetnews_v5_run",
+    "n": 4
+   }
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "seed": 2718,
+ "source": "sample-app held-out (30 hand-written edits, 3 screens; private code)",
+ "tasks": [
+  "D11",
+  "D14",
+  "D17",
+  "D18",
+  "D19",
+  "I21",
+  "L06",
+  "L08",
+  "L09",
+  "L10"
+ ]
+}

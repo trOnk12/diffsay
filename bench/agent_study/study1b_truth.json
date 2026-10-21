@@ -1,0 +1,152 @@
+{
+"I27": {
+"file": "InboxScreen.kt",
+"line": 21,
+"value": "Tue"
+},
+"L07": {
+"file": "LoginScreen.kt",
+"line": 33,
+"value": "false"
+},
+"I30": {
+"file": "InboxScreen.kt",
+"line": 48,
+"value": "0xFF616161"
+},
+"I24": {
+"file": "InboxScreen.kt",
+"line": 42,
+"value": "16.dp"
+},
+"D20": {
+"file": "ProductScreen.kt",
+"line": 20,
+"value": "XXL"
+},
+"I21": {
+"file": "InboxScreen.kt",
+"line": 28,
+"value": "Messages"
+},
+"I25": {
+"file": "InboxScreen.kt",
+"line": 45,
+"value": "14.sp"
+},
+"L06": {
+"file": "LoginScreen.kt",
+"line": 29,
+"value": "Arrangement.Start"
+},
+"L02": {
+"file": "LoginScreen.kt",
+"line": 23,
+"value": "0xFF9E9E9E"
+},
+"D16": {
+"file": "ProductScreen.kt",
+"line": 23,
+"value": "false"
+},
+"I28": {
+"file": "InboxScreen.kt",
+"line": 44,
+"value": "FontWeight.SemiBold"
+},
+"L10": {
+"file": "LoginScreen.kt",
+"line": 39,
+"value": "0xFF0B57D0"
+},
+"D13": {
+"file": "ProductScreen.kt",
+"line": 36,
+"value": "0xFFE65100"
+},
+"D14": {
+"file": "ProductScreen.kt",
+"line": 37,
+"value": "4.7"
+},
+"D19": {
+"file": "ProductScreen.kt",
+"line": 56,
+"value": "18.dp"
+},
+"L01": {
+"file": "LoginScreen.kt",
+"line": 19,
+"value": "MaterialTheme.typography.headlineSmall"
+},
+"I23": {
+"file": "InboxScreen.kt",
+"line": 39,
+"value": "0xFFA5D6A7"
+},
+"D15": {
+"file": "ProductScreen.kt",
+"line": 40,
+"value": "$119.00"
+},
+"I22": {
+"file": "InboxScreen.kt",
+"line": 39,
+"value": "40.dp"
+},
+"D17": {
+"file": "ProductScreen.kt",
+"line": 45,
+"value": "14.dp"
+},
+"L09": {
+"file": "LoginScreen.kt",
+"line": 36,
+"value": "padding"
+},
+"L04": {
+"file": "LoginScreen.kt",
+"line": 26,
+"value": "address"
+},
+"D18": {
+"file": "ProductScreen.kt",
+"line": 46,
+"value": "L"
+},
+"L03": {
+"file": "LoginScreen.kt",
+"line": 18,
+"value": "20.dp"
+},
+"I26": {
+"file": "InboxScreen.kt",
+"line": 20,
+"value": "3"
+},
+"I29": {
+"file": "InboxScreen.kt",
+"line": 38,
+"value": "14.dp"
+},
+"L08": {
+"file": "LoginScreen.kt",
+"line": 33,
+"value": "44.dp"
+},
+"D11": {
+"file": "ProductScreen.kt",
+"line": 26,
+"value": "2.0f"
+},
+"L05": {
+"file": "LoginScreen.kt",
+"line": 26,
+"value": "ada.lovelace"
+},
+"D12": {
+"file": "ProductScreen.kt",
+"line": 32,
+"value": "1"
+}
+}

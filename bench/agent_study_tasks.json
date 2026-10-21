@@ -1,0 +1,16 @@
+{
+ "seed": 5150,
+ "source": "jetnews_v5_sites.json (28 visible)",
+ "tasks": [
+  "J03",
+  "J04",
+  "J05",
+  "J06",
+  "J11",
+  "J16",
+  "J17",
+  "J27",
+  "J31",
+  "J38"
+ ]
+}
