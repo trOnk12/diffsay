@@ -41,5 +41,13 @@ class InitTest(unittest.TestCase):
             self.assertIn("snapshotWithCauses", out.getvalue())
 
 
+class VersionTest(unittest.TestCase):
+    def test_version_flag_names_the_distribution(self):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            self.assertEqual(0, cli.main(["--version"]))
+        self.assertEqual("diffsay-compose 0.3.0", out.getvalue().strip())
+
+
 if __name__ == "__main__":
     unittest.main()

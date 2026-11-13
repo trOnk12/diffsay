@@ -59,9 +59,11 @@ You need a module with [Roborazzi](https://github.com/takahirom/roborazzi) on Ro
 [Paparazzi](https://github.com/cashapp/paparazzi) (use `paparazzi.snapshotWithCauses { … }`, see [Android setup](android/README.md#paparazzi)).
 
 ```bash
-pip install git+https://github.com/trOnk12/diffsay
+pip install diffsay-compose
 diffsay init app        # copies two Kotlin files into app/src/test and prints the Gradle lines
 ```
+
+(The command is `diffsay`. The PyPI package named `diffsay` is a different project.)
 
 If Roborazzi generates your `@Preview` tests, the Gradle part is one line in the block you already
 have (tested with Roborazzi 1.74 and 1.76):

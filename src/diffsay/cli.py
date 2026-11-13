@@ -1136,6 +1136,10 @@ def main(argv: list[str] | None = None) -> int:
     if not argv or argv[0] in ("-h", "--help", "help"):
         print(USAGE)
         return 0 if argv else 2
+    if argv[0] == "--version":
+        from . import __version__
+        print(f"diffsay-compose {__version__}")
+        return 0
     if argv[0] == "init":
         if len(argv) != 2:
             print("usage: diffsay init <android-module-dir>")

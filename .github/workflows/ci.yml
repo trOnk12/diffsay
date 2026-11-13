@@ -14,3 +14,22 @@ jobs:
       - run: pip install .
       - run: python -m unittest discover -s tests -v
       - run: diffsay --help
+  wheel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build && python -m build
+      - name: Install the wheel outside the source tree and run init
+        run: |
+          python -m venv /tmp/v
+          /tmp/v/bin/pip install dist/*.whl
+          cd /tmp
+          mkdir -p m/src/test/kotlin
+          printf 'android {\n    namespace = "com.acme"\n}\n' > m/build.gradle.kts
+          /tmp/v/bin/diffsay init m
+          test -f m/src/test/kotlin/dev/diffsay/SlotRecorder.kt
+          test -f m/src/test/kotlin/dev/diffsay/DiffsayPreviewTester.kt
+          /tmp/v/bin/diffsay --version | grep -x "diffsay-compose 0.3.0"

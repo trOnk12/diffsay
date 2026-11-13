@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: ./gradlew :app:compareRoborazziDebug
-      - run: pip install git+https://github.com/trOnk12/diffsay
+      - run: pip install diffsay-compose
       - name: Explain changed screenshots
         run: diffsay scan app/build --source app --markdown --diff origin/${{ github.base_ref }} > causes.md || true
       - name: Comment
