@@ -146,6 +146,8 @@ class VersionTest(unittest.TestCase):
      int)` on the unmodified project too (reproduced with edits stashed). Not today's Roborazzi bump: 1.76.0 fails
      the same. Their CI is green because plain unit runs don't render previews. Cause not found; stopped digging.
   Not reached yet: a real UI change explained by `diffsay scan`.
+  Bugs 1 and 2 fixed (tests failed first; suite 47/47). Checked in the clone: the new `init` names their tester
+  and prints the capturer snippet; `compileCcc39c3DebugUnitTestKotlin --rerun` succeeds with public `SlotCapture`.
 - Without billing: publish 0.3.0 by hand (`python -m build && twine upload dist/*` with your PyPI token);
   the Action runs on its users' minutes, not yours.
 - Known, deferred: the plain CLI still crashes on Windows when `scan --diff` output is redirected (cp1250 can't

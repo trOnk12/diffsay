@@ -34,8 +34,28 @@ roborazzi {
 preview is shown and writes it once the screenshot is taken. Every preview variant (dark theme, font
 scale, RTL, devices) gets its own dump.
 
-If you already use your own `ComposePreviewTester`, add the same option to your capturer: see the
-`SlotCapture` class in that file.
+### Your own `ComposePreviewTester`
+
+Keep your tester and its `testerQualifiedClassName`. `diffsay init` detects it and prints this. Add
+`SlotCapture` to the options your capturer captures with, built from the **final** file path (after any
+renaming your capturer does), so the dump lands beside the image:
+
+```kotlin
+override fun capture(parameter: CaptureParameter) {
+    val filePath = parameter.filePath.removePrefix(packagePrefix)   // your renaming, if any
+    val slots = dev.diffsay.SlotCapture(File(filePath).absoluteFile, parameter.roborazziOptions.taskType.isRecording())
+    capturer.capture(parameter.copy(
+        filePath = filePath,
+        roborazziComposeOptions = parameter.roborazziComposeOptions.builder()
+            .inspectionMode(true)                                    // your existing options stay
+            .addOption(slots)
+            .build(),
+    ))
+}
+```
+
+This snippet compiles in [EventFahrplan](https://github.com/EventFahrplan/EventFahrplan)'s
+`PackageStrippingComposePreviewTester` (Roborazzi 1.79.0, Kotlin 2.4.21).
 
 ## Paparazzi
 
