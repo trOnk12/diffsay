@@ -136,6 +136,16 @@ class VersionTest(unittest.TestCase):
   (wheel builds, `init` copies the .kt files, version line matches), Action `run.sh` on the fixture PASS
   (`changed=true`, summary has the table).
 - Not verified yet: a real GitHub runner, Task 2 Step 5 TestPyPI dry run, Task 3 Step 6 live PR comment.
+- Fresh-project test (Task 4), EventFahrplan @09c47c6 (281★, Roborazzi generated preview tests with its own
+  `PackageStrippingComposePreviewTester`), clone in `Dev/_fresh/`. Findings so far:
+  1. **diffsay bug:** `init` sees "already generates preview tests" but not the custom tester; its advice
+     (set `testerQualifiedClassName` to `dev.diffsay.DiffsayPreviewTester`) would silently drop the user's tester.
+  2. **diffsay bug:** the README's custom-tester path says "see `SlotCapture`", but `SlotCapture` is `private`
+     in the copied file; users must edit diffsay's file. With it public, integration was 5 lines in their capturer.
+  3. **Blocked, not diffsay:** recording fails 163/163 with `NoSuchMethodError: ComposablePreview.invoke(Composer,
+     int)` on the unmodified project too (reproduced with edits stashed). Not today's Roborazzi bump: 1.76.0 fails
+     the same. Their CI is green because plain unit runs don't render previews. Cause not found; stopped digging.
+  Not reached yet: a real UI change explained by `diffsay scan`.
 - Without billing: publish 0.3.0 by hand (`python -m build && twine upload dist/*` with your PyPI token);
   the Action runs on its users' minutes, not yours.
 - Known, deferred: the plain CLI still crashes on Windows when `scan --diff` output is redirected (cp1250 can't
