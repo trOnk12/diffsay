@@ -9,6 +9,36 @@ Roborazzi's `outputDir`), or restored from the base branch's artifact as in
 [Roborazzi's CI guide](https://github.com/takahirom/roborazzi#github-actions). The `.slots.json.gz`
 files written next to the goldens must travel with them.
 
+## With the Action
+
+```yaml
+name: screenshots
+on: pull_request
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 21 }
+      - run: ./gradlew :app:compareRoborazziDebug
+      - uses: trOnk12/diffsay@v0
+        with:
+          module-dir: app/build
+          source: app
+```
+
+The Action keeps **one** comment per PR and edits it on every push, so it says "No screenshot changes"
+once a later push fixes them. The table is also written to the job summary. On PRs from forks the
+token can't comment: the job stays green with a warning, and the summary still has the table.
+Outputs: `changed` (`"true"`/`"false"`) and `causes-file`.
+
+## Without the Action
+
 ```yaml
 name: screenshots
 on: pull_request

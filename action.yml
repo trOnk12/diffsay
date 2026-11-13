@@ -1,0 +1,57 @@
+name: diffsay
+description: Explain changed Compose screenshot tests as one line per cause in code, on the PR and in the job summary.
+branding:
+  icon: eye
+  color: blue
+inputs:
+  module-dir:
+    description: "Directory holding the compared screenshots, e.g. app/build"
+    required: true
+  source:
+    description: "Module directory with src/ (default: module-dir)"
+    default: ""
+  base-ref:
+    description: Branch to split causes against (explained by this PR or not). Empty disables.
+    default: ${{ github.base_ref }}
+  install:
+    description: pip requirement to install
+    default: diffsay-compose==0.3.0
+  comment:
+    description: Post or update one PR comment ("true"/"false")
+    default: "true"
+  github-token:
+    description: Token for the PR comment
+    default: ${{ github.token }}
+outputs:
+  changed:
+    description: '"true" when any screenshot changed'
+    value: ${{ steps.scan.outputs.changed }}
+  causes-file:
+    description: Path to the markdown table of causes
+    value: ${{ steps.scan.outputs.causes-file }}
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - shell: bash
+      env:
+        INSTALL: ${{ inputs.install }}
+      run: pip install "$INSTALL"
+    - id: scan
+      shell: bash
+      env:
+        MODULE_DIR: ${{ inputs.module-dir }}
+        SOURCE: ${{ inputs.source }}
+        BASE_REF: ${{ inputs.base-ref }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/action/run.sh"
+    - if: inputs.comment == 'true' && github.event_name == 'pull_request'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        REPO: ${{ github.repository }}
+        PR: ${{ github.event.pull_request.number }}
+        CHANGED: ${{ steps.scan.outputs.changed }}
+        CAUSES_FILE: ${{ steps.scan.outputs.causes-file }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/action/comment.sh"
