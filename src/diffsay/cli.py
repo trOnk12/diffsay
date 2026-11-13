@@ -1085,6 +1085,25 @@ roborazzi {
     }
 }"""
 
+_DEPENDENCY = """\
+dependencies {
+    testImplementation("androidx.compose.ui:ui-tooling-data")
+}"""
+
+_CUSTOM_CAPTURER = """\
+    override fun capture(parameter: CaptureParameter) {
+        val filePath = parameter.filePath  // the path you capture to, after any renaming you do
+        val slots = dev.diffsay.SlotCapture(java.io.File(filePath).absoluteFile,
+                                            parameter.roborazziOptions.taskType.isRecording())
+        capturer.capture(parameter.copy(
+            filePath = filePath,
+            roborazziComposeOptions = parameter.roborazziComposeOptions.builder()
+                // …your existing options…
+                .addOption(slots)
+                .build(),
+        ))
+    }"""
+
 USAGE = """usage:
   diffsay init <android-module>                    set up cause-in-code recording in a Compose module
   diffsay scan <dir> [--source <module>] [--markdown] [--crops DIR]
@@ -1121,6 +1140,13 @@ def init(module: str) -> int:
               "Then use paparazzi.snapshotWithCauses(name) { … } instead of paparazzi.snapshot(name) { … },\n"
               f"record, change code, verify, and run: diffsay scan {root}/build --source {root}")
         return 0
+    tester = re.search(r'testerQualifiedClassName\s*(?:=|\.set\()\s*"([\w.]+)"', text)
+    if tester and tester.group(1) != "dev.diffsay.DiffsayPreviewTester":
+        print(f"\nAdd to {build}:\n\n{_DEPENDENCY}\n\n"
+              f"Your module already has its own tester, {tester.group(1)}: keep it, and in its capturer\n"
+              f"add diffsay's option to the parameters it captures with:\n\n{_CUSTOM_CAPTURER}\n\n"
+              f"Then record goldens, change code, compare, and run: diffsay scan {root}/build --source {root}")
+        return 0
     print(f"\nAdd to {build or root / 'build.gradle.kts'} (Roborazzi on Robolectric already set up):\n")
     print(_GRADLE % (namespace.group(1) if namespace else "com.example.app"))
     if "generateComposePreviewRobolectricTests" in text:
@@ -1136,6 +1162,10 @@ def main(argv: list[str] | None = None) -> int:
     if not argv or argv[0] in ("-h", "--help", "help"):
         print(USAGE)
         return 0 if argv else 2
+    if argv[0] == "--version":
+        from . import __version__
+        print(f"diffsay-compose {__version__}")
+        return 0
     if argv[0] == "init":
         if len(argv) != 2:
             print("usage: diffsay init <android-module-dir>")

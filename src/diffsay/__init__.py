@@ -2,5 +2,5 @@
 
 from .cli import compare, load, main, report, scan
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __all__ = ["compare", "load", "main", "report", "scan"]

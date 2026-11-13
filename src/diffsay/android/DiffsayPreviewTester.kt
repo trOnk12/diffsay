@@ -33,9 +33,14 @@ class DiffsayPreviewTester : ComposePreviewTester<AndroidPreviewJUnit4TestParame
     },
 )
 
-/** Records the composition while it is shown and writes it once captured, before the activity closes. */
+/**
+ * Records the composition while it is shown and writes it once captured, before the activity closes.
+ *
+ * Already have your own tester? Add this option in its capturer, built from the file path you pass on:
+ * `parameter.roborazziComposeOptions.builder().addOption(SlotCapture(File(filePath).absoluteFile, recording)).build()`
+ */
 @OptIn(ExperimentalRoborazziApi::class)
-private class SlotCapture(private val image: File, private val recording: Boolean) :
+class SlotCapture(private val image: File, private val recording: Boolean) :
     RoborazziComposeComposableOption, RoborazziComposeCaptureOption {
     private val recorder = SlotRecorder()
 
