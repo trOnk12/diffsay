@@ -64,6 +64,40 @@ class RunScriptTest(unittest.TestCase):
             self.assertIn("::warning::diffsay: base ref unavailable", r.stdout)
             self.assertEqual("true", outputs(tmp / "out")["changed"])
 
+    def test_scan_crash_fails_the_step_instead_of_reporting_a_change(self):
+        with tempfile.TemporaryDirectory() as t:
+            tmp = Path(t)
+            fx = tmp / "fx"
+            fx.mkdir()
+            (fx / "LoginTest.png").write_bytes(b"not a png")
+            (fx / "LoginTest_actual.png").write_bytes(b"not a png either")
+            env = {"MODULE_DIR": str(fx), "SOURCE": str(fx), "BASE_REF": "", "RUNNER_TEMP": str(tmp),
+                   "GITHUB_OUTPUT": str(tmp / "out"), "GITHUB_STEP_SUMMARY": str(tmp / "summary")}
+            r = bash("run.sh", env, str(tmp))
+            self.assertNotEqual(0, r.returncode)
+            self.assertIn("::error::", r.stdout)
+
+    def test_missing_module_dir_fails_instead_of_reporting_no_changes(self):
+        with tempfile.TemporaryDirectory() as t:
+            tmp = Path(t)
+            env = {"MODULE_DIR": str(tmp / "typo"), "SOURCE": "", "BASE_REF": "", "RUNNER_TEMP": str(tmp),
+                   "GITHUB_OUTPUT": str(tmp / "out"), "GITHUB_STEP_SUMMARY": str(tmp / "summary")}
+            r = bash("run.sh", env, str(tmp))
+            self.assertNotEqual(0, r.returncode)
+            self.assertIn("::error::diffsay: module-dir", r.stdout)
+
+    def test_base_ref_already_present_is_used_without_fetching(self):
+        with tempfile.TemporaryDirectory() as t:
+            tmp = Path(t)
+            git = ["git", "-C", str(tmp), "-c", "user.name=t", "-c", "user.email=t@t"]
+            subprocess.run(git[:3] + ["init", "-q"], check=True)
+            subprocess.run(git + ["commit", "-q", "--allow-empty", "-m", "base"], check=True)
+            subprocess.run(git[:3] + ["update-ref", "refs/remotes/origin/main", "HEAD"], check=True)
+            r = self.scan(tmp, base_ref="main")  # no remote configured: any fetch would fail
+            self.assertEqual(0, r.returncode, r.stderr)
+            self.assertNotIn("base ref unavailable", r.stdout)
+            self.assertFalse((tmp / ".git/shallow").exists())
+
 
 class CommentScriptTest(unittest.TestCase):
     def comment(self, tmp: Path, changed: str, existing: str = "", fail: bool = False):
