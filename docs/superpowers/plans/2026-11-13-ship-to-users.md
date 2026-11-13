@@ -131,7 +131,13 @@ class VersionTest(unittest.TestCase):
   reports a change; missing `module-dir` fails instead of "no changes"; base ref used without fetching (no
   shallowing of full clones); release runs the tests first; release ignores the moving `v0` tag;
   `PYTHONIOENCODING=utf-8` in the Action (the `--diff` report crashed on Windows code pages).
-- Not verified yet: CI on GitHub (never pushed), Task 2 Step 5 TestPyPI dry run, Task 3 Step 6 live PR check.
+- PR #1 open. GitHub CI did not run: account locked over billing (jobs end with 0 steps). Stand-in: the three CI
+  jobs' steps run in WSL Ubuntu 22.04 / Python 3.10 on a clean clone of ce09e0c: `test` 45/45 OK, `wheel` PASS
+  (wheel builds, `init` copies the .kt files, version line matches), Action `run.sh` on the fixture PASS
+  (`changed=true`, summary has the table).
+- Not verified yet: a real GitHub runner, Task 2 Step 5 TestPyPI dry run, Task 3 Step 6 live PR comment.
+- Without billing: publish 0.3.0 by hand (`python -m build && twine upload dist/*` with your PyPI token);
+  the Action runs on its users' minutes, not yours.
 - Known, deferred: the plain CLI still crashes on Windows when `scan --diff` output is redirected (cp1250 can't
   encode `❔`); reviewer minors — `head -1` + pipefail with duplicate comments, fork-specific warning text for
   every gh failure, no `concurrency` in the docs example, `body.md` written into the checkout, Action's
